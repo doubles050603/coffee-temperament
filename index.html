@@ -13,47 +13,38 @@
 <meta property="og:locale" content="ko_KR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://doubles050603.github.io/coffee-temperament/og.jpg">
-<meta name="description" content="아이가 왜 이러는지 몰라서 자책한 적 있으세요? 커피 한 잔 값으로 우리 아이 기질 이야기 같이 나눠봐요 ☕">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{
-  --cream:#FAF5EE;--latte:#E8D9C4;--caramel:#C4935A;
-  --espresso:#3D2314;--mocha:#6B3F22;--foam:#FDF9F4;
-  --muted:#8C7260;--warm:#A0714F;--peach:#E8927A;--sage:#8BAF98;
-}
+:root{--cream:#FAF5EE;--latte:#E8D9C4;--caramel:#C4935A;--espresso:#3D2314;--mocha:#6B3F22;--foam:#FDF9F4;--muted:#8C7260;--warm:#A0714F;--peach:#E8927A;--sage:#8BAF98;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{font-family:'Noto Sans KR',sans-serif;font-weight:300;background:var(--cream);color:var(--espresso);min-height:100vh;line-height:1.75;}
+body{font-family:"Noto Sans KR",sans-serif;font-weight:300;background:var(--cream);color:var(--espresso);min-height:100vh;line-height:1.75;}
 .page{display:none;}.page.active{display:block;animation:fadeUp .4s ease both;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
-
-/* 헤더 */
 header{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:var(--foam);border-bottom:1px solid var(--latte);position:sticky;top:0;z-index:100;}
 .logo{display:flex;align-items:center;gap:8px;cursor:pointer;}
-.logo-text{font-family:'Nanum Myeongjo',serif;font-size:14px;color:var(--espresso);line-height:1.2;}
-.logo-text small{display:block;font-family:'Noto Sans KR';font-size:10px;font-weight:300;color:var(--muted);letter-spacing:.05em;}
-.btn-outline{font-size:12px;color:var(--peach);background:transparent;border:1px solid var(--peach);border-radius:20px;padding:7px 14px;cursor:pointer;transition:all .2s;white-space:nowrap;font-family:'Noto Sans KR';}
+.logo-text{font-family:"Nanum Myeongjo",serif;font-size:14px;color:var(--espresso);line-height:1.2;}
+.logo-text small{display:block;font-family:"Noto Sans KR";font-size:10px;font-weight:300;color:var(--muted);letter-spacing:.05em;}
+.btn-outline{font-size:12px;color:var(--peach);background:transparent;border:1px solid var(--peach);border-radius:20px;padding:7px 14px;cursor:pointer;transition:all .2s;white-space:nowrap;font-family:"Noto Sans KR";}
 .btn-outline:hover{background:var(--peach);color:#fff;}
 .prog{height:3px;background:var(--latte);}.prog-fill{height:100%;background:var(--caramel);transition:width .4s ease;}
-
-/* 랜딩 */
 .hero-mobile{display:block;}
 .hero-img-wrap{position:relative;width:100%;overflow:hidden;background:#EDE0CE;}
 .hero-img-wrap img{width:100%;height:auto;display:block;object-fit:cover;object-position:center 10%;}
 .hero-img-wrap::after{content:"";position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(to bottom,transparent,var(--cream));}
 .hero-text{padding:20px 22px 32px;}
 .hook-banner{background:var(--espresso);border-radius:14px;padding:20px 18px;margin-bottom:20px;}
-.hook-banner-top{font-family:'Nanum Myeongjo',serif;font-size:17px;color:#F2C4A0;font-weight:700;display:block;margin-bottom:6px;line-height:1.5;}
+.hook-banner-top{font-family:"Nanum Myeongjo",serif;font-size:17px;color:#F2C4A0;font-weight:700;display:block;margin-bottom:6px;line-height:1.5;}
 .hook-banner p{font-size:14px;color:rgba(255,255,255,.85);line-height:1.8;word-break:keep-all;}
 .hook-small{font-size:11px;color:rgba(255,255,255,.5);display:block;margin-top:10px;}
 .empathy-list{background:#fff;border:1px solid var(--latte);border-radius:14px;padding:16px 18px;margin-bottom:20px;}
-.empathy-title{font-size:12px;color:var(--caramel);letter-spacing:.06em;margin-bottom:12px;font-weight:400;}
+.empathy-title{font-size:12px;color:var(--caramel);letter-spacing:.06em;margin-bottom:12px;}
 .empathy-item{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #F5EEE6;font-size:13.5px;color:var(--espresso);line-height:1.55;word-break:keep-all;}
 .empathy-item:last-child{border-bottom:none;padding-bottom:0;}
 .emp-ic{font-size:15px;flex-shrink:0;margin-top:1px;}
 .hero-eyebrow{font-size:11px;color:var(--caramel);letter-spacing:.06em;margin-bottom:10px;}
-.hero-h1{font-family:'Nanum Myeongjo',serif;font-size:24px;font-weight:700;line-height:1.55;color:var(--espresso);margin-bottom:12px;word-break:keep-all;}
+.hero-h1{font-family:"Nanum Myeongjo",serif;font-size:24px;font-weight:700;line-height:1.55;color:var(--espresso);margin-bottom:12px;word-break:keep-all;}
 .hero-h1 em{color:var(--caramel);font-style:normal;}
 .hero-desc{font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:20px;word-break:keep-all;}
 .feat-list{display:flex;flex-direction:column;background:#fff;border:1px solid var(--latte);border-radius:14px;overflow:hidden;margin-bottom:20px;}
@@ -70,24 +61,24 @@ header{display:flex;align-items:center;justify-content:space-between;padding:14p
 .slider-dots{display:flex;justify-content:center;gap:6px;padding:10px 0 14px;}
 .dot{width:6px;height:6px;border-radius:50%;background:var(--latte);cursor:pointer;transition:all .25s;}
 .dot.on{background:var(--peach);width:18px;border-radius:3px;}
-.btn-main{width:100%;padding:17px;font-family:'Noto Sans KR';font-size:16px;font-weight:500;background:var(--peach);color:#fff;border:none;border-radius:30px;cursor:pointer;letter-spacing:.04em;transition:all .2s;box-shadow:0 4px 18px rgba(232,146,122,.35);}
-.btn-main:active{opacity:.85;transform:scale(.98);}
-.btn-sub{display:block;width:100%;margin-top:12px;font-size:13px;color:var(--caramel);background:none;border:none;cursor:pointer;text-decoration:underline;text-underline-offset:3px;font-family:'Noto Sans KR';}
+.btn-main{width:100%;padding:17px;font-family:"Noto Sans KR";font-size:16px;font-weight:500;background:var(--peach);color:#fff;border:none;border-radius:30px;cursor:pointer;letter-spacing:.04em;transition:all .2s;box-shadow:0 4px 18px rgba(232,146,122,.35);}
+.btn-main:active{opacity:.85;}
+.btn-sub{display:block;width:100%;margin-top:12px;font-size:13px;color:var(--caramel);background:none;border:none;cursor:pointer;text-decoration:underline;text-underline-offset:3px;font-family:"Noto Sans KR";}
 .section{max-width:800px;margin:0 auto;padding:48px 22px;}
 .sec-tag{display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.14em;color:var(--caramel);margin-bottom:20px;}
 .sec-tag::after{content:"";flex:1;height:1px;background:var(--latte);}
-.sec-h2{font-family:'Nanum Myeongjo',serif;font-size:22px;font-weight:700;color:var(--espresso);margin-bottom:8px;word-break:keep-all;}
+.sec-h2{font-family:"Nanum Myeongjo",serif;font-size:22px;font-weight:700;color:var(--espresso);margin-bottom:8px;word-break:keep-all;}
 .sec-sub{font-size:13.5px;color:var(--muted);line-height:1.8;margin-bottom:22px;word-break:keep-all;}
 .talk-cards{display:flex;flex-direction:column;gap:10px;}
 .talk-card{background:#fff;border:1px solid var(--latte);border-radius:14px;padding:18px;display:flex;gap:14px;align-items:flex-start;}
 .tc-icon{font-size:22px;flex-shrink:0;margin-top:2px;}
-.tc-h3{font-family:'Nanum Myeongjo',serif;font-size:15px;color:var(--espresso);margin-bottom:5px;}
+.tc-h3{font-family:"Nanum Myeongjo",serif;font-size:15px;color:var(--espresso);margin-bottom:5px;}
 .tc-p{font-size:13px;color:var(--muted);line-height:1.75;word-break:keep-all;}
 .price-card{background:#fff;border:2px solid var(--peach);border-radius:20px;padding:28px 22px;margin-bottom:18px;text-align:center;}
 .price-cup{font-size:32px;margin-bottom:8px;}
 .price-name{font-size:12px;letter-spacing:.1em;color:var(--caramel);margin-bottom:6px;}
-.price-amount{font-family:'Nanum Myeongjo',serif;font-size:36px;color:var(--espresso);margin-bottom:2px;}
-.price-amount sub{font-family:'Noto Sans KR';font-size:14px;font-weight:300;color:var(--muted);}
+.price-amount{font-family:"Nanum Myeongjo",serif;font-size:36px;color:var(--espresso);margin-bottom:2px;}
+.price-amount sub{font-family:"Noto Sans KR";font-size:14px;font-weight:300;color:var(--muted);}
 .price-like{font-size:12px;color:var(--sage);margin-bottom:18px;}
 .price-includes{list-style:none;margin-bottom:22px;text-align:left;}
 .price-includes li{font-size:13.5px;color:var(--mocha);padding:6px 0;display:flex;gap:8px;line-height:1.5;border-bottom:1px dashed var(--latte);}
@@ -95,8 +86,6 @@ header{display:flex;align-items:center;justify-content:space-between;padding:14p
 .price-includes li::before{content:"✓";color:var(--peach);flex-shrink:0;font-weight:500;}
 .legal-box{background:rgba(196,147,90,.06);border:1px solid var(--latte);border-radius:12px;padding:16px 18px;font-size:12px;color:var(--muted);line-height:1.85;word-break:keep-all;}
 .legal-box strong{color:var(--warm);font-weight:400;}
-
-/* 검사 */
 .test-wrap{max-width:560px;margin:0 auto;padding:28px 20px 56px;}
 .q-progress-info{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
 .q-dim-label{font-size:11px;letter-spacing:.1em;color:var(--caramel);}
@@ -106,70 +95,64 @@ header{display:flex;align-items:center;justify-content:space-between;padding:14p
 .nbr-tip{background:#fff;border:1px solid var(--latte);border-radius:14px 14px 14px 4px;padding:13px 16px;margin-bottom:14px;display:flex;gap:9px;align-items:flex-start;}
 .nbr-av{width:28px;height:28px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,#E8C99A,#C4935A);display:flex;align-items:center;justify-content:center;font-size:14px;}
 .nbr-tip p{font-size:13px;color:var(--mocha);line-height:1.7;word-break:keep-all;}
+.paid-banner{background:linear-gradient(135deg,var(--espresso),#6B3F22);border-radius:12px;padding:14px 16px;margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+.paid-banner-txt{font-size:13px;color:#F2C4A0;line-height:1.5;word-break:keep-all;}
+.paid-banner-txt strong{display:block;font-size:14px;color:#fff;margin-bottom:2px;}
 .q-card{background:#fff;border:1px solid var(--latte);border-radius:18px;padding:26px 20px;margin-bottom:14px;box-shadow:0 2px 12px rgba(107,63,34,.06);}
 .q-num{font-size:10px;letter-spacing:.1em;color:var(--caramel);margin-bottom:8px;}
-.q-txt{font-family:'Nanum Myeongjo',serif;font-size:17px;line-height:1.7;color:var(--espresso);margin-bottom:22px;word-break:keep-all;}
+.q-txt{font-family:"Nanum Myeongjo",serif;font-size:17px;line-height:1.7;color:var(--espresso);margin-bottom:22px;word-break:keep-all;}
 .q-opts{display:flex;flex-direction:column;gap:9px;}
 .q-opt{padding:14px 16px;border:1px solid var(--latte);border-radius:12px;font-size:14px;font-weight:300;color:var(--mocha);background:var(--cream);cursor:pointer;text-align:left;transition:all .18s;line-height:1.5;word-break:keep-all;}
-.q-opt:active{transform:scale(.99);}
 .q-opt.sel{border-color:var(--peach);background:var(--peach);color:#fff;}
 .q-nav{display:flex;justify-content:space-between;align-items:center;}
-.btn-qprev{font-size:13px;color:var(--muted);background:none;border:1px solid var(--latte);border-radius:22px;padding:10px 18px;cursor:pointer;font-family:'Noto Sans KR';}
-.btn-qnext{font-size:14px;font-weight:500;background:var(--espresso);color:var(--cream);border:none;border-radius:22px;padding:12px 26px;cursor:pointer;font-family:'Noto Sans KR';transition:all .2s;}
+.btn-qprev{font-size:13px;color:var(--muted);background:none;border:1px solid var(--latte);border-radius:22px;padding:10px 18px;cursor:pointer;font-family:"Noto Sans KR";}
+.btn-qnext{font-size:14px;font-weight:500;background:var(--espresso);color:var(--cream);border:none;border-radius:22px;padding:12px 26px;cursor:pointer;font-family:"Noto Sans KR";transition:all .2s;}
 .btn-qnext:disabled{opacity:.35;cursor:not-allowed;}
-
-/* 로딩 */
-.loading-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;padding:40px 20px;}
-.loading-cup{font-size:48px;animation:steam 1.5s ease-in-out infinite;}
-@keyframes steam{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
-.loading-txt{font-family:'Nanum Myeongjo',serif;font-size:20px;color:var(--espresso);margin-top:20px;margin-bottom:8px;}
-.loading-sub{font-size:13px;color:var(--muted);text-align:center;line-height:1.75;}
-.loading-bar-wrap{width:200px;height:4px;background:var(--latte);border-radius:2px;margin-top:24px;overflow:hidden;}
-.loading-bar{height:100%;background:var(--caramel);border-radius:2px;animation:loadBar 2.5s ease forwards;}
+.loading-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:70vh;padding:40px 20px;}
+.loading-cup{font-size:56px;animation:bob 1.5s ease-in-out infinite;}
+@keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+.loading-txt{font-family:"Nanum Myeongjo",serif;font-size:20px;color:var(--espresso);margin-top:20px;margin-bottom:8px;text-align:center;}
+.loading-sub{font-size:13px;color:var(--muted);text-align:center;line-height:1.75;word-break:keep-all;}
+.loading-bar-wrap{width:220px;height:4px;background:var(--latte);border-radius:2px;margin-top:24px;overflow:hidden;}
+.loading-bar{height:100%;background:var(--caramel);border-radius:2px;animation:loadBar 3s ease forwards;}
 @keyframes loadBar{from{width:0;}to{width:100%;}}
-
-/* 무료 결과 */
 .result-wrap{max-width:600px;margin:0 auto;padding:28px 20px 20px;}
-
-/* 기질 유형 카드 */
 .type-card{background:#fff;border:1px solid var(--latte);border-radius:20px;padding:28px 20px;text-align:center;margin-bottom:14px;box-shadow:0 4px 20px rgba(107,63,34,.08);}
 .type-badge{display:inline-block;font-size:10px;letter-spacing:.12em;color:var(--caramel);border:1px solid var(--latte);border-radius:20px;padding:4px 14px;margin-bottom:14px;}
 .type-icon{font-size:44px;margin-bottom:10px;line-height:1;}
-.type-name{font-family:'Nanum Myeongjo',serif;font-size:20px;color:var(--espresso);margin-bottom:12px;line-height:1.45;}
+.type-name{font-family:"Nanum Myeongjo",serif;font-size:20px;color:var(--espresso);margin-bottom:12px;line-height:1.45;}
 .type-keywords{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;margin-bottom:14px;}
 .kw-chip{background:var(--latte);color:var(--mocha);font-size:12px;padding:4px 12px;border-radius:20px;}
 .type-desc{font-size:14px;color:var(--muted);line-height:1.85;word-break:keep-all;text-align:left;}
-
-/* 9차원 레이더 바 */
 .dim-card{background:#fff;border:1px solid var(--latte);border-radius:14px;padding:20px;margin-bottom:14px;}
 .dim-card-tag{font-size:10px;letter-spacing:.12em;color:var(--caramel);margin-bottom:16px;}
 .dim-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
 .dim-row:last-child{margin-bottom:0;}
 .dim-nm{font-size:12px;color:var(--muted);width:68px;flex-shrink:0;line-height:1.3;}
-.dim-track{flex:1;height:7px;background:var(--latte);border-radius:4px;overflow:hidden;position:relative;}
+.dim-track{flex:1;height:7px;background:var(--latte);border-radius:4px;overflow:hidden;}
 .dim-fill{height:100%;border-radius:4px;width:0;transition:width 1.3s cubic-bezier(.22,.61,.36,1);}
 .dim-sc{font-size:11px;color:var(--warm);width:24px;text-align:right;flex-shrink:0;}
-
-/* 공감 묘사 — 무료에서 핵심 */
 .empathy-result-card{background:linear-gradient(135deg,#FDF6EE,#FAF0EC);border:1px solid #E8CDB8;border-radius:16px;padding:22px;margin-bottom:14px;}
 .er-tag{font-size:11px;letter-spacing:.08em;color:var(--caramel);margin-bottom:14px;display:flex;align-items:center;gap:6px;}
 .er-tag::before{content:"";width:4px;height:4px;background:var(--caramel);border-radius:50%;}
 .er-item{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid rgba(196,147,90,.2);font-size:13.5px;color:var(--espresso);line-height:1.65;word-break:keep-all;}
 .er-item:last-child{border-bottom:none;padding-bottom:0;}
 .er-check{font-size:16px;flex-shrink:0;margin-top:1px;}
-
-/* 맛보기 양육 팁 */
 .preview-guide{background:#fff;border:1px solid var(--latte);border-radius:14px;padding:20px;margin-bottom:14px;}
 .pg-tag{font-size:10px;letter-spacing:.12em;color:var(--caramel);margin-bottom:14px;}
 .pg-item{display:flex;gap:10px;padding:9px 0;border-bottom:1px dashed var(--latte);font-size:13.5px;color:var(--mocha);line-height:1.7;word-break:keep-all;}
 .pg-item:last-child{border-bottom:none;padding-bottom:0;}
 .pg-dot{color:var(--peach);flex-shrink:0;}
-
-/* 잠금 유도 박스 — 핵심 전환 포인트 */
+.blur-preview{position:relative;margin-bottom:14px;}
+.blur-content{filter:blur(4px);pointer-events:none;user-select:none;opacity:.6;}
+.blur-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(250,245,238,.75);border-radius:14px;}
+.blur-overlay-inner{text-align:center;padding:16px;}
+.blur-overlay-inner p{font-size:13px;color:var(--espresso);font-weight:500;margin-bottom:10px;word-break:keep-all;}
+.btn-blur-unlock{font-family:"Noto Sans KR";font-size:13px;font-weight:500;background:var(--peach);color:#fff;border:none;border-radius:20px;padding:10px 22px;cursor:pointer;}
 .lock-teaser{background:var(--espresso);border-radius:18px;padding:24px 22px;margin-bottom:14px;position:relative;overflow:hidden;}
 .lock-teaser::before{content:"";position:absolute;top:-30px;right:-30px;width:120px;height:120px;background:rgba(255,255,255,.04);border-radius:50%;}
 .lock-badge{display:inline-block;background:var(--peach);color:#fff;font-size:10px;letter-spacing:.08em;padding:4px 12px;border-radius:20px;margin-bottom:14px;}
-.lock-title{font-family:'Nanum Myeongjo',serif;font-size:18px;color:#fff;margin-bottom:10px;line-height:1.5;}
+.lock-title{font-family:"Nanum Myeongjo",serif;font-size:18px;color:#fff;margin-bottom:10px;line-height:1.5;}
 .lock-items{list-style:none;margin-bottom:20px;}
 .lock-items li{font-size:13px;color:rgba(255,255,255,.8);padding:6px 0;display:flex;gap:8px;align-items:flex-start;border-bottom:1px solid rgba(255,255,255,.08);line-height:1.6;word-break:keep-all;}
 .lock-items li:last-child{border-bottom:none;}
@@ -177,61 +160,17 @@ header{display:flex;align-items:center;justify-content:space-between;padding:14p
 .lock-price-row{display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.08);border-radius:12px;padding:14px 16px;margin-bottom:14px;}
 .lock-price-left{font-size:13px;color:rgba(255,255,255,.75);line-height:1.5;}
 .lock-price-left strong{display:block;color:#fff;font-size:15px;font-weight:500;}
-.lock-price-right{font-family:'Nanum Myeongjo',serif;font-size:28px;color:var(--peach);font-weight:700;}
-.lock-price-right sub{font-family:'Noto Sans KR';font-size:13px;font-weight:300;color:rgba(255,255,255,.6);}
-.btn-unlock{width:100%;padding:16px;font-family:'Noto Sans KR';font-size:16px;font-weight:500;background:var(--peach);color:#fff;border:none;border-radius:24px;cursor:pointer;letter-spacing:.04em;transition:all .2s;box-shadow:0 4px 18px rgba(232,146,122,.4);}
-.btn-unlock:active{opacity:.88;transform:scale(.98);}
+.lock-price-right{font-family:"Nanum Myeongjo",serif;font-size:28px;color:var(--peach);font-weight:700;}
+.lock-price-right sub{font-family:"Noto Sans KR";font-size:13px;font-weight:300;color:rgba(255,255,255,.6);}
+.btn-unlock{width:100%;padding:16px;font-family:"Noto Sans KR";font-size:16px;font-weight:500;background:var(--peach);color:#fff;border:none;border-radius:24px;cursor:pointer;letter-spacing:.04em;transition:all .2s;box-shadow:0 4px 18px rgba(232,146,122,.4);}
 .lock-reassure{font-size:11px;color:rgba(255,255,255,.45);text-align:center;margin-top:10px;line-height:1.7;}
-
-/* 맛보기 흐릿 처리 */
-.blur-preview{position:relative;margin-bottom:14px;}
-.blur-content{filter:blur(4px);pointer-events:none;user-select:none;opacity:.6;}
-.blur-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(250,245,238,.7);border-radius:14px;}
-.blur-overlay-inner{text-align:center;padding:16px;}
-.blur-overlay-inner p{font-size:13px;color:var(--espresso);font-weight:500;margin-bottom:10px;word-break:keep-all;}
-.btn-blur-unlock{font-family:'Noto Sans KR';font-size:13px;font-weight:500;background:var(--peach);color:#fff;border:none;border-radius:20px;padding:10px 22px;cursor:pointer;}
-
-/* 유료 결과 */
-.paid-wrap{max-width:600px;margin:0 auto;padding:28px 20px 64px;}
-.paid-header{background:linear-gradient(135deg,var(--espresso),#6B3F22);border-radius:16px;padding:22px;text-align:center;margin-bottom:16px;}
-.paid-badge{display:inline-block;background:var(--peach);color:#fff;font-size:10px;letter-spacing:.1em;padding:4px 14px;border-radius:20px;margin-bottom:12px;}
-.paid-title{font-family:'Nanum Myeongjo',serif;font-size:18px;color:#fff;line-height:1.5;word-break:keep-all;}
-.paid-sec{background:#fff;border:1px solid var(--latte);border-radius:14px;padding:20px;margin-bottom:12px;}
-.paid-sec-tag{font-size:10px;letter-spacing:.12em;color:var(--caramel);margin-bottom:16px;display:flex;align-items:center;gap:6px;}
-.paid-sec-tag::before{content:"";width:4px;height:4px;background:var(--caramel);border-radius:50%;}
-.paid-sec-h3{font-family:'Nanum Myeongjo',serif;font-size:16px;color:var(--espresso);margin-bottom:10px;}
-.detail-item{padding:10px 0;border-bottom:1px solid var(--latte);font-size:13.5px;color:var(--mocha);line-height:1.75;word-break:keep-all;}
-.detail-item:last-child{border-bottom:none;padding-bottom:0;}
-.detail-item strong{display:block;font-size:12px;font-weight:500;color:var(--espresso);margin-bottom:3px;}
-.friend-pattern{background:var(--cream);border-radius:10px;padding:14px;margin-bottom:8px;}
-.fp-type{font-size:11px;color:var(--caramel);margin-bottom:6px;letter-spacing:.06em;}
-.fp-txt{font-size:13.5px;color:var(--mocha);line-height:1.7;word-break:keep-all;}
-.script-card{background:var(--cream);border-radius:12px;padding:16px;margin-bottom:10px;}
-.script-card:last-child{margin-bottom:0;}
-.sc-situation{font-size:11px;color:var(--caramel);letter-spacing:.06em;margin-bottom:8px;}
-.sc-bad{font-size:13px;color:var(--muted);margin-bottom:10px;word-break:keep-all;line-height:1.6;}
-.sc-bad span{color:#C07070;font-weight:400;}
-.sc-good{background:#fff;border-left:3px solid var(--peach);padding:12px 14px;border-radius:0 10px 10px 0;font-size:14px;color:var(--espresso);line-height:1.75;word-break:keep-all;}
-.sc-good span{color:var(--peach);font-weight:500;display:block;font-size:11px;margin-bottom:4px;}
-.age-card{background:var(--cream);border-radius:10px;padding:14px;margin-bottom:8px;}
-.age-card:last-child{margin-bottom:0;}
-.age-tag{display:inline-block;background:var(--caramel);color:#fff;font-size:11px;padding:3px 12px;border-radius:20px;margin-bottom:8px;}
-.age-txt{font-size:13.5px;color:var(--mocha);line-height:1.75;word-break:keep-all;}
-.career-item{padding:12px 0;border-bottom:1px solid var(--latte);font-size:13.5px;color:var(--mocha);line-height:1.7;word-break:keep-all;}
-.career-item:last-child{border-bottom:none;padding-bottom:0;}
-.career-item strong{display:block;font-size:12px;color:var(--caramel);margin-bottom:4px;letter-spacing:.04em;}
-.pdf-box{background:var(--espresso);border-radius:16px;padding:24px;text-align:center;margin-bottom:12px;}
-.pdf-box p{font-size:13px;color:rgba(255,255,255,.8);margin-bottom:16px;line-height:1.75;word-break:keep-all;}
-.btn-pdf{font-family:'Noto Sans KR';font-size:14px;font-weight:500;background:var(--peach);color:#fff;border:none;border-radius:22px;padding:14px 28px;cursor:pointer;}
-.result-disc{font-size:11px;color:var(--muted);line-height:1.9;text-align:center;padding-top:16px;border-top:1px solid var(--latte);word-break:keep-all;}
-
-/* 결제 */
+.result-disc{font-size:11px;color:var(--muted);line-height:1.9;text-align:center;padding-top:16px;word-break:keep-all;}
 .pay-wrap{max-width:440px;margin:0 auto;padding:32px 20px 64px;}
-.pay-h{font-family:'Nanum Myeongjo',serif;font-size:20px;color:var(--espresso);margin-bottom:6px;}
+.pay-h{font-family:"Nanum Myeongjo",serif;font-size:20px;color:var(--espresso);margin-bottom:6px;}
 .pay-sub{font-size:13px;color:var(--muted);margin-bottom:22px;line-height:1.65;word-break:keep-all;}
 .pay-planbox{background:#fff;border:1.5px solid var(--peach);border-radius:14px;padding:16px 18px;margin-bottom:20px;}
 .pay-plan-name{font-size:13px;color:var(--mocha);margin-bottom:4px;}
-.pay-plan-price{font-family:'Nanum Myeongjo',serif;font-size:24px;color:var(--espresso);}
+.pay-plan-price{font-family:"Nanum Myeongjo",serif;font-size:24px;color:var(--espresso);}
 .pay-plan-cmp{font-size:11px;color:var(--caramel);}
 .pay-sl{font-size:11px;letter-spacing:.1em;color:var(--caramel);margin-bottom:10px;}
 .pay-methods{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px;}
@@ -245,13 +184,44 @@ header{display:flex;align-items:center;justify-content:space-between;padding:14p
 .c-row input[type=checkbox]{width:16px;height:16px;accent-color:var(--peach);flex-shrink:0;margin-top:2px;cursor:pointer;}
 .c-row label{font-size:13px;color:var(--mocha);line-height:1.6;cursor:pointer;word-break:keep-all;}
 .c-row label strong{color:var(--espresso);font-weight:400;}
-.btn-pay-go{width:100%;padding:17px;font-family:'Noto Sans KR';font-size:16px;font-weight:500;background:var(--espresso);color:var(--cream);border:none;border-radius:28px;cursor:pointer;letter-spacing:.05em;transition:all .2s;margin-bottom:14px;box-shadow:0 4px 16px rgba(61,35,20,.2);}
-.btn-pay-go:disabled{opacity:1!important;cursor:pointer!important;pointer-events:all!important;}
+.btn-pay-go{width:100%;padding:17px;font-family:"Noto Sans KR";font-size:16px;font-weight:500;background:var(--espresso);color:var(--cream);border:none;border-radius:28px;cursor:pointer;letter-spacing:.05em;margin-bottom:14px;box-shadow:0 4px 16px rgba(61,35,20,.2);}
 .pay-safe{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;}
 .safe-it{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--muted);}
 .safe-dot{width:4px;height:4px;background:var(--peach);border-radius:50%;}
-
-/* 데스크탑 */
+.paid-wrap{max-width:620px;margin:0 auto;padding:28px 20px 64px;}
+.paid-header{background:linear-gradient(135deg,var(--espresso),#5C3318);border-radius:18px;padding:26px 22px;text-align:center;margin-bottom:16px;}
+.paid-badge{display:inline-block;background:var(--peach);color:#fff;font-size:10px;letter-spacing:.1em;padding:4px 14px;border-radius:20px;margin-bottom:12px;}
+.paid-type-icon{font-size:44px;margin-bottom:8px;}
+.paid-type-name{font-family:"Nanum Myeongjo",serif;font-size:22px;color:#fff;margin-bottom:8px;line-height:1.4;}
+.paid-type-sub{font-size:13px;color:rgba(255,255,255,.7);line-height:1.6;word-break:keep-all;}
+.paid-sec{background:#fff;border:1px solid var(--latte);border-radius:14px;padding:20px;margin-bottom:12px;}
+.paid-sec-tag{font-size:10px;letter-spacing:.12em;color:var(--caramel);margin-bottom:16px;display:flex;align-items:center;gap:6px;}
+.paid-sec-tag::before{content:"";width:4px;height:4px;background:var(--caramel);border-radius:50%;}
+.paid-sec-h3{font-family:"Nanum Myeongjo",serif;font-size:15px;color:var(--espresso);margin-bottom:10px;}
+.detail-item{padding:10px 0;border-bottom:1px solid var(--latte);font-size:13.5px;color:var(--mocha);line-height:1.75;word-break:keep-all;}
+.detail-item:last-child{border-bottom:none;padding-bottom:0;}
+.detail-item strong{display:block;font-size:12px;font-weight:500;color:var(--espresso);margin-bottom:3px;}
+.friend-pattern{background:var(--cream);border-radius:10px;padding:14px;margin-bottom:8px;}
+.fp-type{font-size:11px;color:var(--caramel);margin-bottom:6px;letter-spacing:.06em;}
+.fp-txt{font-size:13.5px;color:var(--mocha);line-height:1.7;word-break:keep-all;}
+.script-card{background:var(--cream);border-radius:12px;padding:16px;margin-bottom:10px;}
+.script-card:last-child{margin-bottom:0;}
+.sc-situation{font-size:11px;color:var(--caramel);letter-spacing:.06em;margin-bottom:8px;}
+.sc-bad{font-size:13px;color:var(--muted);margin-bottom:10px;word-break:keep-all;line-height:1.6;}
+.sc-bad span{color:#C07070;font-size:11px;display:block;margin-bottom:3px;}
+.sc-good{background:#fff;border-left:3px solid var(--peach);padding:12px 14px;border-radius:0 10px 10px 0;font-size:14px;color:var(--espresso);line-height:1.75;word-break:keep-all;}
+.sc-good span{color:var(--peach);font-weight:500;font-size:11px;display:block;margin-bottom:4px;}
+.age-card{background:var(--cream);border-radius:10px;padding:14px;margin-bottom:8px;}
+.age-card:last-child{margin-bottom:0;}
+.age-tag{display:inline-block;background:var(--caramel);color:#fff;font-size:11px;padding:3px 12px;border-radius:20px;margin-bottom:8px;}
+.age-txt{font-size:13.5px;color:var(--mocha);line-height:1.75;word-break:keep-all;}
+.career-item{padding:12px 0;border-bottom:1px solid var(--latte);font-size:13.5px;color:var(--mocha);line-height:1.7;word-break:keep-all;}
+.career-item:last-child{border-bottom:none;padding-bottom:0;}
+.career-item strong{display:block;font-size:12px;color:var(--caramel);margin-bottom:4px;letter-spacing:.04em;}
+.pdf-box{background:var(--espresso);border-radius:16px;padding:24px;text-align:center;margin-bottom:12px;}
+.pdf-box p{font-size:13px;color:rgba(255,255,255,.8);margin-bottom:16px;line-height:1.75;word-break:keep-all;}
+.btn-pdf{font-family:"Noto Sans KR";font-size:14px;font-weight:500;background:var(--peach);color:#fff;border:none;border-radius:22px;padding:14px 28px;cursor:pointer;}
+.paid-disc{font-size:11px;color:var(--muted);line-height:1.9;text-align:center;padding-top:16px;border-top:1px solid var(--latte);word-break:keep-all;}
 .hero-desktop{display:none;}
 @media(min-width:700px){
   .hero-mobile{display:none!important;}
@@ -260,10 +230,10 @@ header{display:flex;align-items:center;justify-content:space-between;padding:14p
   .hero-desktop::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to right,rgba(61,35,20,0) 0%,rgba(61,35,20,.05) 38%,rgba(61,35,20,.8) 56%,rgba(61,35,20,.93) 100%);}
   .hd-overlay{position:relative;z-index:2;margin-left:auto;width:46%;padding:52px 48px 52px 36px;display:flex;flex-direction:column;justify-content:center;}
   .hd-hook{backdrop-filter:blur(10px);background:rgba(250,245,238,.13);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:18px 20px;margin-bottom:18px;}
-  .hd-hook strong{font-family:'Nanum Myeongjo',serif;font-size:17px;color:#F2C4A0;display:block;margin-bottom:5px;}
+  .hd-hook strong{font-family:"Nanum Myeongjo",serif;font-size:17px;color:#F2C4A0;display:block;margin-bottom:5px;}
   .hd-hook p{font-size:13px;color:rgba(255,255,255,.85);line-height:1.8;word-break:keep-all;}
   .hd-eyebrow{font-size:12px;color:rgba(255,255,255,.8);margin-bottom:12px;letter-spacing:.04em;}
-  .hd-h1{font-family:'Nanum Myeongjo',serif;font-size:32px;font-weight:700;line-height:1.5;color:#fff;margin-bottom:14px;word-break:keep-all;text-shadow:0 2px 12px rgba(61,35,20,.4);}
+  .hd-h1{font-family:"Nanum Myeongjo",serif;font-size:32px;font-weight:700;line-height:1.5;color:#fff;margin-bottom:14px;word-break:keep-all;text-shadow:0 2px 12px rgba(61,35,20,.4);}
   .hd-h1 em{color:#F2C4A0;font-style:normal;}
   .hd-feats{backdrop-filter:blur(10px);background:rgba(250,245,238,.13);border:1px solid rgba(255,255,255,.22);border-radius:14px;overflow:hidden;margin-bottom:14px;}
   .hd-feat{display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.1);font-size:13px;color:rgba(255,255,255,.9);}
@@ -273,14 +243,13 @@ header{display:flex;align-items:center;justify-content:space-between;padding:14p
   .hd-slide-who{font-size:11px;color:rgba(255,255,255,.55);margin-top:5px;}
   .dot-d{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:all .25s;}
   .dot-d.on{background:#fff;width:18px;border-radius:3px;}
-  .btn-hd-main{font-family:'Noto Sans KR';font-size:14px;font-weight:500;background:var(--peach);color:#fff;border:none;border-radius:28px;padding:14px 32px;cursor:pointer;transition:all .2s;box-shadow:0 4px 18px rgba(232,146,122,.4);}
+  .btn-hd-main{font-family:"Noto Sans KR";font-size:14px;font-weight:500;background:var(--peach);color:#fff;border:none;border-radius:28px;padding:14px 32px;cursor:pointer;transition:all .2s;box-shadow:0 4px 18px rgba(232,146,122,.4);}
   .btn-hd-main:hover{background:#D4785E;transform:translateY(-1px);}
-  .btn-hd-sub{display:block;margin-top:10px;font-size:12px;color:rgba(255,255,255,.6);background:none;border:none;cursor:pointer;text-decoration:underline;font-family:'Noto Sans KR';}
+  .btn-hd-sub{display:block;margin-top:10px;font-size:12px;color:rgba(255,255,255,.6);background:none;border:none;cursor:pointer;text-decoration:underline;font-family:"Noto Sans KR";}
 }
 </style>
 </head>
 <body>
-
 <header>
   <div class="logo" onclick="goTo('land')">
     <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
@@ -295,17 +264,14 @@ header{display:flex;align-items:center;justify-content:space-between;padding:14p
 </header>
 <div class="prog"><div class="prog-fill" id="pbar" style="width:0%"></div></div>
 
-<!-- ══ 랜딩 ══ -->
+<!-- 랜딩 -->
 <div class="page active" id="page-land">
-  <!-- 모바일 히어로 -->
   <div class="hero-mobile">
-    <div class="hero-img-wrap">
-      <img src="hero.jpg" alt="커피 한 잔 들고 따뜻하게 웃고 있는 엄마 일러스트">
-    </div>
+    <div class="hero-img-wrap"><img src="hero.jpg" alt="따뜻한 카페 일러스트"></div>
     <div class="hero-text">
       <div class="hook-banner">
         <span class="hook-banner-top">"혹시 내가 잘못 키우고 있는 건 아닐까…"</span>
-        <p>그 자책, 이제 내려놓으셔도 돼요. 아이가 힘든 게 아니라, <em style="color:#F2C4A0;font-style:normal;font-weight:400">기질이 달랐던 거예요.</em></p>
+        <p>그 자책, 이제 내려놓으셔도 돼요. 아이가 힘든 게 아니라, <em style="color:#F2C4A0;font-style:normal">기질이 달랐던 거예요.</em></p>
         <span class="hook-small">커피 한 잔 값으로 우리 아이 기질 이야기 나눠봐요 ☕</span>
       </div>
       <div class="empathy-list">
@@ -317,19 +283,19 @@ header{display:flex;align-items:center;justify-content:space-between;padding:14p
       </div>
       <div class="hero-eyebrow">☕ 아동 발달 심리학 기반 기질 분석</div>
       <h1 class="hero-h1">그건 문제가 아니에요,<br><em>타고난 기질이에요</em></h1>
-      <p class="hero-desc">Thomas & Chess의 아동 기질 9차원 이론을 기반으로 직접 설계한 18문항이에요. 약 5분이면 우리 아이의 고유한 기질 패턴을 알 수 있어요.</p>
+      <p class="hero-desc">Thomas & Chess의 9차원 기질 이론 기반 33문항으로 우리 아이의 고유한 기질을 10가지 유형으로 세밀하게 분석해요.</p>
       <div class="feat-list">
-        <div class="feat-row"><div class="feat-ic">📋</div>아동 발달 심리학 이론 기반 18문항</div>
-        <div class="feat-row"><div class="feat-ic">💬</div>"어떻게 알았지?" 싶은 일상 공감 묘사</div>
-        <div class="feat-row"><div class="feat-ic">👥</div>친구관계·진로적성까지 연결 분석</div>
-        <div class="feat-row"><div class="feat-ic">☕</div>커피 한 잔 값 4,900원으로 전체 확인</div>
+        <div class="feat-row"><div class="feat-ic">📋</div>9차원 기반 33문항 심층 분석</div>
+        <div class="feat-row"><div class="feat-ic">🔍</div>10가지 기질 유형 세밀 분류</div>
+        <div class="feat-row"><div class="feat-ic">👥</div>친구관계·진로적성까지 연결</div>
+        <div class="feat-row"><div class="feat-ic">☕</div>커피 한 잔 값 4,900원</div>
       </div>
       <div class="slider-wrap">
         <div class="slider-outer"><div class="slider-track" id="track-m">
-          <div class="slide"><div class="slide-av">👩</div><div><div class="slide-txt">"읽고 나서 눈물이 났어요. 애가 문제가 있는 게 아니라 그냥 그런 기질이었던 거더라고요. 내가 너무 자책했었는데…"</div><div class="slide-who">— 38세, 두 아이 엄마 지은님</div></div></div>
-          <div class="slide"><div class="slide-av">👩</div><div><div class="slide-txt">"우리 애가 왜 이렇게 예민한지 몰라서 맨날 혼냈는데, 결과 보고 나니까 미안하더라고요. 이제는 다르게 대해주고 있어요."</div><div class="slide-who">— 34세, 첫째 맘 수연님</div></div></div>
-          <div class="slide"><div class="slide-av">👩</div><div><div class="slide-txt">"친구 문제로 고민이었는데, 기질 때문이었던 걸 알고 나서 어떻게 도와줘야 할지 방향이 잡혔어요."</div><div class="slide-who">— 36세, 유치원 선생님 미정님</div></div></div>
-          <div class="slide"><div class="slide-av">👩</div><div><div class="slide-txt">"커피값이라 부담 없이 해봤는데 완전 공감. 남편한테 보내줬더니 남편도 '이거 맞다'고 하더라고요 😂"</div><div class="slide-who">— 41세, 세 아이 엄마 혜란님</div></div></div>
+          <div class="slide"><div class="slide-av">👩</div><div><div class="slide-txt">"읽고 나서 눈물이 났어요. 애가 문제가 있는 게 아니라 그냥 그런 기질이었던 거더라고요."</div><div class="slide-who">— 38세, 두 아이 엄마 지은님</div></div></div>
+          <div class="slide"><div class="slide-av">👩</div><div><div class="slide-txt">"우리 애가 왜 이렇게 예민한지 몰라서 맨날 혼냈는데, 결과 보고 나니까 미안하더라고요."</div><div class="slide-who">— 34세, 첫째 맘 수연님</div></div></div>
+          <div class="slide"><div class="slide-av">👩</div><div><div class="slide-txt">"친구 문제로 고민이었는데 기질 때문이었던 걸 알고 나서 방향이 잡혔어요."</div><div class="slide-who">— 36세, 유치원 선생님 미정님</div></div></div>
+          <div class="slide"><div class="slide-av">👩</div><div><div class="slide-txt">"커피값이라 부담 없이 해봤는데 완전 공감. 남편한테도 보내줬어요 😂"</div><div class="slide-who">— 41세, 세 아이 엄마 혜란님</div></div></div>
         </div></div>
         <div class="slider-dots" id="dots-m">
           <div class="dot on" onclick="goSlide('m',0)"></div><div class="dot" onclick="goSlide('m',1)"></div><div class="dot" onclick="goSlide('m',2)"></div><div class="dot" onclick="goSlide('m',3)"></div>
@@ -339,29 +305,24 @@ header{display:flex;align-items:center;justify-content:space-between;padding:14p
       <button class="btn-sub" onclick="startPay()">4,900원으로 바로 전체 결과 보기</button>
     </div>
   </div>
-
-  <!-- 데스크탑 히어로 -->
   <div class="hero-desktop">
     <img class="bg" src="hero.jpg" alt="카페 일러스트">
     <div class="hd-overlay">
-      <div class="hd-hook">
-        <strong>"혹시 내가 잘못 키우고 있는 건 아닐까…"</strong>
-        <p>그 자책, 이제 내려놓으셔도 돼요. 아이가 힘든 게 아니라, 기질이 달랐던 거예요.</p>
-      </div>
+      <div class="hd-hook"><strong>"혹시 내가 잘못 키우고 있는 건 아닐까…"</strong><p>그 자책, 이제 내려놓으셔도 돼요. 기질이 달랐던 거예요.</p></div>
       <div class="hd-eyebrow">☕ 아동 발달 심리학 기반 기질 분석</div>
       <h1 class="hd-h1">그건 문제가 아니에요,<br><em>타고난 기질이에요</em></h1>
       <div class="hd-feats">
-        <div class="hd-feat"><span>📋</span>아동 발달 심리학 이론 기반 18문항</div>
-        <div class="hd-feat"><span>💬</span>"어떻게 알았지?" 싶은 일상 공감 묘사</div>
-        <div class="hd-feat"><span>👥</span>친구관계·진로적성까지 연결 분석</div>
-        <div class="hd-feat"><span>☕</span>커피 한 잔 값 4,900원으로 전체 확인</div>
+        <div class="hd-feat"><span>📋</span>9차원 기반 33문항 심층 분석</div>
+        <div class="hd-feat"><span>🔍</span>10가지 기질 유형 세밀 분류</div>
+        <div class="hd-feat"><span>👥</span>친구관계·진로적성까지 연결</div>
+        <div class="hd-feat"><span>☕</span>커피 한 잔 값 4,900원</div>
       </div>
       <div class="hd-slider">
         <div class="slider-outer"><div class="slider-track" id="track-d">
           <div class="slide"><div class="slide-av">👩</div><div><div class="hd-slide-txt">"그냥 그런 기질이었던 거더라고요. 너무 자책했었는데…"</div><div class="hd-slide-who">— 38세, 두 아이 엄마 지은님</div></div></div>
           <div class="slide"><div class="slide-av">👩</div><div><div class="hd-slide-txt">"결과 보고 나니까 미안하더라고요. 이제는 다르게 대해줘요."</div><div class="hd-slide-who">— 34세, 첫째 맘 수연님</div></div></div>
           <div class="slide"><div class="slide-av">👩</div><div><div class="hd-slide-txt">"친구 문제, 기질 때문이었던 걸 알고 방향이 잡혔어요."</div><div class="hd-slide-who">— 36세, 유치원 선생님 미정님</div></div></div>
-          <div class="slide"><div class="slide-av">👩</div><div><div class="hd-slide-txt">"커피값이라 부담 없이 해봤는데 완전 공감 😂"</div><div class="hd-slide-who">— 41세, 세 아이 엄마 혜란님</div></div></div>
+          <div class="slide"><div class="slide-av">👩</div><div><div class="hd-slide-txt">"커피값이라 부담 없이 했는데 완전 공감 😂"</div><div class="hd-slide-who">— 41세, 세 아이 엄마 혜란님</div></div></div>
         </div></div>
         <div class="slider-dots" id="dots-d">
           <div class="dot-d on" onclick="goSlide('d',0)"></div><div class="dot-d" onclick="goSlide('d',1)"></div><div class="dot-d" onclick="goSlide('d',2)"></div><div class="dot-d" onclick="goSlide('d',3)"></div>
@@ -371,50 +332,39 @@ header{display:flex;align-items:center;justify-content:space-between;padding:14p
       <button class="btn-hd-sub" onclick="startPay()">4,900원으로 바로 전체 결과 보기</button>
     </div>
   </div>
-
   <div class="section" style="border-top:1px solid var(--latte)">
-    <div class="sec-tag">어떤 내용인가요</div>
-    <h2 class="sec-h2">알고 보면, 다 이유가 있었어요 🔍</h2>
-    <p class="sec-sub">Thomas & Chess의 9가지 기질 차원을 기반으로 한 18문항으로 우리 아이의 고유한 반응 패턴을 분석해요.</p>
-    <div class="talk-cards">
-      <div class="talk-card"><div class="tc-icon">🧬</div><div><h3 class="tc-h3">9가지 기질 차원으로 분석해요</h3><p class="tc-p">활동수준, 규칙성, 접근/회피, 적응성, 지속성, 산만성, 기분, 반응강도, 반응역치 — 아동 발달 심리학에서 가장 널리 쓰이는 기질 프레임이에요.</p></div></div>
-      <div class="talk-card"><div class="tc-icon">👥</div><div><h3 class="tc-h3">친구관계 패턴을 알 수 있어요</h3><p class="tc-p">왜 친구를 못 사귀는지, 왜 자꾸 친구와 부딪히는지, 어떤 친구와 잘 맞는지 — 기질로 설명이 돼요.</p></div></div>
-      <div class="talk-card"><div class="tc-icon">🌱</div><div><h3 class="tc-h3">진로·적성 방향까지 연결돼요</h3><p class="tc-p">기질은 어떤 환경에서 빛나는지와 직결돼요. 억지로 맞추는 게 아니라, 타고난 방향으로 키워줄 수 있어요.</p></div></div>
-    </div>
-  </div>
-
-  <div class="section" style="border-top:1px solid var(--latte);padding-top:40px">
     <div class="sec-tag">얼마예요?</div>
     <h2 class="sec-h2">커피 한 잔 값, 4,900원이에요 ☕</h2>
-    <p class="sec-sub">무료로 먼저 체험해보고 결정하셔도 돼요. 18문항 검사 후 결과 화면에서 결제해도 늦지 않아요.</p>
+    <p class="sec-sub">무료로 먼저 18문항을 체험해보고 결정하셔도 돼요.</p>
     <div class="price-card">
       <div class="price-cup">☕</div>
       <div class="price-name">전체 기질 분석 리포트</div>
       <div class="price-amount">4,900<sub>원</sub></div>
       <div class="price-like">≈ 카페라떼 한 잔</div>
       <ul class="price-includes">
+        <li>무료 18문항 + 유료 심화 15문항 (총 33문항)</li>
+        <li>10가지 기질 유형 세밀 분석</li>
         <li>9차원 기질 프로파일 상세 분석</li>
-        <li>"혹시 이런 거 있지 않으세요?" 공감 일상 묘사</li>
-        <li>친구관계 패턴 분석 + 상황별 대처법</li>
+        <li>친구관계 패턴 + 상황별 대처법</li>
         <li>진로·적성 방향 제안</li>
-        <li>연령별 발달 노트 (유아~초등)</li>
+        <li>연령별 발달 노트</li>
         <li>상황별 대화 스크립트 5가지</li>
         <li>PDF 리포트 저장</li>
       </ul>
-      <button class="btn-main" onclick="goTo('test')">무료로 먼저 체험해보기 →</button>
+      <button class="btn-main" onclick="startPay()">4,900원으로 시작하기 →</button>
     </div>
-    <div class="legal-box"><strong>잠깐, 읽어봐 주세요 🙏</strong><br>이 콘텐츠는 아동 발달 심리학 연구 이론을 참고해 자체 제작한 <strong>양육 참고용 이야기</strong>예요. 기존 유료 검사 도구(TCI 등)의 문항을 사용하지 않고 직접 작성했어요. 의사 선생님 진단이나 전문 심리 상담을 대신하는 게 아니에요. 결제하면 바로 콘텐츠가 제공되기 때문에 <strong>청약 철회가 제한돼요</strong> (전자상거래법 제17조 제2항 제5호).</div>
+    <div class="legal-box"><strong>잠깐, 읽어봐 주세요 🙏</strong><br>이 콘텐츠는 아동 발달 심리학 연구 이론을 참고해 자체 제작한 <strong>양육 참고용 이야기</strong>예요. 의사 진단이나 전문 심리 상담을 대신하지 않아요. 결제하면 바로 콘텐츠가 제공되기 때문에 <strong>청약 철회가 제한돼요</strong> (전자상거래법 제17조 제2항 제5호).</div>
   </div>
 </div>
 
-<!-- ══ 검사 ══ -->
+<!-- 검사 (무료 18문항) -->
 <div class="page" id="page-test">
   <div class="test-wrap">
     <div class="q-progress-info">
       <div class="q-dim-label" id="q-dim-label">활동 수준</div>
       <div class="q-count-label" id="q-count-label">1 / 18</div>
     </div>
-    <div class="q-progress-track"><div class="q-progress-fill" id="q-prog-fill" style="width:5.5%"></div></div>
+    <div class="q-progress-track"><div class="q-progress-fill" id="q-prog-fill" style="width:5%"></div></div>
     <div class="nbr-tip"><div class="nbr-av">👩</div><p id="q-tip-txt">평소 모습을 떠올리면서 가장 가까운 걸 골라주세요. 정답은 없어요 😊</p></div>
     <div class="q-card">
       <div class="q-num" id="q-num">Q1</div>
@@ -428,97 +378,111 @@ header{display:flex;align-items:center;justify-content:space-between;padding:14p
   </div>
 </div>
 
-<!-- ══ 로딩 ══ -->
+<!-- 유료 심화 문항 (15문항) -->
+<div class="page" id="page-test-paid">
+  <div class="test-wrap">
+    <div class="paid-banner">
+      <div style="font-size:24px">☕</div>
+      <div class="paid-banner-txt">
+        <strong>결제 완료! 심화 분석을 시작할게요</strong>
+        추가 15문항으로 더 세밀한 기질 분석이 가능해요
+      </div>
+    </div>
+    <div class="q-progress-info">
+      <div class="q-dim-label" id="qp-dim-label">또래 관계</div>
+      <div class="q-count-label" id="qp-count-label">1 / 15</div>
+    </div>
+    <div class="q-progress-track"><div class="q-progress-fill" id="qp-prog-fill" style="width:6%"></div></div>
+    <div class="nbr-tip"><div class="nbr-av">👩</div><p id="qp-tip-txt">조금 더 구체적인 상황들이에요. 솔직하게 답해주실수록 정확해져요 💛</p></div>
+    <div class="q-card">
+      <div class="q-num" id="qp-num">Q1</div>
+      <div class="q-txt" id="qp-txt"></div>
+      <div class="q-opts" id="qp-opts"></div>
+    </div>
+    <div class="q-nav">
+      <button class="btn-qprev" id="btn-prev-p" onclick="prevQP()">← 이전</button>
+      <button class="btn-qnext" id="btn-next-p" onclick="nextQP()" disabled>다음 →</button>
+    </div>
+  </div>
+</div>
+
+<!-- 로딩 -->
 <div class="page" id="page-loading">
   <div class="loading-wrap">
     <div class="loading-cup">☕</div>
-    <div class="loading-txt">우리 아이 기질을 분석하고 있어요</div>
-    <div class="loading-sub">18가지 반응 패턴을 종합하고 있어요.<br>잠깐만 기다려 주세요 😊</div>
+    <div class="loading-txt" id="loading-txt">우리 아이 기질을 분석하고 있어요</div>
+    <div class="loading-sub" id="loading-sub">18가지 반응 패턴을 종합하고 있어요.<br>잠깐만 기다려 주세요 😊</div>
     <div class="loading-bar-wrap"><div class="loading-bar"></div></div>
   </div>
 </div>
 
-<!-- ══ 무료 결과 ══ -->
+<!-- 무료 결과 -->
 <div class="page" id="page-result">
   <div class="result-wrap">
-    <!-- 기질 유형 카드 -->
     <div class="type-card">
-      <div class="type-badge">우리 아이 기질 유형</div>
+      <div class="type-badge">우리 아이 기질 유형 — 미리보기</div>
       <div class="type-icon" id="r-icon">🌟</div>
-      <div class="type-name" id="r-name">탐험가형</div>
+      <div class="type-name" id="r-name"></div>
       <div class="type-keywords" id="r-keywords"></div>
       <div class="type-desc" id="r-desc"></div>
     </div>
-
-    <!-- 9차원 점수 -->
     <div class="dim-card">
       <div class="dim-card-tag">9가지 기질 차원 점수</div>
       <div id="dim-bars"></div>
     </div>
-
-    <!-- 공감 묘사 — 핵심 훅 -->
     <div class="empathy-result-card">
       <div class="er-tag">혹시 이런 모습 있지 않으세요?</div>
       <div id="er-items"></div>
     </div>
-
-    <!-- 맛보기 양육 팁 (3개만) -->
     <div class="preview-guide">
       <div class="pg-tag">핵심 양육 방향 (미리보기)</div>
       <div id="pg-items"></div>
     </div>
-
-    <!-- 흐릿 처리된 맛보기 — 친구관계 -->
     <div class="blur-preview">
       <div class="blur-content">
         <div class="paid-sec">
           <div class="paid-sec-tag">친구관계 패턴 분석</div>
-          <div class="friend-pattern"><div class="fp-type">이 기질의 아이는 이런 친구를 좋아해요</div><div class="fp-txt">활동적이고 새로운 걸 함께 탐험할 수 있는 친구. 호기심이 비슷한 친구와 금방 가까워져요.</div></div>
-          <div class="friend-pattern"><div class="fp-type">이런 상황에서 친구와 부딪혀요</div><div class="fp-txt">자기가 하고 싶은 것과 친구가 하고 싶은 것이 다를 때 양보를 어려워해요. 기다리는 걸 못 참아서 순서 지키기에서 갈등이 생기기도 해요.</div></div>
+          <div class="friend-pattern"><div class="fp-type">이 기질의 아이는 이런 친구와 잘 맞아요</div><div class="fp-txt">활동적이고 새로운 걸 함께 탐험할 수 있는 친구. 호기심 방향이 비슷한 친구와 금방 가까워져요.</div></div>
+          <div class="friend-pattern"><div class="fp-type">이런 상황에서 친구와 부딪혀요</div><div class="fp-txt">하고 싶은 것이 다를 때 양보가 어려워요. 순서 지키기에서 갈등이 생겨요.</div></div>
         </div>
       </div>
       <div class="blur-overlay">
         <div class="blur-overlay-inner">
-          <p>친구관계 분석은<br>결제 후 확인할 수 있어요</p>
+          <p>친구관계·진로적성 분석은<br>결제 후 심화 분석에서 확인할 수 있어요</p>
           <button class="btn-blur-unlock" onclick="startPay()">4,900원으로 전체 보기 →</button>
         </div>
       </div>
     </div>
-
-    <!-- 유도 잠금 박스 -->
     <div class="lock-teaser">
       <div class="lock-badge">☕ 4,900원으로 전체 확인</div>
       <div class="lock-title">지금 보신 건 맛보기예요.<br>진짜 이야기는 여기서부터예요.</div>
       <ul class="lock-items">
-        <li>친구관계 패턴 분석 + 상황별 대처법 3가지</li>
+        <li>심화 15문항 추가 분석 (더 세밀한 기질 파악)</li>
+        <li>10가지 기질 유형 중 정밀 분류</li>
+        <li>친구관계 패턴 + 상황별 대처법 3가지</li>
         <li>이 기질이 빛나는 진로·적성 방향</li>
         <li>연령별 발달 노트 (지금 이 시기에 꼭 알아야 할 것)</li>
-        <li>상황별 대화 스크립트 5가지 ("이렇게 말해보세요")</li>
-        <li>9차원 상세 강약점 분석</li>
-        <li>PDF 리포트 저장 (남편과 공유, 선생님께 보여주기)</li>
+        <li>상황별 대화 스크립트 5가지</li>
+        <li>PDF 리포트 저장</li>
       </ul>
       <div class="lock-price-row">
-        <div class="lock-price-left">
-          <strong>전체 기질 분석 리포트</strong>
-          커피 한 잔 값으로 우리 아이를<br>완전히 새롭게 보게 될 거예요
-        </div>
+        <div class="lock-price-left"><strong>전체 기질 분석 리포트</strong>커피 한 잔 값으로 우리 아이를<br>완전히 새롭게 보게 될 거예요</div>
         <div class="lock-price-right">4,900<sub>원</sub></div>
       </div>
       <button class="btn-unlock" onclick="startPay()">☕ 지금 바로 전체 확인하기</button>
-      <div class="lock-reassure">결제 후 바로 전체 결과를 확인할 수 있어요<br>카카오페이 · 토스 · 신용카드 · 네이버페이</div>
+      <div class="lock-reassure">결제 후 심화 15문항 추가 진행 → 전체 결과 확인<br>카카오페이 · 토스 · 신용카드 · 네이버페이</div>
     </div>
-
-    <div class="result-disc">이 결과는 아동 발달 심리학 이론을 참고해 자체 제작한 양육 참고용 이야기예요.<br>의사 진단이나 전문 심리 상담을 대신하지 않아요. 입력 내용은 즉시 삭제돼요 🔒</div>
+    <div class="result-disc">이 결과는 아동 발달 심리학 이론을 참고해 자체 제작한 양육 참고용 이야기예요.<br>의사 진단이나 전문 심리 상담을 대신하지 않아요 🔒</div>
   </div>
 </div>
 
-<!-- ══ 결제 ══ -->
+<!-- 결제 -->
 <div class="page" id="page-pay">
   <div class="pay-wrap">
     <div class="pay-h">결제할게요 ☕</div>
-    <div class="pay-sub">결제 후 바로 전체 결과를 확인할 수 있어요.</div>
+    <div class="pay-sub">결제 후 심화 15문항을 추가로 진행하고 전체 결과를 확인할 수 있어요.</div>
     <div class="pay-planbox">
-      <div class="pay-plan-name">전체 기질 분석 리포트</div>
+      <div class="pay-plan-name">전체 기질 분석 리포트 (33문항)</div>
       <div class="pay-plan-price">4,900원</div>
       <div class="pay-plan-cmp">≈ 카페라떼 한 잔</div>
     </div>
@@ -530,509 +494,399 @@ header{display:flex;align-items:center;justify-content:space-between;padding:14p
       <div class="pay-m" id="m-naver" onclick="selM('naver')"><div class="pm-icon pm-naver">N</div><div class="pm-name">네이버페이</div></div>
     </div>
     <div class="consent-area">
-      <div class="c-row"><input type="checkbox" id="chk1" onchange="chkAll()"><label for="chk1">결제 완료 즉시 콘텐츠가 제공돼서 <strong>청약 철회가 제한</strong>된다는 걸 확인했어요 (전자상거래법 제17조 제2항 제5호).</label></div>
-      <div class="c-row"><input type="checkbox" id="chk2" onchange="chkAll()"><label for="chk2">이 콘텐츠는 <strong>양육 참고용</strong>이고, 의료 진단이나 전문 심리 상담을 대신하지 않는다는 걸 확인했어요.</label></div>
-      <div class="c-row"><input type="checkbox" id="chk3" onchange="chkAll()"><label for="chk3">문항은 기존 유료 검사가 아니라 <strong>직접 제작한 것</strong>임을 확인했어요.</label></div>
+      <div class="c-row"><input type="checkbox" id="chk1"><label for="chk1">결제 완료 즉시 콘텐츠가 제공돼서 <strong>청약 철회가 제한</strong>된다는 걸 확인했어요 (전자상거래법 제17조 제2항 제5호).</label></div>
+      <div class="c-row"><input type="checkbox" id="chk2"><label for="chk2">이 콘텐츠는 <strong>양육 참고용</strong>이고, 의료 진단이나 전문 심리 상담을 대신하지 않는다는 걸 확인했어요.</label></div>
+      <div class="c-row"><input type="checkbox" id="chk3"><label for="chk3">문항은 기존 유료 검사가 아니라 <strong>직접 제작한 것</strong>임을 확인했어요.</label></div>
     </div>
-    <button class="btn-pay-go" id="btn-paygo" type="button" style="opacity:1!important;cursor:pointer!important;pointer-events:auto!important;" onclick="completePay()">☕ 지금 결제하기</button>
+    <button class="btn-pay-go" onclick="completePay()">☕ 지금 결제하기</button>
     <div class="pay-safe">
       <div class="safe-it"><div class="safe-dot"></div>SSL 보안 결제</div>
       <div class="safe-it"><div class="safe-dot"></div>개인정보 암호화</div>
-      <div class="safe-it"><div class="safe-dot"></div>결제 즉시 확인</div>
+      <div class="safe-it"><div class="safe-dot"></div>결제 즉시 심화 분석 시작</div>
     </div>
   </div>
 </div>
 
-<!-- ══ 유료 결과 ══ -->
+<!-- 유료 결과 -->
 <div class="page" id="page-paid">
   <div class="paid-wrap">
     <div class="paid-header">
-      <div class="paid-badge">✅ 전체 기질 분석 완료</div>
-      <div class="paid-title" id="paid-title">우리 아이는 탐험가형이에요</div>
+      <div class="paid-badge">✅ 전체 기질 분석 완료 (33문항)</div>
+      <div class="paid-type-icon" id="paid-icon">🌟</div>
+      <div class="paid-type-name" id="paid-name"></div>
+      <div class="paid-type-sub" id="paid-sub"></div>
     </div>
-
-    <!-- 기질 유형 + 키워드 -->
     <div class="paid-sec">
       <div class="paid-sec-tag">기질 유형 상세 분석</div>
-      <div class="type-icon" id="paid-icon" style="font-size:36px;text-align:center;margin-bottom:10px;"></div>
       <div class="type-keywords" id="paid-keywords" style="justify-content:flex-start;margin-bottom:14px;"></div>
       <div id="paid-details"></div>
     </div>
-
-    <!-- 9차원 점수 -->
     <div class="paid-sec">
       <div class="paid-sec-tag">9가지 기질 차원 점수</div>
       <div id="paid-dim-bars"></div>
     </div>
-
-    <!-- 공감 일상 묘사 (전체) -->
     <div class="paid-sec">
       <div class="paid-sec-tag">혹시 이런 모습 있지 않으세요?</div>
       <div id="paid-empathy"></div>
     </div>
-
-    <!-- 친구관계 패턴 -->
     <div class="paid-sec">
       <div class="paid-sec-tag">친구관계 패턴 분석</div>
       <div id="paid-friend"></div>
     </div>
-
-    <!-- 대화 스크립트 -->
     <div class="paid-sec">
       <div class="paid-sec-tag">상황별 대화 스크립트</div>
-      <p style="font-size:13px;color:var(--muted);margin-bottom:14px;line-height:1.7;word-break:keep-all">이 기질의 아이에게 실제로 효과 있는 말하기 방식이에요. 오늘부터 바로 써보세요.</p>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:14px;line-height:1.7;word-break:keep-all">오늘부터 바로 써보세요.</p>
       <div id="paid-scripts"></div>
     </div>
-
-    <!-- 진로 적성 -->
     <div class="paid-sec">
       <div class="paid-sec-tag">진로 · 적성 방향</div>
       <div id="paid-career"></div>
     </div>
-
-    <!-- 연령별 발달 노트 -->
     <div class="paid-sec">
       <div class="paid-sec-tag">연령별 발달 노트</div>
-      <p style="font-size:13px;color:var(--muted);margin-bottom:14px;line-height:1.7;word-break:keep-all">이 기질의 아이는 연령별로 어떤 특성을 보이고, 이 시기에 부모가 뭘 해줘야 할까요?</p>
       <div id="paid-age"></div>
     </div>
-
-    <!-- PDF -->
     <div class="pdf-box">
-      <p>이 내용을 PDF로 저장해 두세요 📄<br>남편과 공유하거나 어린이집·학교 선생님께 보여주셔도 좋아요.</p>
+      <p>이 내용을 PDF로 저장해 두세요 📄<br>남편과 공유하거나 선생님께 보여주셔도 좋아요.</p>
       <button class="btn-pdf" onclick="window.print()">📄 PDF로 저장하기</button>
     </div>
-
-    <div class="result-disc">본 콘텐츠는 아동 발달 심리학 이론을 참고해 자체 제작한 양육 참고용 이야기예요.<br>의료적 진단이나 전문 심리 상담을 대신하지 않아요 🔒</div>
+    <div class="paid-disc">본 콘텐츠는 아동 발달 심리학 이론을 참고해 자체 제작한 양육 참고용 이야기예요.<br>의료적 진단이나 전문 심리 상담을 대신하지 않아요 🔒</div>
   </div>
 </div>
-
 <script>
-/* ── 슬라이더 ── */
+/* 슬라이더 */
 const SC={m:0,d:0};
-function goSlide(id,i){
-  SC[id]=i;
-  const t=document.getElementById('track-'+id);
-  if(t)t.style.transform='translateX(-'+i*100+'%)';
-  document.querySelectorAll('#dots-'+id+' div').forEach((d,j)=>d.classList.toggle('on',j===i));
-}
+function goSlide(id,i){SC[id]=i;const t=document.getElementById('track-'+id);if(t)t.style.transform='translateX(-'+i*100+'%)';document.querySelectorAll('#dots-'+id+' div').forEach((d,j)=>d.classList.toggle('on',j===i));}
 function auto(id){setInterval(()=>goSlide(id,(SC[id]+1)%4),4500);}
 auto('m');auto('d');
-['m','d'].forEach(id=>{
-  const t=document.getElementById('track-'+id);
-  if(!t)return;
-  let sx=0;
-  t.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;},{passive:true});
-  t.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)goSlide(id,dx<0?Math.min(SC[id]+1,3):Math.max(SC[id]-1,0));},{passive:true});
-});
+['m','d'].forEach(id=>{const t=document.getElementById('track-'+id);if(!t)return;let sx=0;t.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;},{passive:true});t.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)goSlide(id,dx<0?Math.min(SC[id]+1,3):Math.max(SC[id]-1,0));},{passive:true});});
 
-/* ══ 문항 데이터 ══ */
+/* 무료 18문항 */
 const QS=[
-  /* ① 활동수준 */
-  {dim:"활동 수준",tip:"평소 일상적인 모습을 떠올려 주세요 😊",
-   txt:"집에서 자유 시간이 생겼을 때 아이는 주로 어떻게 보내요?",
-   opts:["쉬지 않고 뛰어다니거나 몸을 계속 움직여요","활동적으로 놀다가 중간중간 쉬어요","조용히 장난감이나 그림 그리기를 해요","거의 움직이지 않고 누워서 TV나 영상을 봐요"],
-   scores:[4,3,2,1]},
-  {dim:"활동 수준",tip:"",
-   txt:"마트나 식당처럼 가만히 있어야 하는 상황에서 아이는?",
-   opts:["5분도 안 돼서 돌아다니거나 뛰려고 해요","좀 있다 보면 슬슬 일어나려 해요","장난감이나 핸드폰 있으면 꽤 오래 앉아 있어요","별말 없이 얌전히 기다려요"],
-   scores:[4,3,2,1]},
-  /* ② 규칙성 */
-  {dim:"규칙성",tip:"",
-   txt:"아이의 잠드는 시간, 배고파하는 시간이 매일 얼마나 일정한가요?",
-   opts:["거의 항상 비슷한 시간에 배고프고 졸려해요","대체로 비슷하지만 날마다 조금씩 달라요","그날그날 많이 달라서 예측하기 어려워요","전혀 규칙이 없어서 부모가 맞춰줘야 해요"],
-   scores:[4,3,2,1]},
-  {dim:"규칙성",tip:"",
-   txt:"주말에 평소와 다른 일정이 생겼을 때 아이는?",
-   opts:["오히려 새로운 일정을 더 좋아해요","약간 어색해하지만 금방 적응해요","평소 루틴이 달라지면 컨디션이 흔들려요","루틴이 바뀌면 하루 종일 힘들어해요"],
-   scores:[1,2,3,4]},
-  /* ③ 접근/회피 */
-  {dim:"접근 · 회피",tip:"",
-   txt:"처음 가보는 키즈카페나 놀이터에서 아이는?",
-   opts:["도착하자마자 바로 뛰어가서 탐색해요","잠깐 살펴보다가 슬슬 다가가요","엄마 손 잡고 한참 지켜보다가 움직여요","낯설다며 가기 싫다거나 엄마 뒤에 숨어요"],
-   scores:[4,3,2,1]},
-  {dim:"접근 · 회피",tip:"",
-   txt:"유치원·학교에서 새 친구가 전학 왔을 때 우리 아이는?",
-   opts:["먼저 다가가서 말을 걸거나 같이 놀자고 해요","기회가 생기면 슬쩍 말을 걸어봐요","상대방이 먼저 말 걸어줄 때까지 기다려요","새 친구 생긴 것 자체를 불편해해요"],
-   scores:[4,3,2,1]},
-  /* ④ 적응성 */
-  {dim:"적응성",tip:"",
-   txt:"갑자기 계획이 바뀌었을 때 (예: 가려던 곳을 못 가게 됨) 아이 반응은?",
-   opts:["'그래? 그럼 다른 거 하자!' 하고 금방 넘겨요","잠깐 속상해하다가 금방 괜찮아져요","꽤 오래 속상해하고 투덜거려요","크게 울거나 화를 내고 쉽게 진정이 안 돼요"],
-   scores:[4,3,2,1]},
-  {dim:"적응성",tip:"",
-   txt:"새 학기나 새 학원 첫날, 아이가 적응하는 데 얼마나 걸렸어요?",
-   opts:["첫날부터 바로 적응해서 재미있다고 했어요","1~2주 안에 금방 익숙해졌어요","한 달 정도 지나야 안정되는 것 같았어요","몇 달이 지나도 힘들어하거나 가기 싫어했어요"],
-   scores:[4,3,2,1]},
-  /* ⑤ 지속성 */
-  {dim:"지속성",tip:"",
-   txt:"잘 안 되는 일(퍼즐, 게임 등)이 있을 때 아이는?",
-   opts:["될 때까지 포기하지 않고 계속 시도해요","몇 번 해보다가 도움을 요청해요","금방 포기하고 다른 걸 하려고 해요","안 된다 싶으면 바로 짜증내거나 던져버려요"],
-   scores:[4,3,2,1]},
-  {dim:"지속성",tip:"",
-   txt:"좋아하는 놀이나 활동이 생기면?",
-   opts:["몇 주, 몇 달씩 같은 걸 반복해서 파고들어요","한동안 빠져있다가 자연스럽게 다음 걸로 넘어가요","금방 질려서 새로운 걸 찾아요","하나에 오래 집중하는 걸 어려워해요"],
-   scores:[4,3,2,1]},
-  /* ⑥ 산만성 */
-  {dim:"산만성",tip:"",
-   txt:"아이가 좋아하는 활동(블록, 그림 등)을 할 때 집중하는 시간이?",
-   opts:["한번 시작하면 꽤 오래 집중해서 해요","적당히 하다가 자연스럽게 다른 걸로 넘어가요","10분도 안 돼서 다른 걸 하려고 해요","뭘 시작해도 금방 딴짓을 해요"],
-   scores:[1,2,3,4]},
-  {dim:"산만성",tip:"",
-   txt:"아이가 뭔가 하고 있을 때 옆에서 소리나 자극이 생기면?",
-   opts:["별로 신경 안 쓰고 하던 거 계속해요","잠깐 쳐다보다가 다시 집중해요","금방 관심이 그쪽으로 넘어가요","아예 하던 걸 멈추고 새로운 자극 쪽으로 가요"],
-   scores:[1,2,3,4]},
-  /* ⑦ 기분 */
-  {dim:"기분",tip:"솔직하게 평소 모습을 떠올려 주세요 💛",
-   txt:"특별한 이유 없이 평소에 아이 기분이 어때요?",
-   opts:["대부분 밝고 잘 웃어요","기복이 있지만 전반적으로 밝은 편이에요","조용하고 무덤덤한 편이에요","자주 칭얼거리거나 부정적인 말을 많이 해요"],
-   scores:[4,3,2,1]},
-  {dim:"기분",tip:"",
-   txt:"아이가 기분이 안 좋을 때, 얼마나 빨리 회복하나요?",
-   opts:["금방 털고 일어나서 다시 밝아져요","조금 있으면 스스로 회복해요","꽤 오래 기분이 안 좋은 상태가 유지돼요","한번 기분이 상하면 하루 종일 영향받아요"],
-   scores:[4,3,2,1]},
-  /* ⑧ 반응강도 */
-  {dim:"반응 강도",tip:"",
-   txt:"아이가 기쁘거나 신날 때 감정 표현이 어느 정도예요?",
-   opts:["소리 지르고 날뛸 정도로 격하게 표현해요","활발하게 표현하지만 조절이 돼요","웃거나 좋아하는 티를 내지만 차분해요","좋아도 별 표현이 없어요"],
-   scores:[4,3,2,1]},
-  {dim:"반응 강도",tip:"",
-   txt:"싫거나 화날 때는 어떻게 표현해요?",
-   opts:["크게 울거나 소리 지르고 몸으로 표현해요","표현은 하지만 금방 진정이 돼요","조용히 토라지거나 말이 없어져요","별로 내색하지 않아요"],
-   scores:[4,3,2,1]},
-  /* ⑨ 반응역치 */
-  {dim:"반응 역치",tip:"",
-   txt:"옷 태그, 양말 솔기, 음식 식감 등 감각적인 부분에 예민한가요?",
-   opts:["조금만 불편해도 엄청 거슬려하고 못 입겠다고 해요","가끔 불편하다고는 하지만 심하지 않아요","그냥 입고 먹어요, 별로 신경 안 써요","오히려 강한 자극을 좋아해요"],
-   scores:[4,3,2,1]},
-  {dim:"반응 역치",tip:"",
-   txt:"주변 소음이나 밝기 같은 환경 변화에 얼마나 영향받아요?",
-   opts:["조금만 시끄럽거나 밝아도 예민하게 반응해요","어느 정도는 적응하지만 심하면 힘들어해요","환경 변화에 크게 개의치 않아요","오히려 자극이 많아야 더 잘 지내요"],
-   scores:[4,3,2,1]}
+  {dim:"활동 수준",tip:"평소 일상을 떠올려 주세요 😊",txt:"집에서 자유 시간이 생겼을 때 아이는 주로 어떻게 보내요?",opts:["쉬지 않고 뛰어다니거나 몸을 계속 움직여요","활동적으로 놀다가 중간중간 쉬어요","조용히 장난감이나 그림 그리기를 해요","거의 움직이지 않고 누워서 TV나 영상을 봐요"],scores:[4,3,2,1]},
+  {dim:"활동 수준",tip:"",txt:"마트나 식당처럼 가만히 있어야 하는 상황에서 아이는?",opts:["5분도 안 돼서 돌아다니거나 뛰려고 해요","좀 있다 보면 슬슬 일어나려 해요","장난감이나 핸드폰 있으면 꽤 오래 앉아 있어요","별말 없이 얌전히 기다려요"],scores:[4,3,2,1]},
+  {dim:"규칙성",tip:"",txt:"아이의 잠드는 시간, 배고파하는 시간이 매일 얼마나 일정한가요?",opts:["거의 항상 비슷한 시간에 배고프고 졸려해요","대체로 비슷하지만 날마다 조금씩 달라요","그날그날 많이 달라서 예측하기 어려워요","전혀 규칙이 없어서 부모가 맞춰줘야 해요"],scores:[4,3,2,1]},
+  {dim:"규칙성",tip:"",txt:"주말에 평소와 다른 일정이 생겼을 때 아이는?",opts:["오히려 새로운 일정을 더 좋아해요","약간 어색해하지만 금방 적응해요","평소 루틴이 달라지면 컨디션이 흔들려요","루틴이 바뀌면 하루 종일 힘들어해요"],scores:[1,2,3,4]},
+  {dim:"접근 · 회피",tip:"",txt:"처음 가보는 키즈카페나 놀이터에서 아이는?",opts:["도착하자마자 바로 뛰어가서 탐색해요","잠깐 살펴보다가 슬슬 다가가요","엄마 손 잡고 한참 지켜보다가 움직여요","낯설다며 가기 싫다거나 엄마 뒤에 숨어요"],scores:[4,3,2,1]},
+  {dim:"접근 · 회피",tip:"",txt:"유치원·학교에서 새 친구가 전학 왔을 때 우리 아이는?",opts:["먼저 다가가서 말을 걸거나 같이 놀자고 해요","기회가 생기면 슬쩍 말을 걸어봐요","상대방이 먼저 말 걸어줄 때까지 기다려요","새 친구 생긴 것 자체를 불편해해요"],scores:[4,3,2,1]},
+  {dim:"적응성",tip:"",txt:"갑자기 계획이 바뀌었을 때 아이 반응은?",opts:["'그래? 그럼 다른 거 하자!' 하고 금방 넘겨요","잠깐 속상해하다가 금방 괜찮아져요","꽤 오래 속상해하고 투덜거려요","크게 울거나 화를 내고 쉽게 진정이 안 돼요"],scores:[4,3,2,1]},
+  {dim:"적응성",tip:"",txt:"새 학기나 새 학원 첫날, 아이가 적응하는 데 얼마나 걸렸어요?",opts:["첫날부터 바로 적응해서 재미있다고 했어요","1~2주 안에 금방 익숙해졌어요","한 달 정도 지나야 안정되는 것 같았어요","몇 달이 지나도 힘들어하거나 가기 싫어했어요"],scores:[4,3,2,1]},
+  {dim:"지속성",tip:"",txt:"잘 안 되는 일(퍼즐, 게임 등)이 있을 때 아이는?",opts:["될 때까지 포기하지 않고 계속 시도해요","몇 번 해보다가 도움을 요청해요","금방 포기하고 다른 걸 하려고 해요","안 된다 싶으면 바로 짜증내거나 던져버려요"],scores:[4,3,2,1]},
+  {dim:"지속성",tip:"",txt:"좋아하는 놀이나 활동이 생기면?",opts:["몇 주, 몇 달씩 같은 걸 반복해서 파고들어요","한동안 빠져있다가 자연스럽게 다음 걸로 넘어가요","금방 질려서 새로운 걸 찾아요","하나에 오래 집중하는 걸 어려워해요"],scores:[4,3,2,1]},
+  {dim:"산만성",tip:"",txt:"아이가 좋아하는 활동을 할 때 집중하는 시간이?",opts:["한번 시작하면 꽤 오래 집중해서 해요","적당히 하다가 자연스럽게 다른 걸로 넘어가요","10분도 안 돼서 다른 걸 하려고 해요","뭘 시작해도 금방 딴짓을 해요"],scores:[1,2,3,4]},
+  {dim:"산만성",tip:"",txt:"아이가 뭔가 하고 있을 때 옆에서 자극이 생기면?",opts:["별로 신경 안 쓰고 하던 거 계속해요","잠깐 쳐다보다가 다시 집중해요","금방 관심이 그쪽으로 넘어가요","아예 하던 걸 멈추고 새로운 자극 쪽으로 가요"],scores:[1,2,3,4]},
+  {dim:"기분",tip:"솔직하게 평소 모습을 떠올려 주세요 💛",txt:"특별한 이유 없이 평소에 아이 기분이 어때요?",opts:["대부분 밝고 잘 웃어요","기복이 있지만 전반적으로 밝은 편이에요","조용하고 무덤덤한 편이에요","자주 칭얼거리거나 부정적인 말을 많이 해요"],scores:[4,3,2,1]},
+  {dim:"기분",tip:"",txt:"아이가 기분이 안 좋을 때, 얼마나 빨리 회복하나요?",opts:["금방 털고 일어나서 다시 밝아져요","조금 있으면 스스로 회복해요","꽤 오래 기분이 안 좋은 상태가 유지돼요","한번 기분이 상하면 하루 종일 영향받아요"],scores:[4,3,2,1]},
+  {dim:"반응 강도",tip:"",txt:"아이가 기쁘거나 신날 때 감정 표현이 어느 정도예요?",opts:["소리 지르고 날뛸 정도로 격하게 표현해요","활발하게 표현하지만 조절이 돼요","웃거나 좋아하는 티를 내지만 차분해요","좋아도 별 표현이 없어요"],scores:[4,3,2,1]},
+  {dim:"반응 강도",tip:"",txt:"싫거나 화날 때는 어떻게 표현해요?",opts:["크게 울거나 소리 지르고 몸으로 표현해요","표현은 하지만 금방 진정이 돼요","조용히 토라지거나 말이 없어져요","별로 내색하지 않아요"],scores:[4,3,2,1]},
+  {dim:"반응 역치",tip:"",txt:"옷 태그, 양말 솔기, 음식 식감 등 감각적인 부분에 예민한가요?",opts:["조금만 불편해도 엄청 거슬려하고 못 입겠다고 해요","가끔 불편하다고는 하지만 심하지 않아요","그냥 입고 먹어요, 별로 신경 안 써요","오히려 강한 자극을 좋아해요"],scores:[4,3,2,1]},
+  {dim:"반응 역치",tip:"",txt:"주변 소음이나 밝기 같은 환경 변화에 얼마나 영향받아요?",opts:["조금만 시끄럽거나 밝아도 예민하게 반응해요","어느 정도는 적응하지만 심하면 힘들어해요","환경 변화에 크게 개의치 않아요","오히려 자극이 많아야 더 잘 지내요"],scores:[4,3,2,1]}
 ];
 
-/* ══ 기질 유형 데이터 ══ */
-const TYPES = {
-  explorer: {
-    icon:"🌟", name:"탐험가형",
-    keywords:["활동적","호기심 왕","도전적","즉흥적"],
-    desc:"새로운 걸 보면 달려가는 우리 아이, 겁이 없어서 걱정되시죠? 사실 이건 타고난 탐구 본능이에요. 에너지가 넘치고 창의력이 강한 기질이에요. 일관된 루틴이 없으면 집중력이 흩어지지만, 올바른 방향으로 이끌면 어디서든 빛나는 아이예요.",
-    empathy:[
-      "마트에서 카트 타기 거부하고 직접 뛰어다니려 해요",
-      "한 장난감을 5분도 못 갖고 다른 걸 찾아요",
-      "낯선 놀이터에서 제일 먼저 미끄럼틀로 달려가요",
-      "앉아서 뭔가 하는 걸 정말 힘들어해요",
-      "에너지가 너무 넘쳐서 재워놓기가 힘들어요"
-    ],
-    guides:[
-      "탐구를 막지 말고 '안전한 모험'을 허용해 주세요. 블록, 자연 관찰 등 호기심을 쏟을 활동이 딱이에요.",
-      "하루의 큰 흐름(기상-식사-놀이-취침)은 일정하게 유지해 주세요. 자유로운 아이일수록 예측 가능한 구조가 필요해요.",
-      "흥분했을 때 '지금 어떤 기분이야?'라고 같이 말로 표현해보는 연습을 해주세요."
-    ],
-    friend:{
-      like:"활동적이고 새로운 걸 함께 탐험할 수 있는 친구. 호기심 방향이 비슷한 친구와 금방 가까워져요.",
-      conflict:"하고 싶은 것과 친구가 하고 싶은 것이 다를 때 양보가 어려워요. 기다리는 걸 못 참아서 순서 지키기에서 갈등이 생겨요.",
-      tip1:"'친구가 원하는 거 먼저 한 번만 해보고, 그다음엔 네가 원하는 거 하자'라고 교환 규칙을 알려주세요.",
-      tip2:"친구와 싸운 후 '어떻게 하면 다음엔 더 잘 놀 수 있을까?'를 같이 생각해보세요.",
-      tip3:"공통 관심사가 있는 또래 모임을 만들어 주면 자연스럽게 친구가 생겨요."
-    },
-    scripts:[
-      {sit:"집중이 안 될 때",bad:"왜 이렇게 집중을 못해?",good:"지금 뭐가 제일 재미있어 보여? 그거 5분만 먼저 하고, 이것도 같이 해보자."},
-      {sit:"위험한 행동을 할 때",bad:"하지 말랬잖아!",good:"그거 재미있어 보이지? 대신 이쪽에서 해볼까? 더 신나게 할 수 있어."},
-      {sit:"흥분해서 울거나 소리칠 때",bad:"진정해, 왜 이렇게 난리야",good:"몸이 너무 흥분됐구나. 같이 숨 한번 크게 쉬어볼까? (함께 심호흡)"},
-      {sit:"친구와 싸웠을 때",bad:"네가 먼저 사과해",good:"친구가 어떤 기분일 것 같아? 네 마음은 어때? 어떻게 하면 좋을까?"},
-      {sit:"정리를 안 할 때",bad:"왜 맨날 어질러놔?",good:"탐험대 정리 미션 시작! 빨간 것들부터 찾아봐. 몇 개야?"}
-    ],
-    career:[
-      {title:"이 기질이 빛나는 환경",body:"변화가 많고 탐구할 거리가 있는 환경. 정해진 틀보다 자유롭게 시도할 수 있는 분야에서 강점이 발휘돼요."},
-      {title:"관심 가질 수 있는 활동",body:"체험 과학, 스포츠, 야외 활동, 창작 놀이, 실험 위주 학습. 몸을 쓰면서 배우는 활동이 특히 잘 맞아요."},
-      {title:"피해야 할 압박 유형",body:"'가만히 앉아서 집중해'라는 압박. 이 아이는 움직이면서 더 잘 배워요. 무조건 앉히는 학습 방식은 역효과가 나요."},
-      {title:"장기적 강점",body:"새로운 분야를 빠르게 흡수하고 도전을 두려워하지 않아요. 기업가 정신, 운동, 예술, 탐험 분야에서 두각을 나타낼 수 있어요."}
-    ],
-    age:[
-      {age:"유아 (만 3~5세)",txt:"안전한 탐색 공간을 충분히 주세요. 위험 구역과 허용 구역을 명확히 알려주되, 허용 범위 안에서는 자유롭게 탐험하게 두세요. 신체 활동이 충분해야 집에서 안정돼요."},
-      {age:"유치원·어린이집 시기",txt:"선생님께 '이 아이는 몸을 움직이면서 더 잘 배워요'라고 미리 알려주세요. 규칙은 짧고 명확하게, 이유도 꼭 함께요. 또래 관계에서 충동 조절 연습이 중요한 시기예요."},
-      {age:"초등 저학년 (1~3학년)",txt:"에너지를 건설적으로 쏟을 수 있는 체육 활동이나 동아리를 찾아주세요. 숙제나 공부는 '앉아서'보다 '움직이면서'도 가능한 방식으로 접근해보세요. 이 시기에 자기 조절 능력을 키워주는 게 핵심이에요."}
-    ]
-  },
-  thinker: {
-    icon:"🌿", name:"사색가형",
-    keywords:["신중한","관찰자","꼼꼼한","깊이있는"],
-    desc:"새로운 걸 한참 지켜보다 움직이는 우리 아이, 소심한 게 아니에요. 위험을 미리 살피는 신중한 기질이에요. 안전하다고 느껴지면 그때부터 깊이 파고들어요. 충분히 확인하고 행동하는 사려 깊은 기질이에요.",
-    empathy:[
-      "처음 가는 곳에서 한참 문 앞에 서서 안을 살펴봐요",
-      "새 친구에게 먼저 다가가지 못하고 지켜만 봐요",
-      "하기 싫다고 해서 억지로 시키면 더 닫혀버려요",
-      "마음에 드는 것도 결정하는 데 오래 걸려요",
-      "'괜찮아?'고 물으면 괜찮다고 하면서 실제론 힘들어요"
-    ],
-    guides:[
-      "새로운 활동 전에 미리 충분히 설명해 주세요. '다음 주에 수영 배울 거야~' 하고 예고해 주는 것만으로도 달라져요.",
-      "재촉하거나 비교하지 마세요. '언니는 바로 했는데~'는 오히려 더 움츠러들게 해요.",
-      "작은 성공 경험을 자주 만들어 주세요. 스스로 해냈을 때 크게 인정해 주는 게 정말 중요해요."
-    ],
-    friend:{
-      like:"이미 알고 있는 친구, 서두르지 않는 차분한 친구. 1:1로 깊이 사귀는 걸 더 편해해요.",
-      conflict:"강제로 어울리게 하거나 낯선 무리에 갑자기 집어넣을 때 극도로 불편해해요.",
-      tip1:"친구를 집에 초대해서 1:1로 노는 시간을 만들어 주세요. 무리보다 소수가 편해요.",
-      tip2:"어울리고 싶은데 어떻게 말 걸어야 할지 몰라서 못 다가가는 경우가 많아요. 역할 놀이로 미리 연습시켜 주세요.",
-      tip3:"친구 관계에서 힘든 일이 생겼을 때 말 안 할 수 있어요. 매일 '오늘 어땠어?'로 열어주세요."
-    },
-    scripts:[
-      {sit:"새로운 활동을 거부할 때",bad:"해봐야 알잖아, 빨리 해봐",good:"처음이라 낯설지? 오늘은 그냥 구경만 해도 돼. 하고 싶을 때 해봐."},
-      {sit:"친구 무리에 못 끼어들 때",bad:"왜 가서 같이 안 놀아?",good:"저 친구들이랑 같이 놀고 싶어? 어떻게 말하면 될지 같이 생각해볼까?"},
-      {sit:"결정을 못 내릴 때",bad:"빨리 골라!",good:"이거랑 저거 중에 뭐가 더 좋아? 이거 먼저 만져봐도 돼."},
-      {sit:"실패를 두려워할 때",bad:"해보지도 않고 왜 못한다고 해?",good:"틀려도 괜찮아. 엄마도 처음엔 다 틀렸어. 한 번만 해봐, 어떻게 되나 같이 보자."},
-      {sit:"재촉이 필요할 때",bad:"빨리빨리 해!",good:"10분 뒤에 출발해야 해. 지금 뭐부터 준비하면 될까?"}
-    ],
-    career:[
-      {title:"이 기질이 빛나는 환경",body:"충분한 준비 시간과 안전한 환경이 보장되는 곳. 꼼꼼함과 신중함이 강점이 되는 분야에서 두각을 나타내요."},
-      {title:"관심 가질 수 있는 활동",body:"독서, 그림 그리기, 퍼즐, 과학 실험, 음악. 혼자 또는 소수와 함께 깊이 집중할 수 있는 활동이 잘 맞아요."},
-      {title:"피해야 할 압박 유형",body:"갑작스러운 발표나 즉흥적인 상황 강요. 충분한 준비 없이 앞에 나서게 하면 오히려 자신감이 무너져요."},
-      {title:"장기적 강점",body:"한번 관심 가진 분야를 깊이 파고드는 능력. 연구자, 예술가, 전문직 등 깊이 있는 전문성이 필요한 분야에서 빛나요."}
-    ],
-    age:[
-      {age:"유아 (만 3~5세)",txt:"억지로 새로운 환경에 밀어 넣지 마세요. 부모가 먼저 탐색하는 모습을 보여주고, 아이가 준비됐을 때 따라올 수 있도록 기다려 주세요."},
-      {age:"유치원·어린이집 시기",txt:"선생님께 '이 아이는 새 친구에게 먼저 다가가기 어려워해요. 짝꿍 기회를 만들어주시면 좋겠어요'라고 미리 말씀해 주세요."},
-      {age:"초등 저학년 (1~3학년)",txt:"발표나 숙제 등 새로운 과제에 대해 미리 알려주세요. 당일 통보보다 '다음 주에 이거 해야 해'가 훨씬 잘 준비돼요."}
-    ]
-  },
-  empath: {
-    icon:"💛", name:"공감가형",
-    keywords:["감수성 풍부","섬세한","관계 중심","예민한"],
-    desc:"다른 아이가 울면 같이 속상해하는 우리 아이, 너무 예민한 거 아닐까 걱정되시죠? 타인의 감정을 잘 읽는 공감 능력이 높다는 신호예요. 관계를 소중히 여기고 사람의 마음을 잘 읽는 기질이에요.",
-    empathy:[
-      "친구가 속상해하면 본인도 덩달아 속상해해요",
-      "엄마 기분이 안 좋으면 먼저 눈치채고 '엄마 괜찮아?'라고 물어요",
-      "옷 태그나 이음새가 닿으면 엄청 거슬려해요",
-      "친구와 사소한 갈등 후에도 오래 마음에 담아두어요",
-      "새로운 환경에 가면 분위기를 먼저 살피고 적응해요"
-    ],
-    guides:[
-      "감정에 이름을 붙여주는 연습을 같이 해주세요. '속상했구나' — 이 한마디가 정말 큰 위로가 돼요.",
-      "사회적 활동 후에는 혼자 조용히 쉬는 시간을 꼭 주세요. 배터리가 다 닳은 거예요.",
-      "'너는 어떻게 하고 싶어?'라고 자주 물어봐 주세요. 자기 기준을 함께 키워줘요."
-    ],
-    friend:{
-      like:"감정을 이해해주고 강요하지 않는 친구. 1:1로 깊이 사귀고 소수의 친한 친구를 오래 유지해요.",
-      conflict:"큰 무리에서 에너지가 쉽게 소진돼요. 친구의 감정에 너무 영향을 받아 본인이 힘들어지기도 해요.",
-      tip1:"하루 일과 후 '오늘 친구들이랑 어땠어?'라고 매일 물어봐 주세요. 말 못 한 감정을 털어낼 수 있어요.",
-      tip2:"싫다고 말 못 하는 경우가 많아요. '싫으면 싫다고 말해도 돼'를 반복해서 알려주세요.",
-      tip3:"친구 갈등 후 '네 잘못이야/네가 맞아' 대신 양쪽 감정을 모두 인정해주세요."
-    },
-    scripts:[
-      {sit:"친구 문제로 속상해할 때",bad:"별거 아닌데 왜 그렇게 속상해해?",good:"그랬구나, 많이 속상했겠다. 어떤 점이 제일 힘들었어? (먼저 들어주기)"},
-      {sit:"엄마 기분을 걱정할 때",bad:"(무심코) 엄마 힘들어...",good:"엄마가 조금 피곤하긴 한데, 괜찮아. 네 걱정 안 해도 돼."},
-      {sit:"거절을 못하고 괴로워할 때",bad:"왜 싫으면 싫다고 안 해?",good:"싫을 때 싫다고 말�싫다고 말하는 것도 친절한 거야. '나는 지금 하기 싫어'라고 말해봐."},
-      {sit:"감정이 폭발할 때",bad:"왜 이렇게 예민하게 굴어",good:"많이 힘들었구나. 지금 어떤 기분인지 엄마한테 말해줄 수 있어?"},
-      {sit:"감각 예민 문제",bad:"그게 뭐가 불편해, 그냥 입어",good:"불편하구나. 어디가 제일 거슬려? 같이 해결해보자."}
-    ],
-    career:[
-      {title:"이 기질이 빛나는 환경",body:"사람과 감정을 다루는 분야. 감수성과 공감 능력이 강점이 되는 환경에서 두각을 나타내요."},
-      {title:"관심 가질 수 있는 활동",body:"글쓰기, 그림, 음악, 역할 놀이. 감정을 표현하고 담을 수 있는 예술 활동이 특히 잘 맞아요."},
-      {title:"피해야 할 압박 유형",body:"감정을 무시하거나 '예민하다'고 핀잔 주는 환경. 이 아이의 감수성을 억누르면 오히려 내면으로 더 깊이 들어가요."},
-      {title:"장기적 강점",body:"타인의 마음을 읽고 공감하는 능력. 상담사, 교사, 예술가, 작가, 의료 분야 등 사람의 마음을 다루는 분야에서 빛나요."}
-    ],
-    age:[
-      {age:"유아 (만 3~5세)",txt:"부모의 감정 변화에 매우 민감하게 반응해요. 일관된 정서적 안정감을 주는 게 핵심이에요. 하루 일과 후 '오늘 어떤 기분이었어?'를 물어봐 주세요."},
-      {age:"유치원·어린이집 시기",txt:"친구 관계에서 감정 기복이 클 수 있어요. 매일 감정 이름 붙이기 연습을 해보세요. 공감받는 경험이 자존감의 기반이 돼요."},
-      {age:"초등 저학년 (1~3학년)",txt:"감수성을 긍정적으로 활용할 수 있는 활동(미술, 글쓰기, 음악)을 찾아주세요. '예민한 게 아니라 감각이 풍부한 거야'라는 인식을 심어주세요."}
-    ]
-  },
-  leader: {
-    icon:"🔥", name:"주도가형",
+/* 유료 심화 15문항 */
+const QSP=[
+  {dim:"또래 관계",tip:"친구들과 노는 모습을 떠올려 주세요 👫",txt:"놀이터나 교실에서 여러 명이 함께 놀 때 아이는 주로 어떤 역할을 해요?",opts:["자연스럽게 놀이를 제안하고 이끌어요","적극적으로 참여하지만 이끌진 않아요","시키는 대로 따라가는 편이에요","무리에서 살짝 빠져서 혼자 노는 경우가 많아요"],scores:[4,3,2,1]},
+  {dim:"또래 관계",tip:"",txt:"친구와 의견이 달라서 갈등이 생기면 아이는?",opts:["자기 의견을 강하게 주장해요","협상하려고 시도해요","상대방 의견에 맞춰줘요","갈등 자체를 피하려고 자리를 피해요"],scores:[4,3,2,1]},
+  {dim:"스트레스 반응",tip:"힘들었던 상황을 떠올려 주세요",txt:"아이가 많이 지치거나 스트레스받을 때 주로 어떻게 표현해요?",opts:["크게 울거나 떼를 써서 바로 알 수 있어요","짜증이 늘고 예민해져요","말이 없어지고 혼자 조용히 있으려 해요","별 표현 없이 넘기는데 나중에 탈이 나요"],scores:[4,3,2,1]},
+  {dim:"스트레스 반응",tip:"",txt:"아이가 스트레스를 받은 후 회복하는 방식은?",opts:["신체 활동(뛰기, 놀기)으로 에너지를 발산해요","친한 사람과 이야기하면서 풀어요","혼자 조용히 있으면 금방 괜찮아져요","시간이 지나야 서서히 회복해요"],scores:[0,0,0,0]},
+  {dim:"학습 방식",tip:"공부나 새로운 것을 배울 때를 떠올려 주세요 📚",txt:"새로운 것을 배울 때 아이가 선호하는 방식은?",opts:["직접 해보면서 몸으로 익히는 걸 좋아해요","보고 따라하면서 배워요","설명을 충분히 듣고 이해한 후에 해요","혼자 조용히 책이나 자료를 보면서 익혀요"],scores:[0,0,0,0]},
+  {dim:"학습 방식",tip:"",txt:"과제나 숙제를 할 때 아이는?",opts:["시작하면 끝낼 때까지 몰아서 해요","조금씩 나눠서 규칙적으로 해요","하기 싫어서 자꾸 미루다가 결국 해요","시작 자체를 어려워해요"],scores:[4,3,2,1]},
+  {dim:"애착 유형",tip:"엄마와의 관계를 떠올려 주세요 💕",txt:"엄마와 잠깐 떨어져야 할 때 (어린이집 등원, 외출) 아이는?",opts:["별로 개의치 않고 잘 헤어져요","조금 아쉬워하다가 금방 괜찮아져요","꽤 오래 울거나 매달려요","극심하게 떨어지지 않으려 하고 오래 힘들어해요"],scores:[4,3,2,1]},
+  {dim:"애착 유형",tip:"",txt:"낯선 어른(처음 만나는 친척, 선생님 등)을 대할 때 아이는?",opts:["금방 친해져서 스스럼없이 대해요","조심스럽지만 금방 적응해요","한참 경계하다가 천천히 마음을 열어요","쉽게 마음을 열지 않고 계속 경계해요"],scores:[4,3,2,1]},
+  {dim:"자기 표현",tip:"",txt:"아이가 자신의 감정이나 생각을 표현하는 방식은?",opts:["느끼는 대로 바로바로 말해요","천천히 생각해서 말하는 편이에요","표현하고 싶지만 어떻게 말해야 할지 몰라해요","잘 표현하지 않고 속으로 삭혀요"],scores:[4,3,2,1]},
+  {dim:"자기 표현",tip:"",txt:"아이가 원하는 게 있을 때 어떻게 표현해요?",opts:["직접적으로 '이거 해줘'라고 말해요","눈치를 보면서 간접적으로 표현해요","원하는데 말을 못하고 그냥 포기해요","떼를 쓰거나 울어서 표현해요"],scores:[4,3,2,1]},
+  {dim:"주도성",tip:"",txt:"아이가 새로운 놀이나 활동을 제안하는 경우가 얼마나 되나요?",opts:["항상 먼저 아이디어를 내고 이끌어요","가끔 제안하는 편이에요","다른 사람의 제안을 따르는 경우가 더 많아요","거의 제안하지 않아요"],scores:[4,3,2,1]},
+  {dim:"주도성",tip:"",txt:"모둠 활동이나 팀 프로젝트에서 아이는?",opts:["자연스럽게 리더 역할을 맡아요","적극적으로 참여하고 의견을 내요","맡은 역할을 성실히 해요","뒤에서 조용히 따라가요"],scores:[4,3,2,1]},
+  {dim:"감각 민감성",tip:"",txt:"음식의 맛이나 냄새에 얼마나 예민해요?",opts:["조금만 맛이 달라도 바로 알아채고 싫어해요","가끔 특이한 맛이나 냄새에 반응해요","웬만한 음식은 잘 먹어요","먹는 데 별로 까다롭지 않아요"],scores:[4,3,2,1]},
+  {dim:"감각 민감성",tip:"",txt:"통증이나 신체적 불편함에 얼마나 예민하게 반응해요?",opts:["조금만 아파도 엄청 아프다고 해요","아프면 표현하지만 과하지는 않아요","웬만하면 참고 넘겨요","꽤 아파도 잘 참고 넘겨요"],scores:[4,3,2,1]},
+  {dim:"인내력",tip:"마지막 문항이에요! 거의 다 왔어요 💪",txt:"아이가 하고 싶은 것이 생겼지만 지금 당장 할 수 없을 때?",opts:["크게 떼를 쓰거나 화를 내요","속상해하지만 설명하면 기다려요","아쉬워하면서도 참고 기다려요","별말 없이 다음을 기약해요"],scores:[4,3,2,1]}
+];
+
+/* 10가지 기질 유형 */
+const TYPES={
+  explorer:{icon:"🌟",name:"열정적 탐험가형",sub:"활동적·호기심 왕·즉흥적",
+    keywords:["활동적","호기심 폭발","도전적","즉흥적"],
+    desc:"새로운 걸 보면 달려가는 우리 아이, 겁이 없어서 걱정되시죠? 이건 타고난 탐구 본능이에요. 에너지가 넘치고 창의력이 강한 기질이에요. 올바른 방향으로 이끌면 어디서든 빛나는 아이예요.",
+    empathy:["마트에서 카트 타기 거부하고 직접 뛰어다니려 해요","한 장난감을 5분도 못 갖고 다른 걸 찾아요","낯선 놀이터에서 제일 먼저 미끄럼틀로 달려가요","앉아서 집중하는 게 정말 힘들어 보여요","에너지가 너무 넘쳐서 재워놓기가 힘들어요"],
+    guides:["탐구를 막지 말고 '안전한 모험'을 허용해 주세요.","하루의 큰 흐름은 일정하게 유지해 주세요.","'지금 어떤 기분이야?'라고 감정 표현 연습을 함께 해주세요."],
+    friend:{like:"활동적이고 함께 탐험할 수 있는 친구",conflict:"원하는 게 다를 때 양보가 어려워요",tip1:"교환 규칙 알려주기: '친구 것 먼저, 그다음 네 것'",tip2:"친구와 싸운 후 '다음엔 어떻게 하면 더 잘 놀 수 있을까?' 함께 생각",tip3:"공통 관심사가 있는 또래 모임 만들어주기"},
+    scripts:[{sit:"집중이 안 될 때",bad:"왜 이렇게 집중을 못해?",good:"지금 뭐가 제일 재미있어 보여? 그거 5분만 하고, 이것도 같이 해보자."},{sit:"위험한 행동을 할 때",bad:"하지 말랬잖아!",good:"그거 재미있어 보이지? 대신 이쪽에서 해볼까? 더 신나게 할 수 있어."},{sit:"흥분해서 울 때",bad:"진정해, 왜 이렇게 난리야",good:"몸이 너무 흥분됐구나. 같이 숨 한번 크게 쉬어볼까?"},{sit:"친구와 싸웠을 때",bad:"네가 먼저 사과해",good:"친구가 어떤 기분일 것 같아? 어떻게 하면 좋을까?"},{sit:"정리를 안 할 때",bad:"왜 맨날 어질러놔?",good:"탐험대 정리 미션! 빨간 것들부터 찾아봐. 몇 개야?"}],
+    career:[{title:"이 기질이 빛나는 환경",body:"변화가 많고 탐구할 거리가 있는 환경. 자유롭게 시도할 수 있는 분야에서 강점이 발휘돼요."},{title:"추천 활동",body:"체험 과학, 스포츠, 야외 활동, 창작 놀이. 몸을 쓰면서 배우는 활동이 특히 잘 맞아요."},{title:"피해야 할 것",body:"'가만히 앉아서 집중해'라는 압박. 이 아이는 움직이면서 더 잘 배워요."},{title:"장기적 강점",body:"새로운 분야를 빠르게 흡수하고 도전을 두려워하지 않아요."}],
+    age:[{age:"유아 (만 3~5세)",txt:"안전한 탐색 공간을 충분히 주세요. 허용 범위 안에서 자유롭게 탐험하게 두세요."},{age:"유치원·어린이집",txt:"규칙은 짧고 명확하게, 이유도 꼭 함께요. 신체 활동이 충분해야 집에서 안정돼요."},{age:"초등 저학년",txt:"에너지를 건설적으로 쏟을 수 있는 체육 활동을 찾아주세요."}]},
+
+  leader:{icon:"🔥",name:"강인한 주도가형",sub:"리더십·추진력·자기주장·열정",
     keywords:["리더십","추진력","자기주장","열정적"],
-    desc:"원하는 게 생기면 강하게 밀어붙이는 우리 아이, 고집이 세서 힘드시죠? 이건 강한 주도성과 추진력의 표현이에요. 자기가 원하는 것이 명확하고 에너지가 강한 기질이에요. 올바른 방향을 잡아주면 어디서든 리더가 돼요.",
-    empathy:[
-      "싫으면 싫다고, 좋으면 좋다고 아주 확실하게 표현해요",
-      "자기가 정한 방식이 아니면 도통 안 하려 해요",
-      "친구들 사이에서 자연스럽게 뭔가를 이끌려 해요",
-      "한번 하겠다고 마음먹으면 끝까지 해요",
-      "지기 싫어서 게임이나 놀이 중 갈등이 생겨요"
-    ],
-    guides:[
-      "반대하기보다 선택권을 주세요. '이거 해'보다 '이거 할래, 저거 할래?'가 훨씬 잘 통해요.",
-      "아이의 의견을 먼저 들어주세요. '왜 그렇게 생각해?'라고 물어보면 대화가 열려요.",
-      "규칙은 이유와 함께 알려주세요. '왜 안 돼?'에 답해줄수록 이 아이는 더 잘 따라와요."
-    ],
-    friend:{
-      like:"자기 의견을 말할 수 있고, 리더십을 인정해주는 친구. 함께 뭔가를 만들거나 계획하는 활동에서 잘 맞아요.",
-      conflict:"본인이 원하는 대로 안 됐을 때 강하게 반응해요. 경쟁 의식으로 갈등이 생겨요.",
-      tip1:"게임 전에 '이기는 사람도 지는 사람도 있어. 그게 게임이야'를 미리 말해주세요.",
-      tip2:"'내 방식만 맞아'가 아니라 '친구 방식도 한번 해보자'를 연습시켜 주세요.",
-      tip3:"리더십을 긍정적으로 발휘할 수 있는 역할(반장, 팀장 등)을 경험하게 해주세요."
-    },
-    scripts:[
-      {sit:"고집을 부릴 때",bad:"그냥 말 들어!",good:"네 생각은 알겠어. 근데 이유가 있어. 잠깐만 들어봐."},
-      {sit:"지기 싫어할 때",bad:"졌잖아, 그냥 인정해",good:"아깝다! 다음엔 어떻게 하면 이길 수 있을까?"},
-      {sit:"친구와 충돌했을 때",bad:"네가 잘못한 거야",good:"무슨 일이 있었어? 친구 입장에서는 어떻게 느꼈을 것 같아?"},
-      {sit:"선택을 강요받을 때",bad:"그냥 이걸 해",good:"이거 할래, 저거 할래? 네가 골라봐."},
-      {sit:"규칙을 따르지 않을 때",bad:"규칙이니까 따라야 해",good:"이 규칙이 왜 있는지 알아? 다 같이 즐거우려면 필요해."}
-    ],
-    career:[
-      {title:"이 기질이 빛나는 환경",body:"자신의 의견을 말하고 주도할 수 있는 환경. 경쟁보다 협력 속에서 리더십을 발휘할 수 있는 곳이 좋아요."},
-      {title:"관심 가질 수 있는 활동",body:"팀 스포츠, 학생 자치 활동, 토론, 연극. 무리 속에서 역할을 갖고 이끌 수 있는 활동이 잘 맞아요."},
-      {title:"피해야 할 압박 유형",body:"무조건 복종을 강요하는 환경. '왜?'라는 질문을 막으면 오히려 더 강하게 반발해요."},
-      {title:"장기적 강점",body:"강한 추진력과 명확한 목표 의식. 사업가, 팀 리더, 스포츠 분야에서 방향을 설정하고 이끄는 역할에서 빛나요."}
-    ],
-    age:[
-      {age:"유아 (만 3~5세)",txt:"'안 돼'보다 '이렇게 해보자'가 훨씬 잘 통해요. 아이가 주도할 수 있는 작은 역할을 자주 줘보세요."},
-      {age:"유치원·어린이집 시기",txt:"또래 관계에서 갈등이 생길 수 있어요. 규칙과 이유를 알려주고, 리더십을 긍정적으로 쓸 수 있는 역할을 만들어주세요."},
-      {age:"초등 저학년 (1~3학년)",txt:"자기 주장이 강해질 수 있어요. '왜 그렇게 생각해?'를 자주 물어서 논리적으로 생각하는 습관을 길러주세요."}
-    ]
-  },
-  balanced: {
-    icon:"🌙", name:"조화가형",
-    keywords:["균형잡힌","적응력높은","안정적","유연한"],
-    desc:"큰 기복 없이 차분한 우리 아이, 걱정이 적어서 이게 맞나 싶으실 수도 있어요. 이 기질은 적응력이 높고 다양한 환경에서 잘 지내요. 협력적이고 균형감이 있어요.",
-    empathy:[
-      "어디서든 잘 적응하고 큰 말썽 없이 잘 지내요",
-      "특별히 좋아하는 게 딱히 없어 뭘 시켜줘야 할지 모르겠어요",
-      "다들 '착하다'고 하는데 속마음을 잘 모르겠어요",
-      "먼저 나서서 뭔가 하려 하지 않아요",
-      "힘들어도 말을 잘 안 해서 나중에 알게 돼요"
-    ],
-    guides:[
-      "꾸준한 일과와 따뜻한 스킨십이 이 아이의 안정감을 더욱 키워줘요.",
-      "조용하다고 괜찮겠지 하지 말고, 작은 감정 신호도 놓치지 않고 물어봐 주세요.",
-      "가끔은 새로운 도전도 같이 시도해 보세요. 과하지 않은 자극이 성장의 재료가 돼요."
-    ],
-    friend:{
-      like:"갈등 없이 편안하게 지낼 수 있는 친구. 다양한 친구와 어울릴 수 있어요.",
-      conflict:"자기 의견을 말하지 않아서 친구가 오해하거나 이용당하는 경우가 생길 수 있어요.",
-      tip1:"'오늘 친구랑 어떻게 지냈어?'를 매일 물어봐 주세요.",
-      tip2:"싫을 때 싫다고 표현하는 연습을 집에서 해주세요.",
-      tip3:"아이의 관심사를 발견하고 비슷한 관심사를 가진 또래와 만날 기회를 만들어주세요."
-    },
-    scripts:[
-      {sit:"속마음을 안 말할 때",bad:"왜 말을 안 해?",good:"뭔가 힘든 거 있어? 없어도 괜찮아. 있으면 언제든 말해줘."},
-      {sit:"뭘 좋아하는지 모를 때",bad:"(무관심하게 지나칠 때)",good:"이거 해본 적 있어? 어떤 것 같아? 재미있으면 더 해봐도 돼."},
-      {sit:"칭찬할 때",bad:"(칭찬을 잊어버릴 때)",good:"오늘 스스로 ○○ 했네. 대단하다, 잘했어!"},
-      {sit:"도전을 격려할 때",bad:"(무관심하게 지나칠 때)",good:"이거 해보고 싶어? 엄마도 같이 해볼게. 어때?"},
-      {sit:"의견을 물어볼 때",bad:"(대신 결정해줄 때)",good:"네 생각은 어때? 네가 결정해봐."}
-    ],
-    career:[
-      {title:"이 기질이 빛나는 환경",body:"다양한 역할을 고루 경험할 수 있는 환경. 협력이 중요하고 팀워크가 핵심인 분야에서 강점을 발휘해요."},
-      {title:"관심 가질 수 있는 활동",body:"다양한 체험 활동을 골고루 시도해보세요. 여러 활동을 경험하면서 관심사를 발견해가요."},
-      {title:"피해야 할 압박 유형",body:"'넌 뭘 잘해?' 같은 질문 압박. 아직 찾아가는 중이에요. 조급해하지 않아도 돼요."},
-      {title:"장기적 강점",body:"다양한 환경에 적응하고 협력하는 능력. 팀워크가 중요한 어떤 분야에서도 잘 녹아들어요."}
-    ],
-    age:[
-      {age:"유아 (만 3~5세)",txt:"규칙적인 생활 패턴에 잘 적응해요. 수면, 식사, 놀이 루틴이 일정할수록 안정감이 높아져요."},
-      {age:"유치원·어린이집 시기",txt:"또래 관계에서 중재자 역할을 자연스럽게 해요. 다양한 체험 활동을 통해 관심사를 발견할 수 있도록 도와주세요."},
-      {age:"초등 저학년 (1~3학년)",txt:"자기 표현 방법을 키워주세요. 일기 쓰기, 대화 시간을 통해 속마음을 표현하는 습관을 만들어 주세요."}
-    ]
-  }
+    desc:"원하는 게 생기면 강하게 밀어붙이는 우리 아이, 고집이 세서 힘드시죠? 강한 주도성과 추진력의 표현이에요. 자기가 원하는 것이 명확하고 에너지가 강한 기질이에요.",
+    empathy:["싫으면 싫다고, 좋으면 좋다고 아주 확실하게 표현해요","자기가 정한 방식이 아니면 도통 안 하려 해요","친구들 사이에서 자연스럽게 뭔가를 이끌려 해요","한번 하겠다고 마음먹으면 끝까지 해요","지기 싫어서 게임이나 놀이 중 갈등이 생겨요"],
+    guides:["반대하기보다 선택권을 주세요. '이거 할래, 저거 할래?'가 훨씬 잘 통해요.","아이의 의견을 먼저 들어주세요. '왜 그렇게 생각해?'가 대화를 열어요.","규칙은 이유와 함께 알려주세요."],
+    friend:{like:"자기 의견을 말할 수 있고 리더십을 인정해주는 친구",conflict:"본인이 원하는 대로 안 됐을 때 강하게 반응해요",tip1:"게임 전에 '이기는 사람도 지는 사람도 있어'를 미리 말해주세요",tip2:"'내 방식만 맞아'가 아니라 '친구 방식도 한번 해보자' 연습",tip3:"리더십을 긍정적으로 발휘할 수 있는 역할 경험하게 해주기"},
+    scripts:[{sit:"고집을 부릴 때",bad:"그냥 말 들어!",good:"네 생각은 알겠어. 근데 이유가 있어. 잠깐만 들어봐."},{sit:"지기 싫어할 때",bad:"졌잖아, 그냥 인정해",good:"아깝다! 다음엔 어떻게 하면 이길 수 있을까?"},{sit:"친구와 충돌했을 때",bad:"네가 잘못한 거야",good:"무슨 일이 있었어? 친구 입장에서는 어떻게 느꼈을 것 같아?"},{sit:"선택을 강요받을 때",bad:"그냥 이걸 해",good:"이거 할래, 저거 할래? 네가 골라봐."},{sit:"규칙을 따르지 않을 때",bad:"규칙이니까 따라야 해",good:"이 규칙이 왜 있는지 알아? 다 같이 즐거우려면 필요해."}],
+    career:[{title:"이 기질이 빛나는 환경",body:"자신의 의견을 말하고 주도할 수 있는 환경."},{title:"추천 활동",body:"팀 스포츠, 학생 자치 활동, 토론, 연극."},{title:"피해야 할 것",body:"무조건 복종을 강요하는 환경. '왜?'를 막으면 더 강하게 반발해요."},{title:"장기적 강점",body:"강한 추진력과 명확한 목표 의식. 리더 역할에서 빛나요."}],
+    age:[{age:"유아 (만 3~5세)",txt:"'안 돼'보다 '이렇게 해보자'가 훨씬 잘 통해요. 주도할 수 있는 작은 역할을 자주 줘보세요."},{age:"유치원·어린이집",txt:"또래 관계에서 갈등이 생길 수 있어요. 리더십을 긍정적으로 쓸 수 있는 역할을 만들어주세요."},{age:"초등 저학년",txt:"'왜 그렇게 생각해?'를 자주 물어서 논리적으로 생각하는 습관을 길러주세요."}]},
+
+  thinker:{icon:"🌿",name:"깊이 생각하는 사색가형",sub:"신중함·관찰·꼼꼼함·내면 깊이",
+    keywords:["신중한","관찰자","꼼꼼한","깊이있는"],
+    desc:"새로운 걸 한참 지켜보다 움직이는 우리 아이, 소심한 게 아니에요. 위험을 미리 살피는 신중한 기질이에요. 충분히 확인하고 행동하는 사려 깊은 기질이에요.",
+    empathy:["처음 가는 곳에서 한참 문 앞에 서서 안을 살펴봐요","새 친구에게 먼저 다가가지 못하고 지켜만 봐요","강압적으로 밀어붙이면 오히려 더 닫혀버려요","마음에 드는 것도 결정하는 데 오래 걸려요","'괜찮아?'고 물으면 괜찮다고 하면서 실제론 힘들어요"],
+    guides:["새로운 활동 전에 미리 충분히 설명해 주세요.","재촉하거나 비교하지 마세요.","작은 성공 경험을 자주 만들어 주세요."],
+    friend:{like:"이미 알고 있는 친구, 서두르지 않는 차분한 친구",conflict:"강제로 어울리게 하거나 낯선 무리에 갑자기 집어넣을 때 극도로 불편해해요",tip1:"친구를 집에 초대해서 1:1로 노는 시간 만들어주기",tip2:"어떻게 말 걸어야 할지 역할 놀이로 미리 연습시켜 주기",tip3:"매일 '오늘 어땠어?'로 열어주기"},
+    scripts:[{sit:"새로운 활동을 거부할 때",bad:"해봐야 알잖아, 빨리 해봐",good:"처음이라 낯설지? 오늘은 그냥 구경만 해도 돼."},{sit:"친구 무리에 못 끼어들 때",bad:"왜 가서 같이 안 놀아?",good:"저 친구들이랑 같이 놀고 싶어? 어떻게 말하면 될지 같이 생각해볼까?"},{sit:"결정을 못 내릴 때",bad:"빨리 골라!",good:"이거랑 저거 중에 뭐가 더 좋아? 이거 먼저 만져봐도 돼."},{sit:"실패를 두려워할 때",bad:"해보지도 않고 왜 못한다고 해?",good:"틀려도 괜찮아. 한 번만 해봐, 같이 보자."},{sit:"재촉이 필요할 때",bad:"빨리빨리 해!",good:"10분 뒤에 출발해야 해. 지금 뭐부터 준비하면 될까?"}],
+    career:[{title:"이 기질이 빛나는 환경",body:"충분한 준비 시간과 안전한 환경이 보장되는 곳."},{title:"추천 활동",body:"독서, 그림, 퍼즐, 과학 실험, 음악. 소수와 깊이 집중할 수 있는 활동."},{title:"피해야 할 것",body:"갑작스러운 발표나 즉흥적인 상황 강요."},{title:"장기적 강점",body:"한번 관심 가진 분야를 깊이 파고드는 능력. 전문직에서 빛나요."}],
+    age:[{age:"유아 (만 3~5세)",txt:"억지로 새로운 환경에 밀어 넣지 마세요. 부모가 먼저 탐색하는 모습을 보여주세요."},{age:"유치원·어린이집",txt:"선생님께 '짝꿍 기회를 만들어주시면 좋겠어요'라고 미리 말씀해 주세요."},{age:"초등 저학년",txt:"과제에 대해 미리 알려주세요. 당일 통보보다 '다음 주에 이거 해야 해'가 훨씬 잘 준비돼요."}]},
+
+  empath:{icon:"💛",name:"따뜻한 공감가형",sub:"감수성·공감·관계중심·섬세함",
+    keywords:["감수성 풍부","섬세한","관계 중심","예민한"],
+    desc:"다른 아이가 울면 같이 속상해하는 우리 아이, 너무 예민한 거 아닐까 걱정되시죠? 타인의 감정을 잘 읽는 공감 능력이 높다는 신호예요. 관계를 소중히 여기는 기질이에요.",
+    empathy:["친구가 속상해하면 본인도 덩달아 속상해해요","엄마 기분이 안 좋으면 먼저 눈치채고 '엄마 괜찮아?'라고 물어요","옷 태그나 이음새가 닿으면 엄청 거슬려해요","친구와 사소한 갈등 후에도 오래 마음에 담아두어요","새로운 환경에 가면 분위기를 먼저 살피고 적응해요"],
+    guides:["감정에 이름을 붙여주는 연습을 같이 해주세요.","사회적 활동 후에는 혼자 조용히 쉬는 시간을 꼭 주세요.","'너는 어떻게 하고 싶어?'라고 자주 물어봐 주세요."],
+    friend:{like:"감정을 이해해주고 강요하지 않는 친구",conflict:"큰 무리에서 에너지가 쉽게 소진돼요",tip1:"하루 일과 후 '오늘 친구들이랑 어땠어?'를 매일 물어봐 주세요",tip2:"싫다고 말 못하는 경우가 많아요. '싫으면 싫다고 말해도 돼' 반복",tip3:"갈등 후 양쪽 감정을 모두 인정해주기"},
+    scripts:[{sit:"친구 문제로 속상해할 때",bad:"별거 아닌데 왜 그렇게 속상해해?",good:"그랬구나, 많이 속상했겠다. 어떤 점이 제일 힘들었어?"},{sit:"엄마 기분을 걱정할 때",bad:"(무심코) 엄마 힘들어...",good:"엄마가 조금 피곤하긴 한데, 괜찮아. 네 걱정 안 해도 돼."},{sit:"거절을 못하고 괴로워할 때",bad:"왜 싫으면 싫다고 안 해?",good:"싫을 때 싫다고 말하는 것도 친절한 거야. '나는 지금 하기 싫어'라고 말해봐."},{sit:"감정이 폭발할 때",bad:"왜 이렇게 예민하게 굴어",good:"많이 힘들었구나. 지금 어떤 기분인지 말해줄 수 있어?"},{sit:"감각 예민 문제",bad:"그게 뭐가 불편해, 그냥 입어",good:"불편하구나. 어디가 제일 거슬려? 같이 해결해보자."}],
+    career:[{title:"이 기질이 빛나는 환경",body:"사람과 감정을 다루는 분야."},{title:"추천 활동",body:"글쓰기, 그림, 음악, 역할 놀이."},{title:"피해야 할 것",body:"감정을 무시하거나 '예민하다'고 핀잔 주는 환경."},{title:"장기적 강점",body:"상담사, 교사, 예술가, 작가, 의료 분야에서 빛나요."}],
+    age:[{age:"유아 (만 3~5세)",txt:"부모의 감정 변화에 매우 민감해요. 일관된 정서적 안정감이 핵심이에요."},{age:"유치원·어린이집",txt:"매일 감정 이름 붙이기 연습을 해보세요."},{age:"초등 저학년",txt:"'예민한 게 아니라 감각이 풍부한 거야'라는 인식을 심어주세요."}]},
+
+  focused:{icon:"🎯",name:"집요한 집중가형",sub:"몰입·끈기·완벽주의·전문성",
+    keywords:["집중력 강한","끈기있는","완벽주의","전문가형"],
+    desc:"한번 빠져들면 몇 시간이고 하는 우리 아이, 가끔 집착이 심하다 싶으시죠? 이건 놀라운 몰입력이에요. 한 가지를 깊이 파고드는 능력은 어떤 분야에서든 전문가가 될 수 있는 기질이에요.",
+    empathy:["좋아하는 게 생기면 몇 주, 몇 달씩 그것만 해요","다른 걸 하자고 하면 싫어해요","완성이 안 되면 밥도 안 먹으려 해요","흐름이 끊기면 엄청 짜증내요","관심 없는 건 정말 안 하려 해요"],
+    guides:["관심사를 충분히 탐구할 시간을 보장해 주세요.","전환이 필요할 때는 미리 예고해 주세요. '10분 후에 밥 먹을 거야'.","완벽하지 않아도 괜찮다는 것을 가르쳐주세요."],
+    friend:{like:"같은 관심사를 공유할 수 있는 친구",conflict:"자기 방식이 아닌 다른 방식으로 놀자고 하면 불편해해요",tip1:"공통 관심사가 있는 클럽이나 모임 찾아주기",tip2:"'친구 방식으로 한번 해보는 것도 재미있을 수 있어' 권유",tip3:"한 가지를 깊이 탐구하는 소규모 활동 찾기"},
+    scripts:[{sit:"전환이 어려울 때",bad:"이제 그만해, 밥 먹어야지",good:"10분 후에 밥 먹을 거야. 지금 어디까지 했어? 거기서 마무리하자."},{sit:"완성 못 해서 힘들어할 때",bad:"나중에 해, 지금은 이거 해야 해",good:"많이 아쉽겠다. 잠깐 쉬었다가 다시 하면 더 잘 될 거야."},{sit:"관심 없는 걸 시켜야 할 때",bad:"그냥 해, 다 해야 하는 거야",good:"이게 지루하지? 이걸 끝내면 네가 좋아하는 거 할 수 있어."},{sit:"완벽주의로 힘들어할 때",bad:"그 정도면 됐어, 왜 자꾸 고쳐?",good:"많이 애썼다. 완벽하지 않아도 충분히 잘 한 거야."},{sit:"다른 것도 해봐야 할 때",bad:"맨날 그것만 하지 말고 다른 것도 해봐",good:"좋아하는 거 하면서 이것도 조금 해볼까? 5분만."}],
+    career:[{title:"이 기질이 빛나는 환경",body:"한 분야를 깊이 파고들 수 있는 환경."},{title:"추천 활동",body:"바둑, 코딩, 음악, 미술, 과학 실험."},{title:"피해야 할 것",body:"너무 많은 활동을 동시에 강요하는 환경."},{title:"장기적 강점",body:"연구자, 예술가, 전문직, 기술자. 한 분야의 최고 전문가가 될 수 있어요."}],
+    age:[{age:"유아 (만 3~5세)",txt:"몰입을 방해하지 마세요. 충분히 탐구하게 두되 전환 시 미리 예고해주세요."},{age:"유치원·어린이집",txt:"자유 선택 활동 시간에 관심사를 깊이 탐구할 기회를 주세요."},{age:"초등 저학년",txt:"관심 분야 관련 방과후 활동, 동아리를 찾아주세요."}]},
+
+  flexible:{icon:"🌊",name:"유연한 적응가형",sub:"적응력·사교성·낙천적·융통성",
+    keywords:["적응력 높은","사교적","낙천적","융통성있는"],
+    desc:"어디서든 잘 적응하고 친구도 잘 사귀는 우리 아이, 특별히 걱정이 없어 보이시죠? 이 기질은 사회적 적응력이 높고 어떤 환경에서도 잘 녹아들어요. 타고난 사교성이 강점이에요.",
+    empathy:["처음 가는 곳에서도 금방 친구를 사귀어요","어떤 놀이든 잘 따라가고 즐겨요","분위기 파악을 잘하고 상황에 맞게 행동해요","좋아하는 게 다양해서 뭘 좋아하는지 파악이 어려워요","깊이 파고드는 것보다 다양하게 경험하는 걸 좋아해요"],
+    guides:["다양한 경험을 통해 진짜 관심사를 찾아가게 도와주세요.","속마음을 자주 물어봐 주세요. 겉으로는 괜찮아 보여도 속으로 담아둘 수 있어요.","한 가지를 깊이 탐구하는 경험도 가끔 만들어주세요."],
+    friend:{like:"다양한 친구와 두루두루 잘 지내요",conflict:"자기 의견을 잘 말하지 않아서 이용당하는 경우가 생길 수 있어요",tip1:"'네 생각은 어때?'를 자주 물어서 자기 의견 말하는 연습",tip2:"싫을 때 표현하는 연습을 집에서 먼저 해주기",tip3:"다양한 친구 그룹 경험하게 하기"},
+    scripts:[{sit:"속마음을 안 말할 때",bad:"왜 말을 안 해?",good:"뭔가 힘든 거 있어? 없어도 괜찮아. 있으면 언제든 말해줘."},{sit:"뭘 좋아하는지 모를 때",bad:"(무관심하게 지나칠 때)",good:"이거 해본 적 있어? 어떤 것 같아? 재미있으면 더 해봐도 돼."},{sit:"결정을 못 내릴 때",bad:"빨리 결정해",good:"네 마음이 더 끌리는 건 어느 쪽이야?"},{sit:"칭찬할 때",bad:"(칭찬을 잊어버릴 때)",good:"오늘 ○○이가 스스로 ○○ 했네. 대단하다, 잘했어!"},{sit:"한 가지를 더 깊이 해봐야 할 때",bad:"맨날 이것저것 바꾸지 말고 한 가지만 해",good:"이번엔 이거 좀 더 해볼까? 더 잘할 수 있을 것 같아."}],
+    career:[{title:"이 기질이 빛나는 환경",body:"다양한 사람을 만나고 협력하는 환경."},{title:"추천 활동",body:"팀 스포츠, 연극, 학생회, 다양한 체험 활동."},{title:"피해야 할 것",body:"'넌 뭘 잘해?'라는 압박. 아직 찾아가는 중이에요."},{title:"장기적 강점",body:"어떤 환경에서도 사람들과 잘 어울리는 능력."}],
+    age:[{age:"유아 (만 3~5세)",txt:"다양한 놀이 경험을 통해 흥미를 발견하게 해주세요."},{age:"유치원·어린이집",txt:"또래 관계에서 자연스럽게 리더십을 발휘하기도 해요."},{age:"초등 저학년",txt:"자기 표현 방법을 키워주세요. 일기나 대화를 통해 속마음을 표현하는 습관을 만들어 주세요."}]},
+
+  guardian:{icon:"🛡️",name:"안전 추구형 신중가형",sub:"규칙성·예측가능·안전추구·안정",
+    keywords:["규칙적인","예측가능 선호","안전추구","안정적"],
+    desc:"익숙한 것을 좋아하고 변화에 예민한 우리 아이, 새로운 상황마다 힘들어해서 걱정되시죠? 이건 안전과 예측 가능성을 중시하는 기질이에요. 안정된 환경에서 놀라운 능력을 발휘해요.",
+    empathy:["가던 길이 아닌 다른 길로 가면 불안해해요","먹던 음식, 하던 것만 하려고 해요","예고 없이 바뀌는 걸 정말 힘들어해요","루틴이 지켜지지 않으면 하루가 힘들어요","새로운 활동을 시작하기 전 엄청 많은 질문을 해요"],
+    guides:["하루 일과를 최대한 예측 가능하게 유지해 주세요.","변화가 있을 때는 반드시 미리 충분히 알려주세요.","새로운 것에 적응하는 시간이 남들보다 더 필요해요. 기다려주세요."],
+    friend:{like:"같은 것을 반복해서 즐길 수 있는 친구",conflict:"갑작스러운 놀이 변경이나 규칙 변화에 적응이 어려워요",tip1:"함께 놀이 규칙을 미리 정해두기",tip2:"새로운 친구를 만들 때 충분한 준비 시간 주기",tip3:"이미 친한 친구와 정기적으로 만날 수 있도록 해주기"},
+    scripts:[{sit:"변화를 거부할 때",bad:"그냥 해, 별거 아니잖아",good:"갑자기 바뀌어서 당황스럽구나. 이렇게 바뀌는 거야. 어떤 점이 걱정돼?"},{sit:"새로운 걸 시작하기 전에 많이 물어볼 때",bad:"해보면 알잖아, 그만 물어봐",good:"궁금한 게 있어? 다 말해봐. 엄마가 다 알려줄게."},{sit:"루틴이 깨졌을 때",bad:"오늘은 어쩔 수 없어, 그냥 해",good:"오늘 특별히 이렇게 바뀌었어. 내일은 다시 원래대로야."},{sit:"낯선 음식을 권유할 때",bad:"한 번만 먹어봐, 맛있어",good:"이번엔 조금만 맛보기로 해볼까? 싫으면 안 먹어도 돼."},{sit:"이별이 어려울 때",bad:"빨리 들어가, 울지마",good:"헤어지는 게 싫구나. 엄마도 보고 싶을 거야. ○시에 데리러 올게."}],
+    career:[{title:"이 기질이 빛나는 환경",body:"체계적이고 예측 가능한 환경."},{title:"추천 활동",body:"반복 연습이 필요한 악기, 수영, 체조."},{title:"피해야 할 것",body:"갑작스러운 변화나 즉흥적인 상황 강요."},{title:"장기적 강점",body:"일관성과 신뢰성. 규칙과 체계를 잘 따르는 분야에서 빛나요."}],
+    age:[{age:"유아 (만 3~5세)",txt:"취침 루틴, 식사 루틴을 최대한 일정하게 유지해주세요."},{age:"유치원·어린이집",txt:"선생님께 '이 아이는 변화 전 미리 알려주면 훨씬 잘 적응해요'라고 말씀해 주세요."},{age:"초등 저학년",txt:"학교 일과를 집에서 미리 연습해보면 적응이 빨라져요."}]},
+
+  sensitive:{icon:"⚡",name:"고감도 예민가형",sub:"높은 감각 민감성·직관·창의성·섬세함",
+    keywords:["감각 예민","직관적","창의적","섬세한"],
+    desc:"소음, 빛, 촉감에 매우 예민한 우리 아이, 까다롭다고 생각하셨나요? 이건 감각 처리 능력이 매우 섬세한 기질이에요. 세상을 더 풍부하게 감지하고 창의적으로 해석하는 능력이 있어요.",
+    empathy:["조금만 시끄러워도 귀를 막거나 힘들어해요","옷 재질이나 이음새에 정말 예민해요","밝은 조명이 불편하다고 해요","냄새에 매우 예민해서 밥을 잘 안 먹기도 해요","군중 속에 있으면 에너지가 빨리 소진돼요"],
+    guides:["감각 예민함을 '까다로움'이 아니라 '섬세함'으로 이해해주세요.","불편한 자극을 가능한 한 줄여주는 환경을 만들어주세요.","정서적 회복을 위한 조용한 시간을 매일 만들어주세요."],
+    friend:{like:"조용하고 차분한 소수의 친구",conflict:"자극이 많은 시끄러운 환경에서 쉽게 과부하가 걸려요",tip1:"놀이 후 회복 시간 충분히 주기",tip2:"과부하 신호 (짜증, 울음)를 예민함이 아닌 피로 신호로 이해하기",tip3:"소규모 조용한 활동 위주의 친구 관계 만들어주기"},
+    scripts:[{sit:"감각 불편을 호소할 때",bad:"그게 뭐가 불편해, 그냥 해",good:"불편하구나. 어떤 점이 제일 힘들어? 같이 해결해보자."},{sit:"시끄러운 곳에서 힘들어할 때",bad:"그냥 참아, 별거 아니야",good:"시끄러워서 힘들구나. 잠깐 조용한 곳으로 가서 쉬어볼까?"},{sit:"군중 속에서 지쳐할 때",bad:"왜 이렇게 빨리 지쳐?",good:"사람이 많아서 힘들었구나. 잠깐 쉬자."},{sit:"음식 먹기 힘들어할 때",bad:"편식하지 마, 먹어야 해",good:"이 음식이 어떤 점이 싫어? 맛? 냄새? 식감?"},{sit:"새 옷을 싫어할 때",bad:"괜찮아, 그냥 입어",good:"어디가 불편해? 태그 잘라줄까? 다른 걸로 바꿔볼까?"}],
+    career:[{title:"이 기질이 빛나는 환경",body:"감각을 활용할 수 있는 예술, 창작 분야."},{title:"추천 활동",body:"미술, 음악, 글쓰기, 요리."},{title:"피해야 할 것",body:"과도한 자극이 있는 환경에 장시간 노출."},{title:"장기적 강점",body:"예술가, 디자이너, 작가, 셰프. 감각의 예민함이 창의성으로 발휘돼요."}],
+    age:[{age:"유아 (만 3~5세)",txt:"감각적으로 편안한 환경을 만들어주세요. 옷 태그 제거, 부드러운 소재 선택 등."},{age:"유치원·어린이집",txt:"선생님께 '이 아이는 시끄러운 환경에서 쉽게 지쳐요'라고 알려주세요."},{age:"초등 저학년",txt:"학교 후 충분한 회복 시간을 주세요. 바로 학원에 보내는 건 과부하를 줄 수 있어요."}]},
+
+  grower:{icon:"🌱",name:"꾸준히 성장하는 인내가형",sub:"인내력·성실함·장기적사고·안정성",
+    keywords:["인내력 강한","성실한","장기적 사고","안정적"],
+    desc:"느리지만 꾸준히 하는 우리 아이, 가끔 답답하게 느껴지시나요? 이건 놀라운 인내력과 성실함이에요. 빠른 성과보다 꾸준한 노력을 더 가치있게 여기는 기질이에요.",
+    empathy:["빠르진 않지만 한번 시작하면 끝까지 해요","서두르는 법이 없어서 가끔 답답해요","쉽게 포기하지 않는 대신 유연하게 바꾸지도 않아요","꼼꼼하게 하려다 보니 시간이 오래 걸려요","결과보다 과정을 중요하게 여기는 것 같아요"],
+    guides:["속도보다 방향을 칭찬해주세요. '열심히 했네'가 '빨리 했네'보다 좋아요.","자기 페이스를 존중받을 때 더 잘 성장해요.","새로운 도전을 두려워할 수 있어요. 충분한 준비 시간을 주세요."],
+    friend:{like:"함께 장기 프로젝트를 할 수 있는 친구",conflict:"빨리 결정하거나 바꾸자는 친구와 갈등이 생길 수 있어요",tip1:"비슷한 관심사를 오래 함께 할 수 있는 친구 찾아주기",tip2:"속도 차이로 생기는 갈등 상황 미리 이야기해두기",tip3:"'천천히 해도 돼'라고 자주 말해주기"},
+    scripts:[{sit:"느리게 할 때",bad:"왜 이렇게 느려, 빨리 해",good:"천천히 꼼꼼하게 하고 있구나. 조금만 더 빠르게 하면 더 좋겠어."},{sit:"포기하지 않을 때",bad:"그만해, 됐어",good:"정말 끈질기게 하고 있네. 지금 어디까지 왔어?"},{sit:"새로운 걸 시작하기 싫어할 때",bad:"그냥 해봐, 해보면 돼",good:"처음이라 낯설지? 충분히 살펴보고 준비되면 시작하자."},{sit:"결과가 맘에 안 들 때",bad:"열심히 했잖아, 됐어",good:"많이 노력했는데 아쉽구나. 다음에 어떻게 하면 더 잘될 것 같아?"},{sit:"칭찬할 때",bad:"빨리 했네",good:"이렇게 끝까지 하다니 정말 대단해. 포기하지 않았네."}],
+    career:[{title:"이 기질이 빛나는 환경",body:"꾸준함과 성실함이 인정받는 환경."},{title:"추천 활동",body:"악기, 바둑, 수영, 수학. 꾸준한 연습이 필요한 활동."},{title:"피해야 할 것",body:"빠른 성과를 강요하는 환경."},{title:"장기적 강점",body:"어떤 분야에서든 꾸준히 성장하는 능력. 장기적으로 가장 높은 곳에 도달해요."}],
+    age:[{age:"유아 (만 3~5세)",txt:"서두르지 않아도 된다는 것을 알려주세요."},{age:"유치원·어린이집",txt:"과정을 인정해주는 선생님 환경이 중요해요."},{age:"초등 저학년",txt:"학습 속도보다 이해도를 중시해주세요. 충분히 이해하고 넘어가는 게 장기적으로 더 좋아요."}]},
+
+  balanced:{icon:"🌙",name:"균형잡힌 조화가형",sub:"균형·적응력·협력·안정성",
+    keywords:["균형잡힌","적응력높은","협력적","안정적"],
+    desc:"큰 기복 없이 차분한 우리 아이, 걱정이 적어서 이게 맞나 싶으실 수도 있어요. 특정 기질이 두드러지지 않아 다양한 환경에 두루 적응하고 협력을 잘하는 기질이에요.",
+    empathy:["어디서든 잘 적응하고 큰 말썽 없이 잘 지내요","특별히 좋아하는 게 딱히 없어 뭘 시켜줘야 할지 모르겠어요","힘들어도 말을 잘 안 해서 나중에 알게 돼요","먼저 나서서 뭔가 하려 하지 않아요","다들 '착하다'고 하는데 속마음을 잘 모르겠어요"],
+    guides:["조용하다고 괜찮겠지 하지 말고, 작은 감정 신호도 놓치지 않고 물어봐 주세요.","가끔은 새로운 도전도 같이 시도해 보세요.","'네 생각은 어때?'를 자주 물어서 자기 의견을 말하는 연습을 해주세요."],
+    friend:{like:"갈등 없이 편안하게 지낼 수 있는 친구",conflict:"자기 의견을 말하지 않아서 친구가 오해하거나 이용당하는 경우가 생길 수 있어요",tip1:"매일 '오늘 친구랑 어떻게 지냈어?'를 물어봐 주기",tip2:"싫을 때 싫다고 표현하는 연습을 집에서 먼저 해주기",tip3:"관심사를 발견하고 비슷한 또래와 만날 기회 만들기"},
+    scripts:[{sit:"속마음을 안 말할 때",bad:"왜 말을 안 해?",good:"뭔가 힘든 거 있어? 없어도 괜찮아. 있으면 언제든 말해줘."},{sit:"뭘 좋아하는지 모를 때",bad:"(무관심하게 지나칠 때)",good:"이거 해본 적 있어? 어떤 것 같아?"},{sit:"의견을 물어볼 때",bad:"(대신 결정해줄 때)",good:"네 생각은 어때? 네가 결정해봐."},{sit:"칭찬할 때",bad:"(칭찬을 잊어버릴 때)",good:"오늘 스스로 ○○ 했네. 대단하다, 잘했어!"},{sit:"도전을 격려할 때",bad:"(무관심하게 지나칠 때)",good:"이거 해보고 싶어? 엄마도 같이 해볼게."}],
+    career:[{title:"이 기질이 빛나는 환경",body:"다양한 역할을 고루 경험할 수 있는 환경."},{title:"추천 활동",body:"다양한 체험 활동을 골고루 시도해보세요."},{title:"피해야 할 것",body:"'넌 뭘 잘해?' 같은 압박. 아직 찾아가는 중이에요."},{title:"장기적 강점",body:"다양한 환경에 적응하고 협력하는 능력."}],
+    age:[{age:"유아 (만 3~5세)",txt:"규칙적인 생활 패턴에 잘 적응해요."},{age:"유치원·어린이집",txt:"다양한 체험 활동을 통해 관심사를 발견할 수 있도록 도와주세요."},{age:"초등 저학년",txt:"자기 표현 방법을 키워주세요. 일기나 대화를 통해 속마음을 표현하는 습관을 만들어 주세요."}]}
 };
 
-/* ══ 채점 & 유형 분류 ══ */
 const DIM_NAMES=["활동수준","규칙성","접근/회피","적응성","지속성","산만성","기분","반응강도","반응역치"];
 const DIM_COLORS=["#E8927A","#C4935A","#8BAF98","#9B7EC8","#5B9BD5","#D4776A","#6BAF8A","#E07045","#A07BC0"];
 
-let cur=0, answers=[], currentType=null, isPaid=false;
+let cur=0, curP=0, answers=[], answersP=[], currentType=null, isPaid=false;
 
 function getDimScores(){
   const dims=[0,0,0,0,0,0,0,0,0];
-  for(let i=0;i<18;i++){const dimIdx=Math.floor(i/2);dims[dimIdx]+=(answers[i]||2);}
+  for(let i=0;i<18;i++){const d=Math.floor(i/2);dims[d]+=(answers[i]||2);}
   return dims;
 }
 
-function classifyType(dims){
-  const act=dims[0],ap=dims[2],per=dims[4],dis=dims[5],int_=dims[7],thr=dims[8],mood=dims[6];
-  if(act>=6&&ap>=6&&per<=4)return 'explorer';
-  if(ap<=4&&thr>=6)return 'thinker';
+function classifyType(dims,ap){
+  const act=dims[0],reg=dims[1],app=dims[2],adp=dims[3],per=dims[4],dis=dims[5],mood=dims[6],int_=dims[7],thr=dims[8];
+  // 추가 문항 점수 반영
+  const social=(ap[0]||2)+(ap[1]||2);
+  const stress=(ap[2]||2)+(ap[3]||2);
+  const persist_=(ap[14]||2);
+  // 분류 로직
+  if(thr>=6&&int_>=6&&mood<=4)return 'sensitive';
+  if(per>=7&&dis<=3)return 'focused';
+  if(act>=6&&app>=6&&per>=6&&int_>=6)return 'leader';
+  if(act>=6&&app>=6&&per<=4)return 'explorer';
+  if(app<=4&&thr>=6)return 'thinker';
   if(int_>=6&&thr>=6&&mood<=4)return 'empath';
-  if(act>=6&&ap>=6&&per>=6&&int_>=6)return 'leader';
+  if(reg>=6&&adp<=4)return 'guardian';
+  if(adp>=6&&social>=6)return 'flexible';
+  if(per>=6&&mood>=6)return 'grower';
   return 'balanced';
+}
+
+function renderBars(containerId,dims,prefix){
+  const el=document.getElementById(containerId);if(!el)return;
+  el.innerHTML='';
+  dims.forEach((v,i)=>{
+    const pct=Math.round((v/8)*100);
+    el.innerHTML+=`<div class="dim-row"><div class="dim-nm">${DIM_NAMES[i]}</div><div class="dim-track"><div class="dim-fill" id="${prefix}${i}" style="background:${DIM_COLORS[i]}"></div></div><div class="dim-sc">${pct}</div></div>`;
+  });
+  setTimeout(()=>dims.forEach((v,i)=>{const e=document.getElementById(prefix+i);if(e)e.style.width=Math.round((v/8)*100)+'%';}),200);
 }
 
 function renderResult(){
   const dims=getDimScores();
-  const typeKey=classifyType(dims);
+  const typeKey=classifyType(dims,answersP);
   currentType=typeKey;
   const T=TYPES[typeKey];
   document.getElementById('r-icon').textContent=T.icon;
   document.getElementById('r-name').textContent=T.name;
-  const kwEl=document.getElementById('r-keywords');
-  kwEl.innerHTML=T.keywords.map(k=>`<span class="kw-chip">${k}</span>`).join('');
+  document.getElementById('r-keywords').innerHTML=T.keywords.map(k=>`<span class="kw-chip">${k}</span>`).join('');
   document.getElementById('r-desc').textContent=T.desc;
-  const barEl=document.getElementById('dim-bars');barEl.innerHTML='';
-  dims.forEach((v,i)=>{const pct=Math.round((v/8)*100);barEl.innerHTML+=`<div class="dim-row"><div class="dim-nm">${DIM_NAMES[i]}</div><div class="dim-track"><div class="dim-fill" id="df${i}" style="background:${DIM_COLORS[i]}"></div></div><div class="dim-sc">${pct}</div></div>`;});
-  setTimeout(()=>{dims.forEach((v,i)=>{const e=document.getElementById('df'+i);if(e)e.style.width=Math.round((v/8)*100)+'%';});},200);
-  const erEl=document.getElementById('er-items');
-  erEl.innerHTML=T.empathy.slice(0,3).map(e=>`<div class="er-item"><div class="er-check">😮‍💨</div><div>${e}</div></div>`).join('');
-  const pgEl=document.getElementById('pg-items');
-  pgEl.innerHTML=T.guides.map(g=>`<div class="pg-item"><div class="pg-dot">·</div><div>${g}</div></div>`).join('');
+  renderBars('dim-bars',dims,'df');
+  document.getElementById('er-items').innerHTML=T.empathy.slice(0,3).map(e=>`<div class="er-item"><div class="er-check">😮‍💨</div><div>${e}</div></div>`).join('');
+  document.getElementById('pg-items').innerHTML=T.guides.map(g=>`<div class="pg-item"><div class="pg-dot">·</div><div>${g}</div></div>`).join('');
   goTo('result');
 }
 
 function renderPaid(){
   const dims=getDimScores();
-  const T=TYPES[currentType];
-  document.getElementById('paid-title').textContent=`우리 아이는 ${T.name}이에요`;
+  const typeKey=classifyType(dims,answersP);
+  currentType=typeKey;
+  const T=TYPES[typeKey];
   document.getElementById('paid-icon').textContent=T.icon;
+  document.getElementById('paid-name').textContent=T.name;
+  document.getElementById('paid-sub').textContent=T.sub;
   document.getElementById('paid-keywords').innerHTML=T.keywords.map(k=>`<span class="kw-chip">${k}</span>`).join('');
   document.getElementById('paid-details').innerHTML=`<div class="detail-item"><strong>이 기질의 핵심</strong>${T.desc}</div><div class="detail-item"><strong>강점</strong>${T.career[0].body}</div><div class="detail-item"><strong>주의할 점</strong>${T.career[2].body}</div>`;
-  const pBarEl=document.getElementById('paid-dim-bars');pBarEl.innerHTML='';
-  dims.forEach((v,i)=>{const pct=Math.round((v/8)*100);pBarEl.innerHTML+=`<div class="dim-row"><div class="dim-nm">${DIM_NAMES[i]}</div><div class="dim-track"><div class="dim-fill" id="pdf${i}" style="background:${DIM_COLORS[i]}"></div></div><div class="dim-sc">${pct}</div></div>`;});
-  setTimeout(()=>{dims.forEach((v,i)=>{const e=document.getElementById('pdf'+i);if(e)e.style.width=Math.round((v/8)*100)+'%';});},200);
+  renderBars('paid-dim-bars',dims,'pdf');
   document.getElementById('paid-empathy').innerHTML=T.empathy.map(e=>`<div class="er-item"><div class="er-check">😮‍💨</div><div>${e}</div></div>`).join('');
   document.getElementById('paid-friend').innerHTML=`
     <div class="friend-pattern"><div class="fp-type">어떤 친구와 잘 맞아요</div><div class="fp-txt">${T.friend.like}</div></div>
     <div class="friend-pattern"><div class="fp-type">이런 상황에서 친구와 부딪혀요</div><div class="fp-txt">${T.friend.conflict}</div></div>
-    <div class="friend-pattern"><div class="fp-type">💡 친구관계 도움말 1</div><div class="fp-txt">${T.friend.tip1}</div></div>
-    <div class="friend-pattern"><div class="fp-type">💡 친구관계 도움말 2</div><div class="fp-txt">${T.friend.tip2}</div></div>
-    <div class="friend-pattern"><div class="fp-type">💡 친구관계 도움말 3</div><div class="fp-txt">${T.friend.tip3}</div></div>`;
-  document.getElementById('paid-scripts').innerHTML=T.scripts.map(s=>`<div class="script-card"><div class="sc-situation">${s.sit}</div><div class="sc-bad"><span>❌ 흔히 이렇게 말하게 되는데…</span> "${s.bad}"</div><div class="sc-good"><span>✅ 이렇게 말해보세요</span>"${s.good}"</div></div>`).join('');
+    <div class="friend-pattern"><div class="fp-type">💡 도움말 1</div><div class="fp-txt">${T.friend.tip1}</div></div>
+    <div class="friend-pattern"><div class="fp-type">💡 도움말 2</div><div class="fp-txt">${T.friend.tip2}</div></div>
+    <div class="friend-pattern"><div class="fp-type">💡 도움말 3</div><div class="fp-txt">${T.friend.tip3}</div></div>`;
+  document.getElementById('paid-scripts').innerHTML=T.scripts.map(s=>`<div class="script-card"><div class="sc-situation">${s.sit}</div><div class="sc-bad"><span>❌ 흔히 이렇게 말하게 되는데…</span>"${s.bad}"</div><div class="sc-good"><span>✅ 이렇게 말해보세요</span>"${s.good}"</div></div>`).join('');
   document.getElementById('paid-career').innerHTML=T.career.map(c=>`<div class="career-item"><strong>${c.title}</strong>${c.body}</div>`).join('');
   document.getElementById('paid-age').innerHTML=T.age.map(a=>`<div class="age-card"><div class="age-tag">${a.age}</div><div class="age-txt">${a.txt}</div></div>`).join('');
   goTo('paid');
 }
 
+/* 무료 18문항 */
 function renderQ(){
   const q=QS[cur];
   document.getElementById('q-dim-label').textContent=q.dim;
-  document.getElementById('q-count-label').textContent=(cur+1)+' / '+QS.length;
-  document.getElementById('q-prog-fill').style.width=Math.round(((cur+1)/QS.length)*100)+'%';
-  document.getElementById('pbar').style.width=Math.round(((cur+1)/QS.length)*100)+'%';
+  document.getElementById('q-count-label').textContent=(cur+1)+' / 18';
+  document.getElementById('q-prog-fill').style.width=Math.round(((cur+1)/18)*100)+'%';
+  document.getElementById('pbar').style.width=Math.round(((cur+1)/18)*100)+'%';
   document.getElementById('q-num').textContent='Q'+(cur+1);
   document.getElementById('q-txt').textContent=q.txt;
   if(q.tip)document.getElementById('q-tip-txt').textContent=q.tip;
   const c=document.getElementById('q-opts');c.innerHTML='';
-  q.opts.forEach((o,i)=>{const b=document.createElement('button');b.className='q-opt'+(answers[cur]===q.scores[i]?' sel':'');b.textContent=o;b.onclick=()=>{answers[cur]=q.scores[i];renderQ();};c.appendChild(b);});
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='q-opt'+(answers[cur]===q.scores[i]?' sel':'');
+    b.textContent=o;
+    b.onclick=()=>{answers[cur]=q.scores[i];renderQ();};
+    c.appendChild(b);
+  });
   document.getElementById('btn-prev').style.visibility=cur===0?'hidden':'visible';
-  const n=document.getElementById('btn-next');n.disabled=answers[cur]===undefined;n.textContent=cur===QS.length-1?'결과 볼게요 →':'다음 →';
+  const n=document.getElementById('btn-next');
+  n.disabled=answers[cur]===undefined;
+  n.textContent=cur===17?'완료 →':'다음 →';
 }
 
 function nextQ(){
   if(answers[cur]===undefined)return;
-  if(cur<QS.length-1){cur++;renderQ();}
+  if(cur<17){cur++;renderQ();}
   else{
-    goTo('loading');
-    setTimeout(()=>{
-      if(isPaid) renderPaid();
-      else renderResult();
-    },2600);
+    if(isPaid){
+      // 유료: 심화 문항으로
+      document.getElementById('loading-txt').textContent='잠시 후 심화 분석을 시작해요';
+      document.getElementById('loading-sub').textContent='기본 18문항 분석 완료!\n추가 15문항으로 더 세밀하게 분석할게요 ☕';
+      goTo('loading');
+      setTimeout(()=>{ curP=0; answersP=[]; renderQP(); goTo('test-paid'); },2000);
+    } else {
+      document.getElementById('loading-txt').textContent='우리 아이 기질을 분석하고 있어요';
+      document.getElementById('loading-sub').textContent='18가지 반응 패턴을 종합하고 있어요.\n잠깐만 기다려 주세요 😊';
+      goTo('loading');
+      setTimeout(()=>renderResult(),2600);
+    }
   }
 }
 function prevQ(){if(cur>0){cur--;renderQ();}}
-function startPay(){isPaid=false;['chk1','chk2','chk3'].forEach(id=>document.getElementById(id).checked=false);goTo('pay');}
+
+/* 유료 심화 15문항 */
+function renderQP(){
+  const q=QSP[curP];
+  document.getElementById('qp-dim-label').textContent=q.dim;
+  document.getElementById('qp-count-label').textContent=(curP+1)+' / 15';
+  document.getElementById('qp-prog-fill').style.width=Math.round(((curP+1)/15)*100)+'%';
+  document.getElementById('pbar').style.width=Math.round(((curP+1)/15)*100)+'%';
+  document.getElementById('qp-num').textContent='Q'+(curP+1);
+  document.getElementById('qp-txt').textContent=q.txt;
+  if(q.tip)document.getElementById('qp-tip-txt').textContent=q.tip;
+  const c=document.getElementById('qp-opts');c.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='q-opt'+(answersP[curP]===i?' sel':'');
+    b.textContent=o;
+    b.onclick=()=>{answersP[curP]=i;renderQP();};
+    c.appendChild(b);
+  });
+  document.getElementById('btn-prev-p').style.visibility=curP===0?'hidden':'visible';
+  const n=document.getElementById('btn-next-p');
+  n.disabled=answersP[curP]===undefined;
+  n.textContent=curP===14?'전체 결과 보기 →':'다음 →';
+}
+
+function nextQP(){
+  if(answersP[curP]===undefined)return;
+  if(curP<14){curP++;renderQP();}
+  else{
+    document.getElementById('loading-txt').textContent='33문항 전체를 종합 분석하고 있어요 ☕';
+    document.getElementById('loading-sub').textContent='10가지 기질 유형 중 우리 아이의 유형을 정밀 분류하고 있어요.\n잠깐만 기다려 주세요 😊';
+    goTo('loading');
+    setTimeout(()=>renderPaid(),3000);
+  }
+}
+function prevQP(){if(curP>0){curP--;renderQP();}}
+
+function startPay(){
+  isPaid=true;
+  goTo('pay');
+}
+
 function completePay(){
-  // 결제 완료 후 설문으로 이동 (설문 완료 후 유료 결과 표시)
-  isPaid = true;
-  cur = 0;
-  answers = [];
+  // 무료 체험 완료 후 결제 시 심화 문항으로
+  // 랜딩에서 바로 결제 시 기본 문항부터
+  cur=0; answers=[];
+  curP=0; answersP=[];
   goTo('test');
 }
+
 function selM(m){['kakao','toss','card','naver'].forEach(id=>{document.getElementById('m-'+id).classList.toggle('sel',id===m);});}
-function chkAll(){ /* 데모: 항상 활성 */ }
-const PM={land:'page-land',test:'page-test',loading:'page-loading',result:'page-result',pay:'page-pay',paid:'page-paid'};
+
+const PM={land:'page-land',test:'page-test','test-paid':'page-test-paid',loading:'page-loading',result:'page-result',pay:'page-pay',paid:'page-paid'};
 function goTo(key){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById(PM[key]).classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
   if(key==='test')renderQ();
-  if(!['test','loading'].includes(key))document.getElementById('pbar').style.width='0%';
+  if(key==='test-paid')renderQP();
+  if(!['test','test-paid','loading'].includes(key))document.getElementById('pbar').style.width='0%';
 }
 </script>
 </body>
