@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>우리 아이 기질 이야기 — 커피 한 잔 하면서 얘기해요</title>
+
+<!-- SNS / 카카오 공유 대표 이미지 -->
+<meta property="og:title" content="혹시 우리 아이, 문제가 있는 게 아니라 기질인 걸까요?">
+<meta property="og:description" content="아이가 왜 이러는지 몰라서 자책한 적 있으세요? 커피 한 잔 값으로 우리 아이 기질 이야기 같이 나눠봐요 ☕">
+<meta property="og:image" content="og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="og.jpg">
+<meta name="description" content="아이가 왜 이러는지 몰라서 자책한 적 있으세요? 커피 한 잔 값으로 우리 아이 기질 이야기 같이 나눠봐요 ☕">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FAF5EE;--latte:#E8D9C4;--caramel:#C4935A;
+  --espresso:#3D2314;--mocha:#6B3F22;--foam:#FDF9F4;
+  --muted:#8C7260;--warm:#A0714F;--peach:#E8927A;--sage:#8BAF98;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans KR',sans-serif;font-weight:300;background:var(--cream);color:var(--espresso);min-height:100vh;line-height:1.75;}
+.page{display:none;}.page.active{display:block;animation:fadeUp .4s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+
+/* ── 헤더 ── */
+header{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:var(--foam);border-bottom:1px solid var(--latte);position:sticky;top:0;z-index:100;}
+.logo{display:flex;align-items:center;gap:8px;cursor:pointer;}
+.logo-text{font-family:'Nanum Myeongjo',serif;font-size:14px;color:var(--espresso);line-height:1.2;}
+.logo-text small{display:block;font-family:'Noto Sans KR';font-size:10px;font-weight:300;color:var(--muted);letter-spacing:.05em;}
+.btn-outline{font-size:12px;color:var(--peach);background:transparent;border:1px solid var(--peach);border-radius:20px;padding:7px 14px;cursor:pointer;transition:all .2s;white-space:nowrap;font-family:'Noto Sans KR';}
+.btn-outline:hover{background:var(--peach);color:#fff;}
+.prog{height:3px;background:var(--latte);}.prog-fill{height:100%;background:var(--caramel);transition:width .5s ease;}
+
+/* ══ 모바일 히어로 ══ */
+.hero-mobile{display:block;}
+.hero-img-wrap{position:relative;width:100%;overflow:hidden;background:#EDE0CE;}
+.hero-img-wrap img{width:100%;height:auto;display:block;object-fit:cover;object-position:center 10%;}
+/* 이미지 하단 자연스러운 페이드 */
+.hero-img-wrap::after{content:"";position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(to bottom,transparent,var(--cream));}
+
+.hero-text{padding:20px 22px 32px;}
+
+/* 훅업 배너 */
+.hook-banner{
+  background:var(--espresso);
+  border-radius:12px;
+  padding:18px 18px;
+  margin-bottom:20px;
+  text-align:center;
+}
+.hook-banner p{font-size:15px;color:#fff;line-height:1.75;word-break:keep-all;font-weight:300;}
+.hook-banner p strong{color:#F2C4A0;font-weight:500;display:block;font-size:17px;margin-bottom:4px;font-family:'Nanum Myeongjo',serif;}
+.hook-banner small{font-size:11px;color:rgba(255,255,255,.55);display:block;margin-top:8px;}
+
+.hero-eyebrow{font-size:11px;color:var(--caramel);letter-spacing:.06em;margin-bottom:12px;}
+.hero-h1{font-family:'Nanum Myeongjo',serif;font-size:24px;font-weight:700;line-height:1.55;color:var(--espresso);margin-bottom:14px;word-break:keep-all;}
+.hero-h1 em{color:var(--caramel);font-style:normal;}
+.hero-desc{font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:20px;word-break:keep-all;}
+
+/* 공감 포인트 체크리스트 */
+.empathy-list{background:#fff;border:1px solid var(--latte);border-radius:14px;padding:16px 18px;margin-bottom:20px;}
+.empathy-title{font-size:12px;color:var(--caramel);letter-spacing:.06em;margin-bottom:12px;}
+.empathy-item{display:flex;align-items:flex-start;gap:10px;padding:7px 0;border-bottom:1px solid var(--latte);font-size:13.5px;color:var(--espresso);line-height:1.5;word-break:keep-all;}
+.empathy-item:last-child{border-bottom:none;padding-bottom:0;}
+.emp-check{font-size:14px;flex-shrink:0;margin-top:1px;}
+
+/* 특징 */
+.feat-list{display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--latte);border-radius:14px;overflow:hidden;margin-bottom:20px;}
+.feat-row{display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid var(--latte);font-size:14px;color:var(--espresso);}
+.feat-row:last-child{border-bottom:none;}
+.feat-ic{font-size:18px;flex-shrink:0;}
+
+/* 후기 슬라이더 */
+.slider-wrap{background:#fff;border:1px solid var(--latte);border-radius:16px;overflow:hidden;margin-bottom:22px;}
+.slider-track-outer{overflow:hidden;}
+.slider-track{display:flex;transition:transform .4s ease;}
+.slide{min-width:100%;padding:18px;display:flex;gap:12px;align-items:flex-start;}
+.slide-av{width:36px;height:36px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,#E8C99A,#C4935A);display:flex;align-items:center;justify-content:center;font-size:16px;}
+.slide-txt{font-size:13.5px;color:var(--mocha);line-height:1.75;word-break:keep-all;}
+.slide-who{font-size:11px;color:var(--muted);margin-top:5px;}
+.slider-dots{display:flex;justify-content:center;gap:6px;padding:10px 0 14px;}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--latte);cursor:pointer;transition:all .25s;}
+.dot.on{background:var(--peach);width:18px;border-radius:3px;}
+
+/* 버튼 */
+.btn-main{width:100%;padding:17px;font-family:'Noto Sans KR';font-size:16px;font-weight:500;background:var(--peach);color:#fff;border:none;border-radius:30px;cursor:pointer;letter-spacing:.04em;transition:all .2s;box-shadow:0 4px 18px rgba(232,146,122,.35);}
+.btn-main:active{opacity:.85;transform:scale(.98);}
+.btn-sub{display:block;width:100%;margin-top:12px;font-size:13px;color:var(--caramel);background:none;border:none;cursor:pointer;text-decoration:underline;text-underline-offset:3px;font-family:'Noto Sans KR';}
+
+/* ══ 데스크탑 히어로 ══ */
+.hero-desktop{display:none;position:relative;min-height:calc(100vh - 55px);max-height:720px;overflow:hidden;}
+.hero-desktop img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;}
+.hero-desktop::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to right,rgba(61,35,20,0) 0%,rgba(61,35,20,.05) 38%,rgba(61,35,20,.78) 56%,rgba(61,35,20,.92) 100%);}
+.hero-d-overlay{position:relative;z-index:2;margin-left:auto;width:46%;padding:56px 48px 56px 36px;display:flex;flex-direction:column;justify-content:center;}
+.hero-d-hook{background:rgba(250,245,238,.12);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:18px 20px;margin-bottom:20px;}
+.hero-d-hook p{font-size:14px;color:rgba(255,255,255,.9);line-height:1.8;word-break:keep-all;}
+.hero-d-hook strong{color:#F2C4A0;font-family:'Nanum Myeongjo',serif;font-size:17px;display:block;margin-bottom:4px;}
+.hero-d-eyebrow{font-size:12px;color:rgba(255,255,255,.8);margin-bottom:14px;letter-spacing:.04em;}
+.hero-d-h1{font-family:'Nanum Myeongjo',serif;font-size:32px;font-weight:700;line-height:1.5;color:#fff;margin-bottom:12px;word-break:keep-all;text-shadow:0 2px 12px rgba(61,35,20,.4);}
+.hero-d-h1 em{color:#F2C4A0;font-style:normal;}
+.hero-d-feats{border-radius:14px;overflow:hidden;backdrop-filter:blur(10px);background:rgba(250,245,238,.13);border:1px solid rgba(255,255,255,.22);margin-bottom:16px;}
+.hero-d-feat{display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.1);font-size:13px;color:rgba(255,255,255,.9);}
+.hero-d-feat:last-child{border-bottom:none;}
+.hero-d-slider{background:rgba(255,255,255,.14);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.22);border-radius:16px;overflow:hidden;margin-bottom:16px;}
+.slide-txt-d{font-size:13px;color:rgba(255,255,255,.88);line-height:1.7;word-break:keep-all;}
+.slide-who-d{font-size:11px;color:rgba(255,255,255,.55);margin-top:5px;}
+.dot-d{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:all .25s;}
+.dot-d.on{background:#fff;width:18px;border-radius:3px;}
+.btn-d-main{font-family:'Noto Sans KR';font-size:14px;font-weight:500;background:var(--peach);color:#fff;border:none;border-radius:28px;padding:14px 32px;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:8px;box-shadow:0 4px 18px rgba(232,146,122,.4);}
+.btn-d-main:hover{background:#D4785E;transform:translateY(-1px);}
+.btn-d-sub{display:block;margin-top:10px;font-size:12px;color:rgba(255,255,255,.6);background:none;border:none;cursor:pointer;text-decoration:underline;text-underline-offset:3px;font-family:'Noto Sans KR';}
+
+/* ══ 섹션 ══ */
+.section{max-width:800px;margin:0 auto;padding:52px 22px;}
+.sec-tag{display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.14em;color:var(--caramel);margin-bottom:20px;}
+.sec-tag::after{content:"";flex:1;height:1px;background:var(--latte);}
+.sec-h2{font-family:'Nanum Myeongjo',serif;font-size:22px;font-weight:700;color:var(--espresso);margin-bottom:8px;word-break:keep-all;}
+.sec-sub{font-size:13.5px;color:var(--muted);line-height:1.8;margin-bottom:22px;word-break:keep-all;}
+.talk-cards{display:flex;flex-direction:column;gap:10px;}
+.talk-card{background:#fff;border:1px solid var(--latte);border-radius:14px;padding:18px;display:flex;gap:14px;align-items:flex-start;}
+.tc-icon{font-size:22px;flex-shrink:0;margin-top:2px;}
+.tc-h3{font-family:'Nanum Myeongjo',serif;font-size:15px;color:var(--espresso);margin-bottom:5px;}
+.tc-p{font-size:13px;color:var(--muted);line-height:1.75;word-break:keep-all;}
+
+/* 가격 */
+.price-stack{display:flex;flex-direction:column;gap:14px;margin-bottom:18px;}
+.p-card{background:var(--foam);border:1px solid var(--latte);border-radius:18px;padding:24px 20px;position:relative;cursor:pointer;}
+.p-card.pick{border:2px solid var(--peach);background:#fff;}
+.pick-badge{position:absolute;top:-11px;left:22px;background:var(--peach);color:#fff;font-size:10px;letter-spacing:.08em;padding:3px 14px;border-radius:20px;white-space:nowrap;}
+.p-cup{font-size:26px;margin-bottom:8px;}
+.p-name{font-size:11px;letter-spacing:.1em;color:var(--caramel);margin-bottom:5px;}
+.p-price{font-family:'Nanum Myeongjo',serif;font-size:28px;color:var(--espresso);margin-bottom:2px;}
+.p-price sub{font-family:'Noto Sans KR';font-size:13px;font-weight:300;color:var(--muted);}
+.p-like{font-size:11px;color:var(--sage);margin-bottom:12px;}
+.p-list{list-style:none;margin-bottom:16px;}
+.p-list li{font-size:13px;color:var(--muted);padding:4px 0;display:flex;gap:7px;line-height:1.5;}
+.p-list li::before{content:"✓";color:var(--peach);flex-shrink:0;}
+.btn-p{width:100%;padding:13px;font-family:'Noto Sans KR';font-size:14px;font-weight:400;border-radius:24px;cursor:pointer;transition:all .2s;}
+.btn-p.dark{background:var(--espresso);color:var(--cream);border:none;}
+.btn-p.lite{background:transparent;border:1px solid var(--latte);color:var(--warm);}
+.legal-box{background:rgba(196,147,90,.06);border:1px solid var(--latte);border-radius:12px;padding:16px 18px;font-size:12px;color:var(--muted);line-height:1.85;word-break:keep-all;}
+.legal-box strong{color:var(--warm);font-weight:400;}
+
+/* 검사 */
+.test-wrap{max-width:540px;margin:0 auto;padding:32px 20px 56px;}
+.q-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:16px;}
+.q-step{font-size:11px;letter-spacing:.1em;color:var(--caramel);}
+.nbr-tip{background:#fff;border:1px solid var(--latte);border-radius:14px 14px 14px 4px;padding:13px 16px;margin-bottom:14px;display:flex;gap:9px;align-items:flex-start;}
+.nbr-av{width:28px;height:28px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,#E8C99A,#C4935A);display:flex;align-items:center;justify-content:center;font-size:14px;}
+.nbr-tip p{font-size:13px;color:var(--mocha);line-height:1.7;word-break:keep-all;}
+.q-card{background:#fff;border:1px solid var(--latte);border-radius:16px;padding:24px 20px;margin-bottom:14px;box-shadow:0 2px 10px rgba(107,63,34,.06);}
+.q-dim{font-size:10px;letter-spacing:.1em;color:var(--caramel);margin-bottom:8px;}
+.q-txt{font-family:'Nanum Myeongjo',serif;font-size:17px;line-height:1.7;color:var(--espresso);margin-bottom:20px;word-break:keep-all;}
+.q-opts{display:flex;flex-direction:column;gap:9px;}
+.q-opt{padding:14px 16px;border:1px solid var(--latte);border-radius:12px;font-size:14px;font-weight:300;color:var(--mocha);background:var(--cream);cursor:pointer;text-align:left;transition:all .18s;line-height:1.5;word-break:keep-all;}
+.q-opt.sel{border-color:var(--peach);background:var(--peach);color:#fff;}
+.q-nav{display:flex;justify-content:space-between;}
+.btn-qprev{font-size:13px;color:var(--muted);background:none;border:1px solid var(--latte);border-radius:22px;padding:10px 18px;cursor:pointer;font-family:'Noto Sans KR';}
+.btn-qnext{font-size:14px;font-weight:400;background:var(--espresso);color:var(--cream);border:none;border-radius:22px;padding:12px 24px;cursor:pointer;font-family:'Noto Sans KR';transition:all .2s;}
+.btn-qnext:disabled{opacity:.35;cursor:not-allowed;}
+
+/* 결과 */
+.result-wrap{max-width:600px;margin:0 auto;padding:32px 20px 64px;}
+.r-card{background:#fff;border:1px solid var(--latte);border-radius:18px;padding:28px 20px;text-align:center;margin-bottom:12px;}
+.r-badge{display:inline-block;font-size:10px;letter-spacing:.12em;color:var(--caramel);border:1px solid var(--latte);border-radius:20px;padding:4px 12px;margin-bottom:12px;}
+.r-icon{font-size:36px;margin-bottom:8px;}
+.r-name{font-family:'Nanum Myeongjo',serif;font-size:19px;color:var(--espresso);margin-bottom:10px;line-height:1.45;}
+.r-desc{font-size:13.5px;color:var(--muted);line-height:1.85;word-break:keep-all;}
+.r-sec{background:#fff;border:1px solid var(--latte);border-radius:14px;padding:20px;margin-bottom:10px;}
+.r-sec-tag{font-size:10px;letter-spacing:.12em;color:var(--caramel);margin-bottom:16px;}
+.dim-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}.dim-row:last-child{margin-bottom:0;}
+.dim-nm{font-size:12px;color:var(--muted);width:80px;flex-shrink:0;}
+.dim-track{flex:1;height:6px;background:var(--latte);border-radius:3px;overflow:hidden;}
+.dim-fill{height:100%;background:var(--peach);border-radius:3px;width:0;transition:width 1.4s cubic-bezier(.22,.61,.36,1);}
+.dim-sc{font-size:12px;color:var(--warm);width:26px;text-align:right;flex-shrink:0;}
+.nbr-result{background:var(--cream);border:1px solid var(--latte);border-radius:14px;padding:18px;margin-bottom:10px;}
+.nbr-hd{display:flex;align-items:center;gap:9px;margin-bottom:12px;}
+.nbr-av2{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#E8C99A,#C4935A);display:flex;align-items:center;justify-content:center;font-size:17px;}
+.nbr-nm strong{display:block;font-size:12px;font-weight:500;color:var(--espresso);}
+.nbr-nm span{font-size:11px;color:var(--muted);}
+.nbr-bubble{background:#fff;border:1px solid var(--latte);border-radius:4px 14px 14px 14px;padding:14px 16px;}
+.guide-row{display:flex;gap:9px;padding:9px 0;border-bottom:1px dashed var(--latte);font-size:13px;color:var(--mocha);line-height:1.7;word-break:keep-all;}
+.guide-row:last-child{border-bottom:none;padding-bottom:0;}
+.gdot{color:var(--peach);flex-shrink:0;}
+.cta-dark{background:var(--espresso);border-radius:16px;padding:24px;text-align:center;margin-bottom:10px;}
+.cta-dark p{font-size:13px;color:rgba(255,255,255,.75);margin-bottom:14px;line-height:1.8;word-break:keep-all;}
+.cta-dark p strong{color:#fff;font-weight:500;}
+.btn-cta-w{font-family:'Noto Sans KR';font-size:14px;font-weight:500;background:var(--peach);color:#fff;border:none;border-radius:22px;padding:14px 28px;cursor:pointer;}
+.r-disc{font-size:11px;color:var(--muted);line-height:1.85;text-align:center;padding-top:16px;word-break:keep-all;}
+
+/* 결제 */
+.pay-wrap{max-width:440px;margin:0 auto;padding:32px 20px 64px;}
+.pay-h{font-family:'Nanum Myeongjo',serif;font-size:20px;color:var(--espresso);margin-bottom:6px;}
+.pay-sub{font-size:13px;color:var(--muted);margin-bottom:22px;line-height:1.65;word-break:keep-all;}
+.pay-planbox{background:#fff;border:1px solid var(--latte);border-radius:12px;padding:16px 18px;margin-bottom:18px;display:flex;justify-content:space-between;align-items:center;}
+.pay-pname{font-size:13px;color:var(--mocha);}
+.pay-pprice{font-family:'Nanum Myeongjo',serif;font-size:20px;color:var(--espresso);}
+.pay-pcmp{font-size:11px;color:var(--caramel);display:block;margin-top:2px;text-align:right;}
+.pay-sl{font-size:11px;letter-spacing:.1em;color:var(--caramel);margin-bottom:10px;}
+.pay-methods{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px;}
+.pay-m{padding:14px 10px;border:1px solid var(--latte);border-radius:10px;text-align:center;cursor:pointer;background:var(--foam);transition:all .18s;}
+.pay-m.sel{border-color:var(--peach);background:rgba(232,146,122,.08);}
+.pm-icon{width:28px;height:28px;border-radius:7px;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;}
+.pm-kakao{background:#FEE500;color:#3A1D1D;}.pm-toss{background:#0064FF;color:#fff;}.pm-card{background:var(--espresso);color:var(--cream);font-size:10px;}.pm-naver{background:#03C75A;color:#fff;}
+.pm-name{font-size:11px;color:var(--muted);}
+.consent-area{background:rgba(196,147,90,.06);border:1px solid var(--latte);border-radius:10px;padding:16px;margin-bottom:16px;}
+.c-row{display:flex;align-items:flex-start;gap:9px;margin-bottom:9px;}.c-row:last-child{margin-bottom:0;}
+.c-row input[type=checkbox]{width:16px;height:16px;accent-color:var(--peach);flex-shrink:0;margin-top:2px;cursor:pointer;}
+.c-row label{font-size:13px;color:var(--mocha);line-height:1.6;cursor:pointer;word-break:keep-all;}
+.c-row label strong{color:var(--espresso);font-weight:400;}
+.btn-pay-go{width:100%;padding:16px;font-family:'Noto Sans KR';font-size:15px;font-weight:500;background:var(--espresso);color:var(--cream);border:none;border-radius:26px;cursor:pointer;letter-spacing:.05em;transition:all .2s;margin-bottom:14px;box-shadow:0 4px 14px rgba(61,35,20,.2);}
+.btn-pay-go:disabled{opacity:.38;cursor:not-allowed;box-shadow:none;}
+.pay-safe{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;}
+.safe-it{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--muted);}
+.safe-dot{width:4px;height:4px;background:var(--peach);border-radius:50%;}
+
+.plan-wrap{max-width:440px;margin:0 auto;padding:32px 20px;}
+
+@media(min-width:700px){
+  .hero-mobile{display:none!important;}
+  .hero-desktop{display:block!important;}
+  .price-stack{flex-direction:row;}
+  .p-card{flex:1;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo" onclick="goTo('land')">
+    <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+      <rect x="7" y="10" width="14" height="11" rx="7" fill="#FDF9F4" stroke="#E8D9C4" stroke-width="1.2"/>
+      <ellipse cx="14" cy="13.5" rx="5" ry="3" fill="#C4935A" opacity=".35"/>
+      <path d="M21 14 Q25 14 25 17.5 Q25 21 21 21" stroke="#E8D9C4" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <ellipse cx="14" cy="22" rx="9" ry="3" fill="#E8D9C4"/>
+    </svg>
+    <div class="logo-text">우리 아이 이야기 <small>아이 기질 이야기 나눔</small></div>
+  </div>
+  <button class="btn-outline" onclick="goTo('test')">먼저 체험해보기</button>
+</header>
+<div class="prog"><div class="prog-fill" id="pbar" style="width:0%"></div></div>
+
+<!-- ══ LANDING ══ -->
+<div class="page active" id="page-land">
+
+  <!-- 모바일 히어로 -->
+  <div class="hero-mobile">
+    <div class="hero-img-wrap">
+      <img src="hero.jpg" alt="커피 한 잔 들고 따뜻하게 웃고 있는 엄마 일러스트">
+    </div>
+    <div class="hero-text">
+
+      <!-- 훅업 배너 -->
+      <div class="hook-banner">
+        <p>
+          <strong>"혹시 내가 잘못 키우고 있는 건 아닐까…"</strong>
+          그 자책, 이제 내려놓으셔도 돼요.<br>아이가 힘든 게 아니라, <em style="color:#F2C4A0;font-style:normal">기질이 달랐던 거예요.</em>
+        </p>
+        <small>커피 한 잔 값으로 우리 아이 기질 이야기 나눠봐요 ☕</small>
+      </div>
+
+      <!-- 공감 체크리스트 -->
+      <div class="empathy-list">
+        <div class="empathy-title">☕ 이 중에 하나라도 해당된다면…</div>
+        <div class="empathy-item"><div class="emp-check">😮‍💨</div>"왜 이렇게 예민하지? 내가 뭘 잘못한 걸까" 자책한 적 있어요</div>
+        <div class="empathy-item"><div class="emp-check">😮‍💨</div>다른 집 애는 잘 하는데 우리 애만 유독 힘들어요</div>
+        <div class="empathy-item"><div class="emp-check">😮‍💨</div>훈육을 해도 소용없고, 어떻게 해야 할지 모르겠어요</div>
+        <div class="empathy-item"><div class="emp-check">😮‍💨</div>아이가 고집이 너무 세서, 아니면 너무 소극적이어서 걱정돼요</div>
+      </div>
+
+      <div class="hero-eyebrow">☕ 엄마의 마음을 이해하는 육아 이야기</div>
+      <h1 class="hero-h1">그건 문제가 아니에요,<br><em>타고난 기질이에요</em></h1>
+      <p class="hero-desc">아이마다 태어날 때부터 다른 반응 패턴이 있어요. 그걸 알고 나면 훈육이 아니라 이해가 시작돼요. 이웃집 세 아이 엄마 혜진씨가 커피 한 잔 하면서 같이 얘기해드릴게요.</p>
+
+      <div class="feat-list">
+        <div class="feat-row"><div class="feat-ic">💬</div>있는 그대로 공감해드리는 대화체 결과</div>
+        <div class="feat-row"><div class="feat-ic">🌱</div>우리 아이 기질에 딱 맞는 양육 방향</div>
+        <div class="feat-row"><div class="feat-ic">☕</div>커피 한 잔 값, 약 5분이면 충분해요</div>
+      </div>
+
+      <!-- 후기 슬라이더 -->
+      <div class="slider-wrap">
+        <div class="slider-track-outer">
+          <div class="slider-track" id="track-m">
+            <div class="slide"><div class="slide-av">👩</div><div><div class="slide-txt">"읽고 나서 눈물이 났어요. 애가 문제가 있는 게 아니라 그냥 그런 기질이었던 거더라고요. 내가 너무 자책했었는데…"</div><div class="slide-who">— 38세, 두 아이 엄마 지은님</div></div></div>
+            <div class="slide"><div class="slide-av">👩</div><div><div class="slide-txt">"우리 애가 왜 이렇게 예민한지 몰라서 맨날 혼냈는데, 결과 보고 나니까 미안하더라고요. 이제는 다르게 대해주고 있어요."</div><div class="slide-who">— 34세, 첫째 맘 수연님</div></div></div>
+            <div class="slide"><div class="slide-av">👩</div><div><div class="slide-txt">"커피값이라 부담 없이 해봤는데 완전 공감. 남편한테 보내줬더니 남편도 '이거 맞다'고 하더라고요 😂"</div><div class="slide-who">— 41세, 세 아이 엄마 혜란님</div></div></div>
+            <div class="slide"><div class="slide-av">👩</div><div><div class="slide-txt">"훈육을 잘못하는 줄 알았는데 기질 때문이라는 걸 알고 나서 저한테도 아이한테도 훨씬 여유로워졌어요."</div><div class="slide-who">— 36세, 어린이집 선생님 미정님</div></div></div>
+          </div>
+        </div>
+        <div class="slider-dots" id="dots-m">
+          <div class="dot on" onclick="goSlide('m',0)"></div>
+          <div class="dot" onclick="goSlide('m',1)"></div>
+          <div class="dot" onclick="goSlide('m',2)"></div>
+          <div class="dot" onclick="goSlide('m',3)"></div>
+        </div>
+      </div>
+
+      <button class="btn-main" onclick="goTo('price-select')">지금 바로 우리 아이 기질 알아보기 →</button>
+      <button class="btn-sub" onclick="goTo('test')">먼저 무료로 체험해볼게요</button>
+    </div>
+  </div>
+
+  <!-- 데스크탑 히어로 -->
+  <div class="hero-desktop">
+    <img class="bg" src="hero.jpg" alt="커피 한 잔 들고 이야기 나누는 따뜻한 카페 일러스트">
+    <div class="hero-d-overlay">
+      <div class="hero-d-hook">
+        <p><strong>"혹시 내가 잘못 키우고 있는 건 아닐까…"</strong>
+        그 자책, 이제 내려놓으셔도 돼요.<br>아이가 힘든 게 아니라, 기질이 달랐던 거예요.</p>
+      </div>
+      <div class="hero-d-eyebrow">☕ 엄마의 마음을 이해하는 육아 이야기</div>
+      <h1 class="hero-d-h1">그건 문제가 아니에요,<br><em>타고난 기질이에요</em></h1>
+      <div class="hero-d-feats">
+        <div class="hero-d-feat"><span style="font-size:17px">💬</span>있는 그대로 공감해드리는 대화체 결과</div>
+        <div class="hero-d-feat"><span style="font-size:17px">🌱</span>우리 아이 기질에 딱 맞는 양육 방향</div>
+        <div class="hero-d-feat"><span style="font-size:17px">☕</span>커피 한 잔 값, 약 5분이면 충분해요</div>
+      </div>
+      <div class="hero-d-slider">
+        <div class="slider-track-outer">
+          <div class="slider-track" id="track-d">
+            <div class="slide"><div class="slide-av">👩</div><div><div class="slide-txt-d">"읽고 나서 눈물이 났어요. 애가 문제가 있는 게 아니라 그런 기질이었던 거더라고요."</div><div class="slide-who-d">— 38세, 두 아이 엄마 지은님</div></div></div>
+            <div class="slide"><div class="slide-av">👩</div><div><div class="slide-txt-d">"우리 애가 왜 예민한지 몰라서 혼냈는데, 결과 보고 나니까 미안하더라고요."</div><div class="slide-who-d">— 34세, 첫째 맘 수연님</div></div></div>
+            <div class="slide"><div class="slide-av">👩</div><div><div class="slide-txt-d">"커피값이라 부담 없이 해봤는데 완전 공감. 남편한테도 보내줬어요 😂"</div><div class="slide-who-d">— 41세, 세 아이 엄마 혜란님</div></div></div>
+            <div class="slide"><div class="slide-av">👩</div><div><div class="slide-txt-d">"기질 때문이라는 걸 알고 나서 저한테도 아이한테도 훨씬 여유로워졌어요."</div><div class="slide-who-d">— 36세, 어린이집 선생님 미정님</div></div></div>
+          </div>
+        </div>
+        <div class="slider-dots" id="dots-d">
+          <div class="dot-d on" onclick="goSlide('d',0)"></div>
+          <div class="dot-d" onclick="goSlide('d',1)"></div>
+          <div class="dot-d" onclick="goSlide('d',2)"></div>
+          <div class="dot-d" onclick="goSlide('d',3)"></div>
+        </div>
+      </div>
+      <button class="btn-d-main" onclick="goTo('price-select')">지금 바로 우리 아이 기질 알아보기 →</button>
+      <button class="btn-d-sub" onclick="goTo('test')">먼저 무료로 체험해볼게요</button>
+    </div>
+  </div>
+
+  <!-- 소개 -->
+  <div class="section" style="border-top:1px solid var(--latte)">
+    <div class="sec-tag">이런 이야기 나눠요</div>
+    <h2 class="sec-h2">알고 보면, 다 이유가 있었어요 🔍</h2>
+    <p class="sec-sub">고집인지, 기질인지 — 알고 나면 훈육이 아니라 이해가 시작돼요.</p>
+    <div class="talk-cards">
+      <div class="talk-card"><div class="tc-icon">🌟</div><div><h3 class="tc-h3">우리 아이는 어떤 기질이에요?</h3><p class="tc-p">새로운 곳에 가면 바로 달려가는 아이, 한참 지켜보다 조심히 다가가는 아이 — 둘 다 정상이에요! 타고난 반응 패턴을 5가지 방향으로 살펴봐요.</p></div></div>
+      <div class="talk-card"><div class="tc-icon">💡</div><div><h3 class="tc-h3">왜 이렇게 행동하는 걸까요?</h3><p class="tc-p">고집스러운 건지, 겁이 많은 건지, 예민한 건지… 기질을 알고 나면 "문제 행동"으로 보이던 것들이 "이 아이의 특성"으로 보이기 시작해요.</p></div></div>
+      <div class="talk-card"><div class="tc-icon">🤝</div><div><h3 class="tc-h3">어떻게 대해주면 좋을까요?</h3><p class="tc-p">정답은 없지만, 우리 아이에게 맞는 방향은 있어요. 소통 방식, 훈육 접근, 환경 만들기까지 구체적으로 얘기해드려요.</p></div></div>
+    </div>
+  </div>
+
+  <!-- 가격 -->
+  <div class="section" style="border-top:1px solid var(--latte);padding-top:44px">
+    <div class="sec-tag">얼마예요?</div>
+    <h2 class="sec-h2">딱 커피 한 잔 값이에요 ☕</h2>
+    <p class="sec-sub">부담 없이, 오늘 카페에서 커피 한 잔 마시는 마음으로 시작해 보세요.</p>
+    <div class="price-stack">
+      <div class="p-card" onclick="startPay('basic')">
+        <div class="p-cup">☕</div><div class="p-name">아메리카노</div>
+        <div class="p-price">3,900<sub>원</sub></div><div class="p-like">≈ 아메리카노 한 잔</div>
+        <ul class="p-list"><li>기질 유형 분석 결과</li><li>5가지 차원 점수 확인</li><li>핵심 양육 방향 3가지</li></ul>
+        <button class="btn-p lite">시작하기</button>
+      </div>
+      <div class="p-card pick" onclick="startPay('standard')">
+        <div class="pick-badge">엄마들이 많이 선택해요</div>
+        <div class="p-cup">☕</div><div class="p-name">카페라떼</div>
+        <div class="p-price">6,900<sub>원</sub></div><div class="p-like">≈ 카페라떼 한 잔</div>
+        <ul class="p-list"><li>위 내용 전부 포함돼요</li><li>상세 양육 가이드 8가지</li><li>연령대별 발달 참고 노트</li><li>PDF 리포트 이메일 발송</li></ul>
+        <button class="btn-p dark">시작하기</button>
+      </div>
+    </div>
+    <div class="legal-box">
+      <strong>잠깐, 읽어봐 주세요 🙏</strong><br>
+      이 콘텐츠는 심리학 연구 문헌을 참고해서 직접 만든 <strong>양육 참고용 이야기</strong>예요. 의사 선생님 진단이나 전문 심리 상담을 대신하는 게 아니에요. 결제하면 바로 콘텐츠가 제공되기 때문에 <strong>청약 철회가 제한돼요</strong> (전자상거래법 제17조 제2항 제5호). 문항은 기존 유료 검사 도구를 쓰지 않고 직접 만들었어요.
+    </div>
+  </div>
+</div>
+
+<!-- ══ 검사 ══ -->
+<div class="page" id="page-test">
+  <div class="test-wrap">
+    <div class="q-header"><div class="q-step" id="q-step-lbl">STEP 1 / 5 — 자극 추구</div></div>
+    <div class="nbr-tip"><div class="nbr-av">👩</div><p id="q-tip">평소 모습을 떠올리면서 가장 가까운 걸 골라주세요. 정답은 없어요 😊</p></div>
+    <div class="q-card">
+      <div class="q-dim" id="q-dim"></div>
+      <div class="q-txt" id="q-txt"></div>
+      <div class="q-opts" id="q-opts"></div>
+    </div>
+    <div class="q-nav">
+      <button class="btn-qprev" id="btn-prev" onclick="prevQ()">← 이전</button>
+      <button class="btn-qnext" id="btn-next" onclick="nextQ()" disabled>다음 →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 결과 ══ -->
+<div class="page" id="page-result">
+  <div class="result-wrap">
+    <div class="r-card"><div class="r-badge">우리 아이 기질 이야기</div><div class="r-icon" id="r-icon">🌿</div><div class="r-name" id="r-name">—</div><div class="r-desc" id="r-desc">—</div></div>
+    <div class="r-sec"><div class="r-sec-tag">기질 차원별 점수</div><div id="dim-bars"></div></div>
+    <div class="nbr-result">
+      <div class="nbr-hd"><div class="nbr-av2">👩</div><div class="nbr-nm"><strong>혜진씨의 이야기</strong><span>우리 아이 맞춤 양육 방향</span></div></div>
+      <div class="nbr-bubble"><div id="guide-list"></div></div>
+    </div>
+    <div class="cta-dark">
+      <p>라떼 한 잔 값으로 더 깊은 이야기 나눠봐요 ☕<br><strong>상세 양육 가이드 8가지 + 연령별 발달 노트 + PDF 리포트</strong></p>
+      <button class="btn-cta-w" onclick="startPay('standard')">PDF 리포트 받아볼게요 — 6,900원</button>
+    </div>
+    <div class="r-disc">이 결과는 심리학 연구 문헌을 참고해 직접 만든 양육 참고용 이야기예요.<br>의사 진단이나 전문 심리 상담을 대신하지 않아요.<br>입력하신 내용은 결과 확인 후 바로 삭제돼요. 저장 안 해요 🔒</div>
+  </div>
+</div>
+
+<!-- ══ 플랜 선택 ══ -->
+<div class="page" id="page-price-select">
+  <div class="plan-wrap">
+    <div class="pay-h" style="margin-bottom:6px">어떤 걸로 할까요? ☕</div>
+    <div class="pay-sub">먼저 무료로 체험해보고 결정하셔도 돼요.</div>
+    <div class="price-stack" style="margin-bottom:14px">
+      <div class="p-card" onclick="startPay('basic')"><div class="p-cup">☕</div><div class="p-name">아메리카노</div><div class="p-price" style="font-size:24px">3,900<sub>원</sub></div><div class="p-like">≈ 아메리카노 한 잔</div><ul class="p-list"><li>기질 유형 + 점수</li><li>핵심 양육 방향</li></ul><button class="btn-p lite" style="pointer-events:none">선택</button></div>
+      <div class="p-card pick" onclick="startPay('standard')"><div class="pick-badge">많이 선택해요</div><div class="p-cup">☕</div><div class="p-name">카페라떼</div><div class="p-price" style="font-size:24px">6,900<sub>원</sub></div><div class="p-like">≈ 카페라떼 한 잔</div><ul class="p-list"><li>상세 가이드 8가지</li><li>PDF 리포트 발송</li></ul><button class="btn-p dark" style="pointer-events:none">선택</button></div>
+    </div>
+    <button class="btn-main" onclick="goTo('test')">무료로 먼저 체험해볼게요 →</button>
+  </div>
+</div>
+
+<!-- ══ 결제 ══ -->
+<div class="page" id="page-pay">
+  <div class="pay-wrap">
+    <div class="pay-h">결제할게요 ☕</div>
+    <div class="pay-sub" id="pay-desc">라떼 한 잔 값으로 우리 아이 이야기 나눠봐요</div>
+    <div class="pay-planbox"><div class="pay-pname" id="ord-name">카페라떼 플랜</div><div><div class="pay-pprice" id="ord-price">6,900원</div><span class="pay-pcmp" id="ord-cmp">≈ 카페라떼 한 잔</span></div></div>
+    <div class="pay-sl">결제 수단 선택해주세요</div>
+    <div class="pay-methods">
+      <div class="pay-m sel" id="m-kakao" onclick="selM('kakao')"><div class="pm-icon pm-kakao">K</div><div class="pm-name">카카오페이</div></div>
+      <div class="pay-m" id="m-toss" onclick="selM('toss')"><div class="pm-icon pm-toss">T</div><div class="pm-name">토스페이</div></div>
+      <div class="pay-m" id="m-card" onclick="selM('card')"><div class="pm-icon pm-card">카드</div><div class="pm-name">신용카드</div></div>
+      <div class="pay-m" id="m-naver" onclick="selM('naver')"><div class="pm-icon pm-naver">N</div><div class="pm-name">네이버페이</div></div>
+    </div>
+    <div class="consent-area">
+      <div class="c-row"><input type="checkbox" id="chk1" onchange="chkAll()"><label for="chk1">결제 완료 즉시 콘텐츠가 제공돼서 <strong>청약 철회가 제한</strong>된다는 걸 확인했어요 (전자상거래법 제17조 제2항 제5호).</label></div>
+      <div class="c-row"><input type="checkbox" id="chk2" onchange="chkAll()"><label for="chk2">이 콘텐츠는 <strong>양육 참고용</strong>이고, 의료 진단이나 전문 심리 상담을 대신하지 않는다는 걸 확인했어요.</label></div>
+      <div class="c-row"><input type="checkbox" id="chk3" onchange="chkAll()"><label for="chk3">문항은 기존 유료 검사가 아니라 <strong>직접 만든 것</strong>임을 확인했어요.</label></div>
+    </div>
+    <button class="btn-pay-go" id="btn-paygo" disabled onclick="alert('실제 서비스에서는 여기서 결제창이 열려요! 😊\n\n카카오페이: pay.kakao.com\n토스페이먼츠: tosspayments.com')">☕ 지금 결제하기</button>
+    <div class="pay-safe"><div class="safe-it"><div class="safe-dot"></div>SSL 보안 결제</div><div class="safe-it"><div class="safe-dot"></div>개인정보 암호화</div><div class="safe-it"><div class="safe-dot"></div>결제 후 이메일 발송</div></div>
+  </div>
+</div>
+
+<script>
+const SC={m:0,d:0};
+function goSlide(id,i){SC[id]=i;document.getElementById('track-'+id).style.transform='translateX(-'+i*100+'%)';document.querySelectorAll('#dots-'+id+' .dot,#dots-'+id+' .dot-d').forEach((d,j)=>d.classList.toggle('on',j===i));}
+function auto(id){setInterval(()=>goSlide(id,(SC[id]+1)%4),4500);}
+auto('m');auto('d');
+['m','d'].forEach(id=>{const t=document.getElementById('track-'+id);if(!t)return;let sx=0;t.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;},{passive:true});t.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)goSlide(id,dx<0?Math.min(SC[id]+1,3):Math.max(SC[id]-1,0));},{passive:true});});
+
+const QS=[
+  {dim:"자극 추구 성향",tip:"평소 가장 자주 보이는 모습을 떠올려 주세요 😊",txt:"새로운 장난감이나 낯선 곳을 처음 접했을 때, 우리 아이는 어떻게 해요?",opts:["주저 없이 바로 달려가서 탐색해요","잠깐 살펴보다가 조심히 다가가요","엄마 곁에서 멀리 지켜봐요","낯선 게 싫다며 피하거나 불안해해요"]},
+  {dim:"위험 회피 성향",tip:"억지로 시켰을 때 말고, 자연스러운 첫 반응이요 😊",txt:"처음 해보는 활동(새 놀이터, 물놀이 등) 앞에서 어떤 모습이에요?",opts:["겁 없이 바로 뛰어들어요","살짝 망설이다 격려하면 금방 해요","한참 지켜보다 천천히 시작해요","완강히 거부하거나 울어요"]},
+  {dim:"사회적 민감성",tip:"아이가 자발적으로 하는 행동을 봐주세요 💛",txt:"다른 아이가 울거나 속상해하면 우리 아이는 어떻게 해요?",opts:["바로 달려가서 위로하거나 도우려 해요","어떻게 할지 눈치를 보며 생각해요","별로 신경 안 쓰고 자기 놀이를 해요","오히려 본인이 불안해지거나 자리를 피해요"]},
+  {dim:"활동 수준",tip:"오늘 하루가 아니라 평소 패턴으로 봐주세요 😄",txt:"하루 종일 보면 신체 활동량이 어느 정도예요?",opts:["쉬지 않고 움직여서 엄마가 지쳐요 😅","활발하지만 쉬는 시간도 있어요","조용히 앉아서 노는 걸 좋아해요","거의 안 움직이고 차분해요"]},
+  {dim:"정서 반응성",tip:"솔직하게 떠올려 보세요, 다 우리 아이 모습이에요 😊",txt:"원하는 걸 못 얻었을 때 (장난감, 간식 등) 어떻게 해요?",opts:["크게 울거나 격하게 감정을 표현해요","잠깐 속상해하다 금방 다른 것에 관심이 가요","조용히 속상해하지만 금방 진정돼요","별 반응 없이 담담하게 넘겨요"]}
+];
+const TYPES=[
+  {icon:"🌟",name:"탐구형 · 에너지 넘치는 호기심 기질",desc:"새로운 걸 보면 달려가는 우리 아이, 겁이 없어서 걱정되시죠? 사실 이건 타고난 탐구 본능이에요. 창의력과 행동력이 강한 대신, 일관된 루틴이 없으면 집중력이 흩어질 수 있어요.",guides:['탐구를 막지 말고 "안전한 모험"을 허용해 주세요. 블록 조립, 자연 관찰처럼 호기심을 쏟을 수 있는 활동이 딱이에요.','하루의 큰 흐름은 일정하게 유지해 주세요. 자유로운 아이일수록 예측 가능한 구조가 안전망이 돼요.','흥분했을 때 "지금 어떤 기분이야?"라고 같이 말로 표현해보는 연습을 해주세요.'],scores:[88,20,65,85,68]},
+  {icon:"🌿",name:"신중형 · 꼼꼼하게 살피는 기질",desc:"새로운 걸 한참 지켜보다 움직이는 우리 아이, 소심한 게 아니에요. 위험을 미리 살피는 신중한 기질이에요. 안전한 환경에서 충분히 탐색한 후 자신만의 방식으로 세상을 열어가요.",guides:['새로운 활동 전에 미리 충분히 설명해 주세요. 예고해 주는 것만으로도 달라져요.','재촉하거나 비교하지 마세요. 오히려 더 움츠러들게 해요.','작은 성공 경험을 자주 만들어 주세요. 스스로 해냈을 때 크게 인정해 주는 게 정말 중요해요.'],scores:[20,88,50,32,58]},
+  {icon:"💛",name:"공감형 · 감수성 풍부한 기질",desc:"다른 아이가 울면 같이 속상해하는 우리 아이, 너무 예민한 거 아닐까 걱정되시죠? 타인의 감정을 잘 읽는 공감 능력이 높다는 신호예요. 다만 정서적으로 쉽게 피로해질 수 있어요.",guides:['감정에 이름을 붙여주는 연습을 같이 해주세요. "속상했구나" — 이 한마디가 정말 큰 위로가 돼요.','사회적 활동 후에는 혼자 조용히 쉬는 시간을 꼭 주세요. 배터리가 다 닳은 거예요.','"너는 어떻게 하고 싶어?"라고 자주 물어봐 주세요. 자기 기준을 함께 키워줘요.'],scores:[60,50,90,45,78]},
+  {icon:"🌙",name:"안정형 · 균형 잡힌 기질",desc:"큰 기복 없이 차분한 우리 아이, 걱정이 적어서 이게 맞나 싶으실 수도 있어요. 적응력이 높고 다양한 환경에서 잘 지내요. 안정을 스스로 찾는 능력이 있어요.",guides:["꾸준한 일과와 따뜻한 스킨십이 이 아이의 안정감을 더욱 키워줘요.","조용하다고 괜찮겠지 하지 말고, 작은 감정 신호도 놓치지 않고 물어봐 주세요.","가끔은 새로운 도전도 같이 시도해 보세요. 과하지 않은 자극이 성장의 재료가 돼요."],scores:[48,42,52,45,38]}
+];
+const DN=["자극 추구","위험 회피","사회적 민감성","활동 수준","정서 반응성"];
+let cur=0,ans=[];
+function renderQ(){
+  const q=QS[cur];
+  document.getElementById("q-dim").textContent=q.dim;
+  document.getElementById("q-txt").textContent=q.txt;
+  document.getElementById("q-tip").textContent=q.tip;
+  document.getElementById("q-step-lbl").textContent="STEP "+(cur+1)+" / "+QS.length+" — "+q.dim;
+  document.getElementById("pbar").style.width=Math.round(((cur+1)/QS.length)*100)+"%";
+  const c=document.getElementById("q-opts");c.innerHTML="";
+  q.opts.forEach((o,i)=>{const b=document.createElement("button");b.className="q-opt"+(ans[cur]===i?" sel":"");b.textContent=o;b.onclick=()=>{ans[cur]=i;renderQ();};c.appendChild(b);});
+  document.getElementById("btn-prev").style.visibility=cur===0?"hidden":"visible";
+  const n=document.getElementById("btn-next");n.disabled=ans[cur]===undefined;n.textContent=cur===QS.length-1?"결과 볼게요 →":"다음 →";
+}
+function nextQ(){if(ans[cur]===undefined)return;if(cur<QS.length-1){cur++;renderQ();}else buildResult();}
+function prevQ(){if(cur>0){cur--;renderQ();}}
+function buildResult(){
+  const t=TYPES[Math.min(ans[0]??0,3)];
+  document.getElementById("r-icon").textContent=t.icon;
+  document.getElementById("r-name").textContent=t.name;
+  document.getElementById("r-desc").textContent=t.desc;
+  const el=document.getElementById("dim-bars");el.innerHTML="";
+  DN.forEach((nm,i)=>{el.innerHTML+=`<div class="dim-row"><div class="dim-nm">${nm}</div><div class="dim-track"><div class="dim-fill" id="df${i}"></div></div><div class="dim-sc">${t.scores[i]}</div></div>`;});
+  const gl=document.getElementById("guide-list");gl.innerHTML="";
+  t.guides.forEach(g=>{gl.innerHTML+=`<div class="guide-row"><div class="gdot">·</div><span>${g}</span></div>`;});
+  goTo("result");
+  setTimeout(()=>{t.scores.forEach((s,i)=>{const e=document.getElementById("df"+i);if(e)e.style.width=s+"%";});},150);
+}
+function startPay(plan){
+  const iS=plan==="standard";
+  document.getElementById("pay-desc").textContent=iS?"라떼 한 잔 값으로 우리 아이 이야기 나눠봐요 ☕":"아메리카노 한 잔 값으로 시작해봐요 ☕";
+  document.getElementById("ord-name").textContent=iS?"카페라떼 플랜":"아메리카노 플랜";
+  document.getElementById("ord-price").textContent=iS?"6,900원":"3,900원";
+  document.getElementById("ord-cmp").textContent=iS?"≈ 카페라떼 한 잔":"≈ 아메리카노 한 잔";
+  ["chk1","chk2","chk3"].forEach(id=>document.getElementById(id).checked=false);
+  document.getElementById("btn-paygo").disabled=true;
+  goTo("pay");
+}
+function selM(m){["kakao","toss","card","naver"].forEach(id=>{document.getElementById("m-"+id).classList.toggle("sel",id===m);});}
+function chkAll(){document.getElementById("btn-paygo").disabled=!["chk1","chk2","chk3"].every(id=>document.getElementById(id).checked);}
+const PM={land:"page-land",test:"page-test",result:"page-result","price-select":"page-price-select",pay:"page-pay"};
+function goTo(key){
+  document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+  document.getElementById(PM[key]).classList.add("active");
+  window.scrollTo({top:0,behavior:"smooth"});
+  if(key==="test")renderQ();
+  if(key!=="test")document.getElementById("pbar").style.width="0%";
+}
+</script>
+</body>
+</html>
