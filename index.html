@@ -246,7 +246,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:14p
 .c-row label{font-size:13px;color:var(--mocha);line-height:1.6;cursor:pointer;word-break:keep-all;}
 .c-row label strong{color:var(--espresso);font-weight:400;}
 .btn-pay-go{width:100%;padding:17px;font-family:'Noto Sans KR';font-size:16px;font-weight:500;background:var(--espresso);color:var(--cream);border:none;border-radius:28px;cursor:pointer;letter-spacing:.05em;transition:all .2s;margin-bottom:14px;box-shadow:0 4px 16px rgba(61,35,20,.2);}
-.btn-pay-go:disabled{opacity:.38;cursor:not-allowed;box-shadow:none;}
+.btn-pay-go:disabled{opacity:1;cursor:pointer;}
 .pay-safe{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;}
 .safe-it{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--muted);}
 .safe-dot{width:4px;height:4px;background:var(--peach);border-radius:50%;}
@@ -534,7 +534,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:14p
       <div class="c-row"><input type="checkbox" id="chk2" onchange="chkAll()"><label for="chk2">이 콘텐츠는 <strong>양육 참고용</strong>이고, 의료 진단이나 전문 심리 상담을 대신하지 않는다는 걸 확인했어요.</label></div>
       <div class="c-row"><input type="checkbox" id="chk3" onchange="chkAll()"><label for="chk3">문항은 기존 유료 검사가 아니라 <strong>직접 제작한 것</strong>임을 확인했어요.</label></div>
     </div>
-    <button class="btn-pay-go" id="btn-paygo" onclick="completePay()">☕ 지금 결제하기</button>
+    <button class="btn-pay-go" id="btn-paygo" onclick="completePay()" style="opacity:1;cursor:pointer;">☕ 지금 결제하기</button>
     <div class="pay-safe">
       <div class="safe-it"><div class="safe-dot"></div>SSL 보안 결제</div>
       <div class="safe-it"><div class="safe-dot"></div>개인정보 암호화</div>
