@@ -246,7 +246,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:14p
 .c-row label{font-size:13px;color:var(--mocha);line-height:1.6;cursor:pointer;word-break:keep-all;}
 .c-row label strong{color:var(--espresso);font-weight:400;}
 .btn-pay-go{width:100%;padding:17px;font-family:'Noto Sans KR';font-size:16px;font-weight:500;background:var(--espresso);color:var(--cream);border:none;border-radius:28px;cursor:pointer;letter-spacing:.05em;transition:all .2s;margin-bottom:14px;box-shadow:0 4px 16px rgba(61,35,20,.2);}
-.btn-pay-go:disabled{opacity:1;cursor:pointer;}
+.btn-pay-go:disabled{opacity:1!important;cursor:pointer!important;pointer-events:all!important;}
 .pay-safe{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;}
 .safe-it{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--muted);}
 .safe-dot{width:4px;height:4px;background:var(--peach);border-radius:50%;}
@@ -1010,7 +1010,7 @@ function nextQ(){
   else{goTo('loading');setTimeout(()=>renderResult(),2600);}
 }
 function prevQ(){if(cur>0){cur--;renderQ();}}
-function startPay(){['chk1','chk2','chk3'].forEach(id=>document.getElementById(id).checked=false);document.getElementById('btn-paygo').disabled=true;goTo('pay');}
+function startPay(){['chk1','chk2','chk3'].forEach(id=>document.getElementById(id).checked=false);goTo('pay');}
 function completePay(){
   console.log("completePay called, currentType:", currentType);
   if(!currentType){
@@ -1021,7 +1021,7 @@ function completePay(){
   renderPaid();
 }
 function selM(m){['kakao','toss','card','naver'].forEach(id=>{document.getElementById('m-'+id).classList.toggle('sel',id===m);});}
-function chkAll(){ return; }
+function chkAll(){ /* 데모: 항상 활성 */ }
 const PM={land:'page-land',test:'page-test',loading:'page-loading',result:'page-result',pay:'page-pay',paid:'page-paid'};
 function goTo(key){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
