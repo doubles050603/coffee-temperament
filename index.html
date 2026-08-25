@@ -14,6 +14,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://doubles050603.github.io/coffee-temperament/og.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<script src="https://cdn.portone.io/v2/browser-sdk.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{--cream:#FAF5EE;--latte:#E8D9C4;--caramel:#C4935A;--espresso:#3D2314;--mocha:#6B3F22;--foam:#FDF9F4;--muted:#8C7260;--warm:#A0714F;--peach:#E8927A;--sage:#8BAF98;}
@@ -583,7 +584,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:14p
         <button type="button" onclick="openDoc('refund')">환불정책</button>
       </div>
     </div>
-    <button class="btn-pay-go" onclick="completePay()">☕ 지금 결제하기</button>
+    <button class="btn-pay-go" id="btn-paygo" onclick="completePay()">☕ 지금 결제하기</button>
     <div class="pay-safe">
       <div class="safe-it"><div class="safe-dot"></div>SSL 보안 결제</div>
       <div class="safe-it"><div class="safe-dot"></div>개인정보 암호화</div>
@@ -612,6 +613,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:14p
       <div class="code-display">
         <div class="code-label">재접속 코드</div>
         <div class="code-value" id="reaccess-code">- - - -</div>
+        <div id="pay-ref" style="font-size:10px;color:rgba(255,255,255,.4);margin-top:8px;word-break:break-all;"></div>
       </div>
       <div class="nick-row">
         <input class="nick-input" id="nick-input" type="text" maxlength="10" placeholder="아이 애칭 (예: 첫째, 서준이)" style="background:rgba(255,255,255,.9)">
@@ -707,7 +709,13 @@ const SC={m:0,d:0};
 function goSlide(id,i){SC[id]=i;const t=document.getElementById('track-'+id);if(t)t.style.transform='translateX(-'+i*100+'%)';document.querySelectorAll('#dots-'+id+' div').forEach((d,j)=>d.classList.toggle('on',j===i));}
 function auto(id){setInterval(()=>goSlide(id,(SC[id]+1)%4),4500);}
 auto('m');auto('d');
-window.addEventListener('load',function(){ setTimeout(offerResume,600); });
+window.addEventListener('load',function(){
+  setTimeout(function(){
+    if(handlePaymentReturn()) return;   // 모바일 결제 후 복귀
+    checkPendingPay();                   // 결제했는데 결과 못 본 경우
+    offerResume();                       // 진행 중이던 검사 이어하기
+  },500);
+});
 ['m','d'].forEach(id=>{const t=document.getElementById('track-'+id);if(!t)return;let sx=0;t.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;},{passive:true});t.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)goSlide(id,dx<0?Math.min(SC[id]+1,3):Math.max(SC[id]-1,0));},{passive:true});});
 
 /* 무료 18문항 — 구체적 장면 기반, A/B 방향 명확화 */
@@ -1609,8 +1617,16 @@ function renderPaid(isRestore){
   if(isRestore){
     var ce=document.getElementById('reaccess-code');
     if(ce) ce.textContent=currentCode||'- - - -';
+    var pr=document.getElementById('pay-ref');
+    if(pr){
+      var lst=safeGet(), rec=null;
+      lst.forEach(function(r){ if(r.code===currentCode) rec=r; });
+      pr.textContent=(rec&&rec.pay)?('결제번호 '+rec.pay):'';
+    }
   } else {
     saveReport();
+    var pr2=document.getElementById('pay-ref');
+    if(pr2) pr2.textContent=lastPaymentId?('결제번호 '+lastPaymentId):'';
   }
   var sh=document.getElementById('paid-sib-hint');
   if(sh){
@@ -1710,20 +1726,6 @@ function startPay(){
   goTo('pay');
 }
 
-function completePay(){
-  isPaid=true;
-  const doneCount = answers.filter(a=>a!==undefined).length;
-  curP=0; answersP=[];
-  if(doneCount>=18){
-    // 이미 무료 18문항을 완료한 상태 → 심화 15문항으로 바로 이동 (다시 안 물어봄)
-    goTo('test-paid');
-  } else {
-    // 랜딩에서 바로 결제한 경우 → 기본 18문항부터 시작
-    cur=0; answers=[];
-    goTo('test');
-  }
-}
-
 function selM(m){if(m!=='card')return;/* 현재 신용카드만 결제 가능 */}
 
 
@@ -1756,6 +1758,7 @@ function saveReport(){
     dims:dims,
     ans:answers.slice(),
     ansP:answersP.slice(),
+    pay:lastPaymentId||'',
     date:new Date().toISOString()
   };
   list.unshift(rec);
@@ -1820,7 +1823,8 @@ function renderVault(){
     var d=new Date(r.date);
     var ds=d.getFullYear()+'.'+(d.getMonth()+1)+'.'+d.getDate();
     var title=r.nick?(r.nick+' — '+T.name):T.name;
-    return '<div class="vault-card"><div class="vault-info"><div class="vault-nick">'+T.icon+' '+title+'</div><div class="vault-meta">코드 '+r.code+' · '+ds+'</div></div><button class="btn-vault-open" onclick="openReport(\''+r.code+'\')">열어보기</button></div>';
+    var payline=r.pay?('<br>결제번호 '+r.pay):'';
+    return '<div class="vault-card"><div class="vault-info"><div class="vault-nick">'+T.icon+' '+title+'</div><div class="vault-meta">코드 '+r.code+' · '+ds+payline+'</div></div><button class="btn-vault-open" onclick="openReport(\''+r.code+'\')">열어보기</button></div>';
   }).join('');
 }
 function openReport(code){
@@ -1864,6 +1868,125 @@ window.addEventListener('beforeunload',function(e){
 });
 
 
+
+
+/* ══════════════════════════════════════════
+   결제 설정 (포트원 + NHN KCP)
+   ※ ENABLED를 false로 두면 결제 없이 바로 진행돼요 (테스트용)
+   ══════════════════════════════════════════ */
+var PAY_CONFIG={
+  ENABLED:      true,
+  STORE_ID:     'store-5920ca2d-bed5-4302-8dae-33edce947c7c',
+  CHANNEL_KEY:  'channel-key-8d67274f-c0c0-43c2-8365-1ebdd442f2ec',
+  AMOUNT:       1900,
+  ORDER_NAME:   '우리 아이 기질 분석 리포트'
+};
+var lastPaymentId=null;
+
+function makePaymentId(){
+  var t=Date.now().toString(36);
+  var r=Math.random().toString(36).slice(2,8);
+  return 'wai-'+t+'-'+r;
+}
+/* 결제 성공 후 다음 단계로 */
+function afterPaySuccess(pid){
+  lastPaymentId=pid||null;
+  isPaid=true;
+  curP=0; answersP=[];
+  var doneCount=answers.filter(function(a){return a!==undefined;}).length;
+  saveProgress();
+  if(doneCount>=18){ goTo('test-paid'); }
+  else { cur=0; answers=[]; goTo('test'); }
+}
+/* 결제 요청 */
+async function completePay(){
+  /* 동의 확인 */
+  var need=['chk1','chk2','chk3'];
+  for(var i=0;i<need.length;i++){
+    var el=document.getElementById(need[i]);
+    if(el&&!el.checked){
+      alert('결제를 진행하려면 아래 3가지 동의 항목에\n모두 체크해 주세요 😊');
+      el.focus();
+      return;
+    }
+  }
+  /* 테스트 모드 */
+  if(!PAY_CONFIG.ENABLED){ afterPaySuccess(null); return; }
+  /* SDK 확인 */
+  if(typeof PortOne==='undefined'){
+    alert('결제 모듈을 불러오지 못했어요.\n네트워크 상태를 확인하시고 새로고침 후 다시 시도해 주세요.');
+    return;
+  }
+  var btn=document.getElementById('btn-paygo');
+  if(btn){ btn.disabled=true; btn.textContent='결제창을 여는 중...'; }
+
+  var paymentId=makePaymentId();
+  /* 결제창 이동 전에 진행상태 저장 (모바일은 페이지가 새로 열려요) */
+  saveProgress();
+  try{ localStorage.setItem('wooriai_pending_pay',JSON.stringify({id:paymentId,t:Date.now()})); }catch(e){}
+
+  try{
+    var res=await PortOne.requestPayment({
+      storeId:     PAY_CONFIG.STORE_ID,
+      channelKey:  PAY_CONFIG.CHANNEL_KEY,
+      paymentId:   paymentId,
+      orderName:   PAY_CONFIG.ORDER_NAME,
+      totalAmount: PAY_CONFIG.AMOUNT,
+      currency:    'CURRENCY_KRW',
+      payMethod:   'CARD',
+      redirectUrl: location.origin+location.pathname
+    });
+    if(btn){ btn.disabled=false; btn.textContent='☕ 지금 결제하기'; }
+    if(res&&res.code!=null){
+      alert('결제가 완료되지 않았어요.\n\n'+(res.message||'다시 시도해 주세요.'));
+      return;
+    }
+    afterPaySuccess((res&&res.paymentId)||paymentId);
+  }catch(err){
+    if(btn){ btn.disabled=false; btn.textContent='☕ 지금 결제하기'; }
+    alert('결제 중 문제가 발생했어요.\n잠시 후 다시 시도해 주세요.\n\n계속 안 되시면 kdw8808@kakao.com으로 문의해 주세요.');
+  }
+}
+/* 모바일 결제 후 돌아왔을 때 처리 */
+function handlePaymentReturn(){
+  var q=new URLSearchParams(location.search);
+  var pid=q.get('paymentId');
+  if(!pid) return false;
+  var code=q.get('code'), msg=q.get('message');
+  try{ history.replaceState(null,'',location.pathname); }catch(e){}
+  /* 결제 직전 저장해둔 진행상태 복원 */
+  var p=loadProgress();
+  if(p){
+    cur=p.cur||0; answers=p.answers||[]; curP=p.curP||0; answersP=p.answersP||[];
+    currentType=p.type||null;
+  }
+  try{ localStorage.removeItem('wooriai_pending_pay'); }catch(e){}
+  if(code){
+    alert('결제가 취소되었거나 완료되지 않았어요.\n\n'+(msg||'다시 시도해 주세요.'));
+    goTo('pay');
+    return true;
+  }
+  afterPaySuccess(pid);
+  return true;
+}
+/* 결제했는데 결과를 못 본 경우 안내 */
+function checkPendingPay(){
+  try{
+    var r=localStorage.getItem('wooriai_pending_pay');
+    if(!r) return;
+    var p=JSON.parse(r);
+    if(!p||!p.t) { localStorage.removeItem('wooriai_pending_pay'); return; }
+    if(Date.now()-p.t>1000*60*30){ localStorage.removeItem('wooriai_pending_pay'); return; }
+    if(confirm('조금 전 결제를 시도하신 기록이 있어요.\n\n결제는 완료됐는데 결과를 못 보셨다면\n[확인]을 눌러 이어서 진행해 주세요.\n\n결제가 안 되셨다면 [취소]를 눌러주세요.')){
+      var pr=loadProgress();
+      if(pr){ cur=pr.cur||0; answers=pr.answers||[]; curP=pr.curP||0; answersP=pr.answersP||[]; currentType=pr.type||null; }
+      localStorage.removeItem('wooriai_pending_pay');
+      afterPaySuccess(p.id);
+    } else {
+      localStorage.removeItem('wooriai_pending_pay');
+    }
+  }catch(e){}
+}
 
 /* ══ 형제 궁합 로직 ══ */
 function sibLabel(r){
@@ -2192,7 +2315,7 @@ function goTo(key){
       <p style="font-weight:500;margin-bottom:8px;">환불 가능 사유</p>
       <p style="margin-bottom:16px;">• 서비스 내 중대한 오류로 결과를 확인하지 못한 경우<br>• 이중 결제가 발생한 경우</p>
       <p style="font-weight:500;margin-bottom:8px;">환불 신청 방법</p>
-      <p style="margin-bottom:16px;">고객센터 이메일(kdw8808@kakao.com)로 아래 내용과 함께 문의해주세요.<br>① 결제자 성함<br>② 결제일시 및 금액<br>③ 환불 사유</p>
+      <p style="margin-bottom:16px;">고객센터 이메일(kdw8808@kakao.com)로 아래 내용과 함께 문의해주세요.<br>① 결제자 성함<br>② 결제일시 및 금액<br>③ 결제번호 또는 재접속 코드 (리포트 화면에서 확인 가능)<br>④ 환불 사유</p>
       <p style="font-weight:500;margin-bottom:8px;">처리 기간</p>
       <p style="margin-bottom:16px;">환불 접수 후 3영업일 이내에 처리됩니다.</p>
       <p style="color:var(--muted);font-size:12px;">본 환불 정책은 전자상거래 등에서의 소비자보호에 관한 법률을 따릅니다.</p>
